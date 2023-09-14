@@ -89,7 +89,7 @@
 　・ログイン/ログアウト機能  
 検定  
 　・地図一覧機能  
-  ・オートコンプリート機能  
+　・オートコンプリート機能  
   　→都道府県名・国名の検索  
 	　→Stimulus Autocompleteを使用予定  
 　・画像アップロード機能  
@@ -116,6 +116,11 @@
   ・パスワードリセット機能  
 その他  
   ・テストコード  
+
+
+## 画面遷移図  
+https://www.figma.com/file/TUMgpRrEpnobEeT33LdBvj/kan-kentei?type=design&node-id=0%3A1&mode=design&t=iUNiBykPkrholq1N-1
+
   
 　
 　
