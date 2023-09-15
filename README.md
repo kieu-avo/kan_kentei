@@ -85,7 +85,7 @@
 ## 実装を予定している機能  
 ### MVP
 ユーザー管理  
-　・会員登録機能  
+　・ユーザー登録機能  
 　・ログイン/ログアウト機能  
 検定  
 　・地図一覧機能  
@@ -106,7 +106,7 @@
 　・SNSシェア機能  
 レビュー  
 　・レビュー作成機能  
-　・レビュー編集機能  
+　・レビュー表示機能  
 
 ### その後の機能  
 検定  
@@ -116,10 +116,11 @@
   ・パスワードリセット機能  
 その他  
   ・テストコード  
+  ・お問い合わせ機能
 
 
 ## 画面遷移図  
-https://www.figma.com/file/TUMgpRrEpnobEeT33LdBvj/kan-kentei?type=design&node-id=0%3A1&mode=design&t=iUNiBykPkrholq1N-1
+https://www.figma.com/file/TUMgpRrEpnobEeT33LdBvj/kan-kentei?type=design&node-id=0-1&mode=design&t=0ZNcdRrdWIgUl7tM-0
 
   
 　
