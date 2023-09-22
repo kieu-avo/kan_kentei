@@ -122,6 +122,6 @@
 ## 画面遷移図  
 https://www.figma.com/file/TUMgpRrEpnobEeT33LdBvj/kan-kentei?type=design&node-id=0-1&mode=design&t=0ZNcdRrdWIgUl7tM-0
 
-  
-　
-　
+
+### ER図
+[![Image from Gyazo](https://i.gyazo.com/bd01becff9aeca60afcff37b4af2a5be.png)](https://gyazo.com/bd01becff9aeca60afcff37b4af2a5be)
