@@ -124,4 +124,4 @@ https://www.figma.com/file/TUMgpRrEpnobEeT33LdBvj/kan-kentei?type=design&node-id
 
 
 ### ER図
-[![Image from Gyazo](https://i.gyazo.com/748958347e0334c6f516a405df4d4fd0.png)](https://gyazo.com/748958347e0334c6f516a405df4d4fd0)
+[![Image from Gyazo](https://i.gyazo.com/bd01becff9aeca60afcff37b4af2a5be.png)](https://gyazo.com/bd01becff9aeca60afcff37b4af2a5be)
