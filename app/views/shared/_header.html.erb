@@ -1,0 +1,27 @@
+<header class="fixed top-0 left-0 w-screen bg-header_footer_color-400 p-2">
+  <div class="flex items-center justify-between cursor-pointe pr-5">
+    <!--ロゴのリンクパスを追加すること！！！ -->
+    <%= link_to image_tag('logo3.png', class:'w-20 ml-5'), root_path%>
+    <div class="space-x-10 hidden md:flex">
+    <!--各ボタンのリンクパスを追加すること！！！ -->
+      <button class="header-button"><%= link_to "サンプル問題"%></button>
+      <button class="header-button"><%= link_to "ログイン" %></button>
+      <button class="header-button"><%= link_to "新規登録" %></button>
+  </div>
+
+  <!-- スマホサイズ -->
+  <div class="dropdown dropdown-left md:hidden">
+    <label tabindex="0" class="btn m-1"><i class="fa-solid fa-bars"></i></label>
+    <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-200 rounded-box w-52">
+      <li><%= link_to "サンプル問題"%></button></li>
+      <li><%= link_to "ログイン" %></button></li>
+      <li><%= link_to "新規登録" %></button></li>
+    </ul>
+  </div>
+
+</header>
+
+
+
+
+

@@ -11,7 +11,13 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        yomogi: ['Yomogi', cursive],
       },
+      colors: {
+        header_footer_color: {
+          400: '#2E97A7',
+        },
+      }
     },
   },
   plugins: [
