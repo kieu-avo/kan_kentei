@@ -11,3 +11,31 @@
 }
 
 */
+
+.body {
+  height: calc(100vh - 134px);
+} 
+
+.top_page {
+  background-color: rgb(214 211 209);
+}
+
+.explain {
+  @apply pt-4;
+}
+
+.explain_for_md {
+  @apply py-2 sm:text-gl font-black;
+} 
+
+header {
+  z-index: 1000;
+}
+
+.header-button {
+  @apply btn btn-outline text-slate-100 hover:text-slate-50 transition-all duration-300;
+}
+
+.footer {
+  @apply text-base text-white underline underline-offset-1;
+}
