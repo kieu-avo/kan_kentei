@@ -9,11 +9,18 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Hachi+Maru+Pop&family=Noto+Sans+JP:wght@100;210&family=Open+Sans:ital,wght@1,300&family=Poppins:wght@700&family=Roboto:ital@1&family=Rock+Salt&family=Yomogi&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+  <body> 
+    <%= render 'shared/header' %>
+    <%= yield %>
+    <%= render 'shared/footer' %>
   </body>
+  
 </html>
