@@ -10,6 +10,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,8 +18,12 @@
 
   </head>
 
-  <body> 
-    <%= render 'shared/header' %>
+  <body>
+    <% if logged_in? %>
+      <%= render 'shared/after_login_header' %>
+    <% else %>
+      <%= render 'shared/before_login_header' %>
+    <% end %>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>
