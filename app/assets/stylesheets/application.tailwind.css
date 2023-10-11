@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+  background-color: rgb(214 211 209);
+  font-family: 'yomogi';
+  min-height: 100vh;
+}
+
+.explain {
+  @apply pt-4;
+}
+
+.explain_for_md {
+  @apply py-2 
+}
+
+.header-button {
+  @apply btn btn-outline text-slate-100 hover:text-slate-50 transition-all duration-500;
+}
+
+.footer {
+  @apply text-base text-white underline underline-offset-1;
+}
+
+/* .user_new_input {
+  width: 800px;
+} */

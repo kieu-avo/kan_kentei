@@ -1,0 +1,36 @@
+<div>
+  <%= image_tag 'top_image.png', class:"w-screen" %>
+  <h1 class="text-center md:text-6xl sm:text-4xl py-5">今日は、どこで勘をためす？</h1>
+  <span class=" md:text-3xl sm:text-xl flex justify-center mb-10">-勘検定-</span>
+  <div class="flex justify-center">
+    <div class="container mb-10 px-5 py-5 rounded-lg bg-neutral-50 bg-opacity-90 font-bold md:text-3xl sm:text-xl">
+      <p class="explain">使い方<p>
+      <ul class="list-decimal pt-5 px-10">
+        <li class="explain cursor-pointe"><%= link_to "勘検定について", "#explain_test", class: "underline underline-offset-1" %>を確認</li>     
+        <li class="explain">ログイン / 新規登録</li>
+        <li class="explain">場所を選択して受検開始</br>
+            *合格された方は、合格した級の仲間たち宛又は喜びをメッセージを残しましょう！</br>
+            <i class="fa-brands fa-square-x-twitter"></i>（旧Twitter）にも投稿をしましょう！</li>
+      </ul>
+    </div>
+  </div>
+  <!-- 検定について -->
+  <div id="explain_test" class="flex justify-center">
+    <div class="container mb-10 mt-20 px-5 py-5 rounded-lg bg-neutral-50 bg-opacity-90 font-bold md:text-3xl sm:text-xl ml-px">
+      <p class="explain">勘検定について<p>
+      <ul class="list-disc pt-5 px-5">
+        <li class="explain">この検定は、各都道府県・各国に関してよく知られている事からあまり知られていない事を出題し、あなたが持っている知識と<span class="text-blue-800 font-bold text-3xl">勘</span>で当ててもらいます。</li>
+        <li class="explain">合格は6割以上です。</li>
+        <li class="explain">出題する問題はその土地の出身の方や詳しい方のお話を基に作成しております。</br>
+            問題の形式を確認したい方は、右上にある「サンプル問題」からご確認頂けます（ログインは不要です）。</li>
+        <li class="explain">勘が外れても、きっと新しい知識や世界を見ることができると信じております。勘が外れたからといって、決して落ち込まないでくださいね。</li>
+        <li class="explain">受検している級に旅行しているイメージをしながら回答してください。きっと旅行気分を味わえるでしょう。</li>
+        <li class="explain">合格された方には<span class="text-red-600 font-bold text-3xl">素敵なお土産</span>をご用意しております。是非、合格するまでチャレンジして下さい。</br>
+            また、他の級にも挑戦し、素敵なお土産を集めてみてください。</li>
+        <li class="explain explain_for_sm">一日に何度も勘を使うのは疲れると思いますので、一日に受検できるのは一つとさせて頂きます。</li>
+      </ul>
+      <p class="text-center pt-5">Good luck on your test!</p>
+    </div>
+  </div>
+</div>
+  
