@@ -1,0 +1,18 @@
+<div class="container pt-20 mb-10 mx-auto h-screen">
+  <h1 class="pt-20 mb-10 text-center md:text-3xl sm:text-xl"><%=  t '.title' %></h1>
+  <%= form_with model: @user, local: true do |f| %>
+    <div class="container flex flex-col items-centers ">
+      <div class="cotainer py-5 flex flex-col items-center">
+        <%= f.label :email, User.human_attribute_name(:email) %>
+        <%= f.email_field :email, class:"input input-bordered user_new_input" %>
+      </div>
+      <div class="cotainer py-5 flex flex-col items-center">
+        <%= f.label :password, User.human_attribute_name(:password) %>
+        <%= f.password_field :password, class:"input input-bordered user_new_input" %>
+      </div>
+    </div>
+    <div class="container flex justify-center items-center pt-10">
+      <%= f.submit (t'defaults.login'), class:"btn btn-lg btn-outline" %>
+    </div>
+  <% end %>
+</div>
