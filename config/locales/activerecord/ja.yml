@@ -5,10 +5,12 @@ ja:
       messages:
     models: 
       user: ユーザー
-  
     attributes:
       user:
-  
+        name: お名前（ニックネーム可）
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード確認
   date:
     abbr_day_names:
     - 日
