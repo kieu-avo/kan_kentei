@@ -52,6 +52,9 @@ gem "bootsnap", require: false
 gem 'cssbundling-rails'
 gem 'jsbundling-rails'
 gem 'rails-i18n'
+gem 'sorcery'
+gem 'pry-byebug'
+
 
 
 group :development, :test do
