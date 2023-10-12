@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        yomogi: ['Yomogi', 'cursive'],
+       'sans': ['ui-sans-serif', 'system-ui'],
+        'yomogi': ['Yomogi', 'cursive'],
       },
       colors: {
         header_footer_color: {
