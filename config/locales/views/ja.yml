@@ -23,7 +23,7 @@ ja:
       success: ログインしました
       fail: ログインに失敗しました
     destroy:
-      logout: ログアウトしました。またのご受検をお待ちしております！
+      logout: ログアウトしました。またの受検をお待ちしております！
 
   date:
     abbr_day_names:
