@@ -8,6 +8,7 @@ ja:
     my_page: マイページ
     logout: ログアウト
     profile: プロフィール
+    register: 登録
   users:
     create:
       success: 新規登録が完了しました
@@ -23,7 +24,15 @@ ja:
       success: ログインしました
       fail: ログインに失敗しました
     destroy:
-      logout: ログアウトしました。またの受検をお待ちしております！
+      logout: お疲れ様でした。またの受検をお待ちしております！
+  profiles:
+    update:
+      success: プロフィールを更新しました
+      fail: プロフィールの更新ができませんでした
+    edit:
+      title: プロフィール編集
+    show:
+      title: プロフィール
 
   date:
     abbr_day_names:
