@@ -7,10 +7,11 @@ ja:
       user: ユーザー
     attributes:
       user:
-        name: お名前（ニックネーム可）
+        name: お名前
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード確認
+        avatar: アバター
   date:
     abbr_day_names:
     - 日
