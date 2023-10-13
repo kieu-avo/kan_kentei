@@ -1,0 +1,20 @@
+<div class="container pt-20 mb-10 mx-auto h-full">
+  <div class="flex items-center justify-center">
+    <h1 class="pt-20 mb-10 text-center md:text-4xl sm:text-3xl"><%=  t '.title' %></h1>
+    <%= link_to edit_profile_path do %>
+      <i class="fa-solid fa-pen-to-square"></i>
+    <% end %>
+  </div>
+  <table class="container md:text-2xl sm:text-xl text-center">
+    <tr>
+      <th class="py-5"><%= User.human_attribute_name(:name) %>:<span class="pl-10"><%= current_user.name %></span></th>
+    </tr>
+    <tr>
+      <th class="pb-11"><%= User.human_attribute_name(:email) %>:<span class="pl-10"><%= current_user.email %></span></th>
+    </tr>
+  </table>
+  <div class="flex justify-center">
+    <%= image_tag current_user.avatar.url, class: "border-solid border-2 border-neutral-400 rounded-lg w-80 h-80", id: "preview"%>
+  </div>
+</div>
+
