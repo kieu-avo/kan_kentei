@@ -53,8 +53,8 @@ gem 'jsbundling-rails'
 gem 'rails-i18n'
 gem 'sorcery'
 gem 'pry-byebug'
-
-
+gem 'carrierwave'
+gem 'mini_magick'
 
 
 group :development, :test do
