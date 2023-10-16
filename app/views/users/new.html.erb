@@ -1,6 +1,6 @@
 <div class="container pt-20 mx-auto">
   <h1 class="pt-20 mb-10 text-center md:text-3xl sm:text-xl"><%=  t '.title' %></h1>
-  <%= form_with model: @user, local: true do |f| %>
+  <%= form_with model: @user do |f| %>
     <div class="container flex flex-col items-centers">
       <div class="cotainer py-5 flex flex-col items-center">
         <%= f.label :name %>
