@@ -55,6 +55,7 @@ gem 'sorcery'
 gem 'pry-byebug'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'ransack'
 
 
 group :development, :test do
