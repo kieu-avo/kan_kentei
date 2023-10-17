@@ -1,0 +1,2 @@
+class JapanAndOverseasTestCategory < ApplicationRecord
+end
