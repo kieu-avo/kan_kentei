@@ -3,8 +3,12 @@ ja:
   activerecord:
     errors:
       messages:
+        record_invalid: 'バリデーションに失敗しました: %{errors}'
     models: 
       user: ユーザー
+      japan_and_overseas_test_categories_controller: カテゴリー
+      quiz: 検定
+      quiz_choice: 選択肢
     attributes:
       user:
         name: お名前
@@ -12,6 +16,14 @@ ja:
         password: パスワード
         password_confirmation: パスワード確認
         avatar: アバター
+      japan_and_overseas_test_categories_controller:
+        title: 場所
+      quiz:
+        content: 設問
+      quiz_choice:
+        content: 選択
+        correct_answer: 正解
+        explanation: 解説
   date:
     abbr_day_names:
     - 日
