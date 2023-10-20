@@ -16,9 +16,6 @@ module.exports = {
           400: '#2E97A7',
         },
       },
-      backgroundImage: {
-        'note': "url('backgournd.png')",
-      },
     },
     screens: {
       'sm': '640px',
