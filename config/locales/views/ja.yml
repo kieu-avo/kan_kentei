@@ -1,13 +1,10 @@
 ---
 ja:
   defaults:
-    new_user_register: 新規登録
     login: ログイン
-    map_list: 地図一覧
     pass_list: 合格一覧
     my_page: マイページ
     logout: ログアウト
-    profile: プロフィール
     register: 登録
   users:
     create:
@@ -33,12 +30,12 @@ ja:
       title: プロフィール編集
     show:
       title: プロフィール
-  maps:
+  japan_and_overseas_test_categories:
     index:
-      title: 地図一覧
+      title: カテゴリー一覧
       search_japan: 都道府県名
       search_world: 国名
-
+      
   date:
     abbr_day_names:
     - 日
