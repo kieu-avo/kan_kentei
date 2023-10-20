@@ -15,7 +15,7 @@ module.exports = {
         header_footer_color: {
           400: '#2E97A7',
         },
-      }
+      },
     },
     screens: {
       'sm': '640px',

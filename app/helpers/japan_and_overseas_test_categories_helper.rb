@@ -1,0 +1,2 @@
+module JapanAndOverseasTestCategoriesHelper
+end
