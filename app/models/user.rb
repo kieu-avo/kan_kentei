@@ -2,6 +2,8 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
 
   has_many :user_quiz_answers
+  has_many :quizzes, through: :user_quiz_answers
+  has_many :quiz_choices, through: :user_quiz_answers
 
   mount_uploader :avatar, AvatarUploader
 
@@ -11,4 +13,10 @@ class User < ApplicationRecord
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
+  def select_category
+    if current_user == category.title
+      redirect_to category.title.quiz
+    end
+  end
 end
+
