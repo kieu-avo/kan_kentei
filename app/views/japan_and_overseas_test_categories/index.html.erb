@@ -7,9 +7,9 @@
   <div class="flex justify-center space-x-20 pt-10">
     <%= image_tag 'map3.png', class:"w-screen" %>
   </div>
-  <% @japan_and_overseas.each do |japan_overseas| %>
+  <% @places.each do |place| %>
     <div>
-      <%= link_to japan_overseas.title, quizzes_path(place: japan_overseas.title) %>
+      <%= link_to place.title, category_quizzes_path(place) %>
     </div>
   <% end %>
 </div>
