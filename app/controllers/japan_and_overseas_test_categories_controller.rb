@@ -1,7 +1,8 @@
 class JapanAndOverseasTestCategoriesController < ApplicationController
 
   def index
-    @japan_and_overseas = JapanAndOverseasTestCategory.all
+    @places = JapanAndOverseasTestCategory.all
   end
-
+  
 end
+
