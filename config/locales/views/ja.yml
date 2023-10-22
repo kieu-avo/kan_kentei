@@ -35,6 +35,9 @@ ja:
       title: カテゴリー一覧
       search_japan: 都道府県名
       search_world: 国名
+  quizzes:
+    index: 
+      submit: 提出
       
   date:
     abbr_day_names:
