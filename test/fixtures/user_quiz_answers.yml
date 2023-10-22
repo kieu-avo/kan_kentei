@@ -2,10 +2,10 @@
 
 one:
   quiz: one
-  quize_choice: one
   user: one
+  quiz_choice: one
 
 two:
   quiz: two
-  quize_choice: two
   user: two
+  quiz_choice: two
