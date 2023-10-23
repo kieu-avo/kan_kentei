@@ -1,11 +1,11 @@
-canada = JapanAndOverseasTestCategory.create!(title: "canada")
+canada = TestCategory.create!(title: "canada")
 
 #---------問題１--------------------------------------------------------------------
 quiz1 = Quiz.create!(
   content: "①カナダはメープルが有名ですが、どこの州が一番生産が盛んだと思いますか？",
   youtube_url: nil,
   image_url: nil,
-  japan_and_overseas_test_category: canada
+  test_category: canada
 )
 #------選択肢--------
 QuizChoice.create!(
@@ -39,7 +39,7 @@ quiz2 = Quiz.create!(
   content: "②カナダの食べ物と言ったら何でしょう？",
   youtube_url: nil,
   image_url: nil,
-  japan_and_overseas_test_category: canada
+  test_category: canada
 )
 
 #------選択肢--------
