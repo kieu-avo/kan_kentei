@@ -1,11 +1,11 @@
-vietnam = JapanAndOverseasTestCategory.create!(title: "vietnam")
+vietnam = TestCategory.create!(title: "vietnam")
 
 #---------問題１--------------------------------------------------------------------
 quiz1 = Quiz.create!(
   content: "①ベトナムの首都はどこでしょうか？",
   youtube_url: nil,
   image_url: nil,
-  japan_and_overseas_test_category: vietnam
+  test_category: vietnam
 )
 #------選択肢--------
 QuizChoice.create!(
@@ -37,7 +37,7 @@ quiz2 = Quiz.create!(
   content: "②プレゼントで渡してもいけないもので、この中ではどれだと思いますか？",
   youtube_url: nil,
   image_url: nil,
-  japan_and_overseas_test_category: vietnam
+  test_category: vietnam
 )
 
 #------選択肢--------
