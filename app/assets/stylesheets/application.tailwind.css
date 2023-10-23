@@ -29,3 +29,9 @@ body {
 .user_new_input {
   width: 800px;
 }
+
+.page {
+  background-image: url(paper.png);  
+  background-repeat: no-repeat;
+  background-size: cover;
+}

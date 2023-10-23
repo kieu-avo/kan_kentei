@@ -5,6 +5,7 @@ class CreateQuizChoices < ActiveRecord::Migration[7.0]
       t.text :content, null: false
       t.boolean :correct_answer, null: false, default: false
       t.text :explanation
+      t.string :image_url
 
       t.timestamps
     end

@@ -1,27 +1,26 @@
-<div class="container pt-32 mb-10 mx-auto h-full">
-  <h1 class="text-xl">勘検定</h1>
-  <div class="text-center text-4xl py-10">
-    <% if @quizzes.first %>
-      <p><%= @quizzes.first.japan_and_overseas_test_category.title.upcase %>級</p>
-    <% end %>
-  </div>
-
-  <div class="py-5 text-right text-xl underline underline-offset-1">
-    <p>氏名：<%= current_user.name %></p>
-  </div>
-  
-  <!-- form_withを追加すること -->
-    <% @quizzes.each do |quiz|%>
-      <div class="py-5 pl-5 my-5 text-xl border-solid border-2 border-stone-500 rounded-lg">
-        <%= quiz.content %>
-          <div class="pt-10 px-10 flex items-center justify-center space-x-10">
-            <% quiz.quiz_choices.each do |choice| %>
-              <input type="radio" name="radio-1" class="radio border-2 border-lime-700" />
-              <%= choice.content %>
-            <% end %>
+<div class="page h-full">
+  <div class="container pt-32 mb-10 mx-auto">
+    <h1 class="text-xl">勘検定</h1>
+    <div class="text-center text-4xl py-10">
+      <p><%= @category.title.upcase %>級</p>
+    </div>
+    <div class="py-5 text-right text-xl underline underline-offset-1">
+      <p>氏名：<%= current_user.name %></p>
+    </div>
+    <%= form_with url: calculate_score_category_quizzes_path(@category) ,method: :post do |f|%>
+      <% @quizzes.each do |quiz| %>
+        <p><%= quiz.content %></p>
+        <% quiz.quiz_choices.each do |choice| %>
+          <div>
+            <%= f.radio_button "answers[#{quiz.id}]", choice.id %>
+            <%= f.label "answers_#{quiz.id}_#{choice.id}", choice.content %>
           </div>
+        <% end %>
+      <% end %>
+      <div class="container flex justify-center items-center pt-10">
+        <%= f.submit (t'.submit'), class:"btn btn-lg btn-outline" %>
       </div>
     <% end %>
-
-</div>
   
+    
+</div>
