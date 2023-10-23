@@ -6,11 +6,13 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
   
   #get 'japan_and_overseas_test_categories', to: 'japan_and_overseas_test_categories#index', as: 'place'
+  get 'quizzes/:category_name', to: 'quizzes#index'
 
   resources :users, only: %i[new create]
   resource :profile, only: %i[show edit update]
-  resources :japan_and_overseas_test_categories, only: %i[index], as: :category do
-    resources :quizzes, only: %i[index]
+  resources :test_categories, only: %i[index], as: :categories do
+    resources :quizzes, only: %i[index show] do
+      post 'calculate_score', on: :collection
+    end
   end
-    
 end
