@@ -7,20 +7,32 @@
     <div class="py-5 text-right text-xl underline underline-offset-1">
       <p>氏名：<%= current_user.name %></p>
     </div>
-    <%= form_with url: calculate_score_category_quizzes_path(@category) ,method: :post do |f|%>
-      <% @quizzes.each do |quiz| %>
-        <p><%= quiz.content %></p>
-        <% quiz.quiz_choices.each do |choice| %>
-          <div>
-            <%= f.radio_button "answers[#{quiz.id}]", choice.id %>
-            <%= f.label "answers_#{quiz.id}_#{choice.id}", choice.content %>
-          </div>
+    <div>
+      <p>受検中に気を付けること</p>
+      <ul>
+        <li>分からない問題があったら「勘」で答えること</li>
+        <li>現地にいるイメージをしながら回答すること</li>
+        <li>とにかく楽しむこと！<li>
+      </ul>
+    </div>
+    <div class="pt-20">
+      <%= form_with url: calculate_score_category_quizzes_path(@category) ,method: :post do |f|%>
+        <% @quizzes.each do |quiz| %>
+          <p><%= quiz.content %></p>
+          <% quiz.quiz_choices.each do |choice| %>
+            <div>
+              <%= f.radio_button "answers[#{quiz.id}]", choice.id %>
+              <%= f.label "answers_#{quiz.id}_#{choice.id}", choice.content %>
+            </div>
+          <% end %>
         <% end %>
+        <div class="container flex justify-center items-center pt-10">
+          <%= f.submit (t'.submit'), class:"btn btn-lg btn-outline bg-amber-300" %>
+        </div>
       <% end %>
-      <div class="container flex justify-center items-center pt-10">
-        <%= f.submit (t'.submit'), class:"btn btn-lg btn-outline" %>
+      <div class="pt-10">
+        <button class="btn btn-lg btn-outline bg-sky-200 "><%= link_to t('defaults.back'), categories_path %></button>
       </div>
-    <% end %>
-  
-    
+    </div>  
+  </div>
 </div>
