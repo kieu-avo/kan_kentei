@@ -10,19 +10,20 @@ class QuizzesController < ApplicationController
     answers = params[:answers]
     correct_count = 0
 
+    #（正解の選択肢を取得）
     correct_choices = QuizChoice.where(quiz_id: answers.keys, correct_answer: true).index_by(&:quiz_id)
-
+    #（正解数を計算）
     answers.each do |quiz_id, choice_id|
-      if correct_choices[quiz_id]&.id.to_s == choice_id
+      if correct_choices[quiz_id.to_i]&.id.to_s == choice_id
         correct_count += 1
       end
       UserQuizAnswer.create(user_id: current_user.id, quiz_id: quiz_id, quiz_choice_id: choice_id)
     end
+
     #点数を計算
     total_quizzes = answers.keys.length
     total_score = (correct_count.to_f * 100) / total_quizzes
-    total_score.to_i
-    
+
     #QuizResultに保存
     quiz_result = QuizResult.create(
       test_category_id: params[:category_id],
@@ -40,8 +41,7 @@ class QuizzesController < ApplicationController
     end
   end
 
-  #クイズの結果を表示
-  def show 
+  def show #クイズの結果を表示
     @quiz_result = QuizResult.find(params[:id])
     @pass_status = @quiz_result.is_passed ? '合格' : '不合格'
     @category = TestCategory.find(@quiz_result.test_category_id)
