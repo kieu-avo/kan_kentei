@@ -6,6 +6,7 @@ ja:
     my_page: マイページ
     logout: ログアウト
     register: 登録
+    back: 戻る
   users:
     create:
       success: 新規登録が完了しました
