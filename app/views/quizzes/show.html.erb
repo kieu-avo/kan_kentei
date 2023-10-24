@@ -1,14 +1,13 @@
 <div class="page h-full">
   <div class="container pt-32 mb-10 mx-auto">
     <h1 class="text-xl">合格発表</h1>
-    <div class="text-center text-4xl py-10">
-    
-    </div>
-    <p>点数：<%= @quiz_result.score %></p>
+    <div class="text-center text-4xl py-10"> 
+    <div>
     <p><%= @pass_status %></p>
-
-
-
-
+      <p>点数：<%= @quiz_result.score %></p>
+    </div>
+    <div class="pt-10">
+      <button class="btn btn-lg btn-outline bg-sky-200 "><%= link_to t('defaults.back'), category_quizzes_path(@category) %></button>
+    </div>
   </div>
 </div>
