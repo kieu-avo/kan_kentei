@@ -7,6 +7,7 @@ ja:
     logout: ログアウト
     register: 登録
     back: 戻る
+    categories: カテゴリー一覧
   users:
     create:
       success: 新規登録が完了しました
@@ -31,15 +32,18 @@ ja:
       title: プロフィール編集
     show:
       title: プロフィール
-  japan_and_overseas_test_categories:
+  test_categories:
     index:
-      title: カテゴリー一覧
       search_japan: 都道府県名
       search_world: 国名
   quizzes:
     index: 
       submit: 提出
-      
+    calculate_score:
+      take_test_again: 恐れ入りますが、再度後受験ください。
+    show:
+      passed: 合格
+      failed: 不合格
   date:
     abbr_day_names:
     - 日
