@@ -47,22 +47,17 @@ class QuizzesController < ApplicationController
   end
 
   def show #クイズの結果を表示
-    @quiz_result = QuizResult.find(params[:id])
+    @quiz_result = current_user.quiz_results.find(params[:id])
     @pass_status = @quiz_result.is_passed ? t('.passed') : t('.failed')
     @category = TestCategory.find(@quiz_result.test_category_id)
     @quizzes = Quiz.includes(:quiz_choices).where(test_category_id: @quiz_result.test_category_id)
 
-    @user_answers = {}
-    @explanations = {}
-    
-    @quizzes.each do |quiz|
-      user_answer = quiz.user_quiz_answers.find_by(user_id: current_user.id)
-      @user_answers[quiz.id] = user_answer.quiz_choice_id if user_answer
-      
-      correct_choice = quiz.quiz_choices.find_by(correct_answer: true)
-      @explanations[quiz.id] = correct_choice.explanation if correct_choice
-    end
+    @user_answers = UserQuizAnswer.where(user_id: current_user.id, quiz_id: @quizzes.pluck(:id)).index_by(&:quiz_id)
+    @explanations = QuizChoice.where(quiz_id: @quizzes.pluck(:id), correct_answer: true).index_by(&:quiz_id)
+
   end
 
 end
   
+
+
