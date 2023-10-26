@@ -44,6 +44,8 @@ ja:
     show:
       passed: 合格
       failed: 不合格
+      challenge_again: 再受検
+      souvenir: お土産コーナーへ
   date:
     abbr_day_names:
     - 日
