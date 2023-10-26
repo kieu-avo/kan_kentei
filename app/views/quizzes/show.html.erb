@@ -52,8 +52,12 @@
         </div>
       </div>
     <% end %>
-    <div class="pt-10">
-      <%= link_to t('defaults.back'), category_quizzes_path(@category), class: "btn btn-lg btn-outline bg-sky-200" %>
+    <div class="flex justify-center">
+      <% if @quiz_result.is_passed? %>
+        <%= link_to t('.souvenir'), "#", class: "btn btn-lg btn-outline bg-sky-200" %>
+      <% else %>
+        <%= link_to t('.challenge_again'), category_quizzes_path(@category), class: "btn btn-lg btn-outline bg-rose-200" %>
+      <% end %>
     </div>
   </div>
 </div>
