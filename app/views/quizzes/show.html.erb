@@ -1,31 +1,57 @@
 <div class="h-full">
   <div class="container pt-32 mb-10 mx-auto">
     <h1 class="text-xl">合格発表</h1>
-    <div class="text-center text-4xl py-10"> 
+    <div class="text-center text-4xl py-10 space-y-5"> 
       <p><%= @pass_status %></p>
       <p>点数：<%= @quiz_result.score %>/100</p>
     </div>
-
+    <div class="text-3xl py-5 flex justify-center">
+      <% if @quiz_result.is_passed? %>
+        <div class="flex items-center ">
+          <p>おめでとうございます！</br>
+          勘で当てたところはしっかりと復習をしましょう。</p>
+          <%=image_tag 'passed_mark.png', class:"w-48" %>
+        </div>
+      <% else %>
+        <p>落ち込まないでください！</p>
+        <p>復習をして、もう一度受検をしましょう。</p>
+      <% end %>
+    </div>
+    <!--クイズ一覧を表示-->
     <% @quizzes.each do |quiz| %>
       <div class="py-10 container mb-10 px-5 py-10 rounded-lg bg-neutral-50 bg-opacity-90 ">
-        <p class="text-4xl"><%= quiz.content %></p>
-        <% quiz.quiz_choices.each do |choice| %>
-          <% if @user_answers[quiz.id] == choice.id %>
+        <p class="text-3xl"><%= quiz.content %></p>
+        <!-- 選択肢、ユーザーの回答、正解を表示 -->
+        <div class="flex space-x-16 py-10">
+          <% quiz.quiz_choices.each do |choice| %>
+            <div>
+              <div class="flex items-center space-x-2 text-xl">
+                <% if @user_answers[quiz.id].quiz_choice_id == choice.id %>
+                  <% if choice.correct_answer %>
+                    <p class="text-red-500 font-black">◎</p>
+                  <% else %>
+                    <p class="font-black">❌</p>
+                  <% end %>
+                <% elsif choice.correct_answer? %>
+                  <p class="font-black text-blue-500 ">✔︎</p>
+                <% end %>
+                <p><%= choice.content %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <!--解説を表示 -->
+        <div class="text-xl pt-5 border-dashed border-t-2 border-stone-400">
+          <% quiz.quiz_choices.each do |choice| %>
             <% if choice.correct_answer %>
-              <p class="text-rose-500 text-4xl font-bold pr-5">◎</p>
-            <% else %>
-              <p class="text-blue-500 text-4xl font-bold pr-5">×</p>
-            <% end %>
+              <div class="py-5">
+                <p><%= choice.explanation %></p>
+              </div>
+            <%end %>
           <% end %>
-          <p><%= choice.content %></p>
-          <% if choice.correct_answer %>
-            <p>✔️</p>
-            <p><%= @explanations[quiz.id]%></p>
-          <% end %>
-        <% end %>
+        </div>
       </div>
     <% end %>
-
     <div class="pt-10">
       <%= link_to t('defaults.back'), category_quizzes_path(@category), class: "btn btn-lg btn-outline bg-sky-200" %>
     </div>
