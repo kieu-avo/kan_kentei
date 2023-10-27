@@ -6,7 +6,6 @@ class QuizzesController < ApplicationController
   end
   
   def calculate_score
-  
     answers = params[:answers]
     correct_count = 0
 
@@ -18,7 +17,7 @@ class QuizzesController < ApplicationController
       if correct_choices[quiz.to_i]&.id.to_s == choice
         correct_count += 1
       end
-    #ユーザーが選んだ回答をUserQuizAnswerに保存
+      #ユーザーが選んだ回答をUserQuizAnswerに保存
       UserQuizAnswer.create(
         user_id: current_user.id, 
         quiz_id: quiz, 
@@ -46,17 +45,16 @@ class QuizzesController < ApplicationController
     end
   end
 
-  def show #クイズの結果を表示
+  #クイズの結果を表示
+  def show 
     @quiz_result = current_user.quiz_results.find(params[:id])
     @pass_status = @quiz_result.is_passed ? t('.passed') : t('.failed')
     @category = TestCategory.find(@quiz_result.test_category_id)
     @quizzes = Quiz.includes(:quiz_choices).where(test_category_id: @quiz_result.test_category_id)
 
-    @user_answers = UserQuizAnswer.where(user_id: current_user.id, quiz_id: @quizzes.pluck(:id)).index_by(&:quiz_id)
+    @user_quiz_answers = UserQuizAnswer.where(user_id: current_user.id, quiz_id: @quizzes.pluck(:id)).index_by(&:quiz_id)
     @explanations = QuizChoice.where(quiz_id: @quizzes.pluck(:id), correct_answer: true).index_by(&:quiz_id)
-
   end
-
 end
   
 
