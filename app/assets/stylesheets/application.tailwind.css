@@ -32,6 +32,4 @@ body {
 
 .page {
   background-image: url(paper.png);  
-  background-repeat: no-repeat;
-  background-size: cover;
 }
