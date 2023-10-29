@@ -13,20 +13,19 @@
           <%=image_tag 'passed_mark.png', class:"w-48" %>
         </div>
       <% else %>
-        <p>落ち込まないでください！</p>
-        <p>復習をして、もう一度受検をしましょう。</p>
+        <p>落ち込まないでください！復習をして、もう一度受検をしましょう。</p>
       <% end %>
     </div>
     <!--クイズ一覧を表示-->
     <% @quizzes.each do |quiz| %>
       <div class="py-10 container mb-10 px-5 py-10 rounded-lg bg-neutral-50 bg-opacity-90 ">
-        <p class="text-3xl"><%= quiz.content %></p>
+        <p class="text-3xl"><%= simple_format(quiz.content, class:"text-2xl") %></p>
         <!-- 選択肢、ユーザーの回答、正解を表示 -->
         <div class="flex space-x-16 py-10">
           <% quiz.quiz_choices.each do |choice| %>
             <div>
               <div class="flex items-center space-x-2 text-xl">
-                <% if @user_answers[quiz.id].quiz_choice_id == choice.id %>
+                <% if @user_quiz_answers[quiz.id].quiz_choice_id == choice.id %>
                   <% if choice.correct_answer %>
                     <p class="text-red-500 font-black">◎</p>
                   <% else %>
@@ -45,7 +44,7 @@
           <% quiz.quiz_choices.each do |choice| %>
             <% if choice.correct_answer %>
               <div class="py-5">
-                <p><%= choice.explanation %></p>
+                <p><%= simple_format(choice.explanation) %></p>
               </div>
             <%end %>
           <% end %>
