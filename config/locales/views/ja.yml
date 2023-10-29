@@ -40,7 +40,7 @@ ja:
     index: 
       submit: 提出
     calculate_score:
-      take_test_again: 恐れ入りますが、再度後受験ください。
+      blank: 未回答の質問があります。
     show:
       passed: 合格
       failed: 不合格
