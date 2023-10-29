@@ -8,8 +8,8 @@
       <p>氏名：<%= current_user.name %></p>
     </div>
     <div>
-      <p>受検中に気を付けること</p>
-      <ul>
+      <p class="text-xl">受検中に気を付けること</p>
+      <ul class="text-xl">
         <li>分からない問題があったら「勘」で答えること</li>
         <li>現地にいるイメージをしながら回答すること</li>
         <li>とにかく楽しむこと！<li>
@@ -18,13 +18,18 @@
     <div class="pt-20">
       <%= form_with url: calculate_score_category_quizzes_path(@category) ,method: :post do |f|%>
         <% @quizzes.each do |quiz| %>
-          <p><%= quiz.content %></p>
-          <% quiz.quiz_choices.each do |choice| %>
-            <div>
-              <%= f.radio_button "answers[#{quiz.id}]", choice.id %>
-              <%= f.label "answers_#{quiz.id}_#{choice.id}", choice.content %>
-            </div>
-          <% end %>
+          <div class="py-10 border-dashed border-b-2 border-stone-400">
+            <p><%= simple_format(quiz.content, class:"text-3xl") %></p>
+            <% quiz.quiz_choices.each do |choice| %>
+              <div class="flex pt-5 space-w-10">
+                <%= f.radio_button "answers[#{quiz.id}]", 
+                      choice.id, 
+                      checked: @user_answers&.dig(quiz.id.to_s)  == choice.id.to_s,
+                      class:"block w-8 h-8 rounded-full border-2 border-gray-400 cursor-pointer space-w-5" %>
+                <%= f.label "answers_#{quiz.id}_#{choice.id}", choice.content, class:"text-2xl" %>
+              </div>
+            <% end %>
+          </div>
         <% end %>
         <div class="container flex justify-center items-center pt-10">
           <%= f.submit (t'.submit'), class:"btn btn-lg btn-outline bg-amber-300" %>
