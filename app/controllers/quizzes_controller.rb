@@ -6,7 +6,7 @@ class QuizzesController < ApplicationController
 
   def calculate_score
     answers = params[:answers] || {}
-    correct_count = 0
+    count_correct = 0
     count_quizzes = Quiz.total_by_category(@category.id)
 
     # 未選択の問題があった場合の処理
@@ -21,7 +21,7 @@ class QuizzesController < ApplicationController
 
     # 正解数を計算
     answers.each do |quiz, choice|
-      correct_count += 1 if correct_choices[quiz.to_i]&.id.to_s == choice
+      count_correct += 1 if correct_choices[quiz.to_i]&.id.to_s == choice
       # ユーザーが選んだ回答をUserQuizAnswerに保存
       UserQuizAnswer.create(
         user_id: current_user.id,
@@ -32,7 +32,7 @@ class QuizzesController < ApplicationController
 
     # 点数を計算
     total_quizzes = answers.keys.length
-    total_score = (correct_count.to_f * 100) / total_quizzes
+    total_score = (count_correct.to_f * 100) / total_quizzes
 
     # QuizResultに保存
     quiz_result = QuizResult.create(
