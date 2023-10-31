@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :quizzes, through: :user_quiz_answers
   has_many :quiz_choices, through: :user_quiz_answers
   has_many :quiz_results
+  has_many :user_souvenirs
+  has_many :souvenir_photos, through: :user_souvenirs
 
   mount_uploader :avatar, AvatarUploader
 
