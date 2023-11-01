@@ -53,7 +53,7 @@
     <% end %>
     <div class="flex justify-center">
       <% if @quiz_result.is_passed? %>
-        <%= link_to t('.souvenir'), "#", class: "btn btn-lg btn-outline bg-sky-200" %>
+        <%= link_to t('.souvenir'),  new_category_review_path(@category), class: "btn btn-lg btn-outline bg-sky-200" %>
       <% else %>
         <%= link_to t('.challenge_again'), category_quizzes_path(@category), class: "btn btn-lg btn-outline bg-rose-200" %>
       <% end %>

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  test_category: one
+  souvenir_photo: one
+
+two:
+  user: two
+  test_category: two
+  souvenir_photo: two
