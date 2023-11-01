@@ -8,6 +8,7 @@ ja:
     register: 登録
     back: 戻る
     categories: カテゴリー一覧
+    submit: 提出
   users:
     create:
       success: 新規登録が完了しました
@@ -37,8 +38,6 @@ ja:
       search_japan: 都道府県名
       search_world: 国名
   quizzes:
-    index: 
-      submit: 提出
     calculate_score:
       blank: 未回答の質問があります。
     show:
@@ -46,6 +45,9 @@ ja:
       failed: 不合格
       challenge_again: 再受検
       souvenir: お土産コーナーへ
+  reviews:
+    create:
+      blank: レビューをお願いします。
   date:
     abbr_day_names:
     - 日
