@@ -14,5 +14,11 @@ Rails.application.routes.draw do
     resources :quizzes, only: %i[index show] do
       post 'calculate_score', on: :collection
     end
+    resources :reviews, only: %i[index new create]
+    resources :test_comments, only: %i[index new create show]
   end
+
+  
+  
+
 end
