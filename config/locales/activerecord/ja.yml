@@ -10,6 +10,9 @@ ja:
       quiz: 検定
       quiz_choice: 選択肢
       user_quiz_answer: 回答
+      review: レビュー
+      test_comment: コメント
+      souvenir_photo: お土産
     attributes:
       user:
         name: お名前
@@ -25,6 +28,10 @@ ja:
         content: 選択
         correct_answer: 正解
         explanation: 解説  
+      souvenir_photo:
+        name: 獲得したお土産
+      test_comment:
+        content: コメント
   date:
     abbr_day_names:
     - 日
