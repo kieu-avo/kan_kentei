@@ -21,7 +21,7 @@ class ReviewsController < ApplicationController
       end
     end
 
-    redirect_to :new_category_comment_path
+    redirect_to new_category_test_comment_path(category_id: @category.id)
   end
 
   private
