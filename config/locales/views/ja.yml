@@ -48,6 +48,12 @@ ja:
   reviews:
     create:
       blank: レビューをお願いします。
+  test_comments:
+    new:
+      post: 投稿
+      example: |
+        同じ級に合格した仲間へ一言、合格した感想などコメントを書きましょう。
+        ＜例：次の夏休みはここに行こうかな！＞
   date:
     abbr_day_names:
     - 日
