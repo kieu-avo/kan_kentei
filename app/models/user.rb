@@ -5,8 +5,10 @@ class User < ApplicationRecord
   has_many :quizzes, through: :user_quiz_answers
   has_many :quiz_choices, through: :user_quiz_answers
   has_many :quiz_results
-  has_many :user_souvenirs
-  has_many :souvenir_photos, through: :user_souvenirs
+  has_many :souvenir_photos, through: :test_comments
+  has_many :user_review_answers, dependent: :destroy
+  has_many :reviews, through: :user_review_answers
+  has_many :test_comments, dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader
 
