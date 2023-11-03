@@ -1,4 +1,4 @@
-<div class="certification mt-10 p-5 mt-20 mx-auto">
+<div class="certification w-1/2 mt-10 p-5 mt-20 mx-auto">
   <div class="pt-20">
     <p class="text-center text-3xl pb-5"><%= category.title.upcase %>級 合格証明書</p>
     <p class="text-right pr-10">氏名：<%= current_user.name %></p>
@@ -7,6 +7,8 @@
     </div>
   </div>
   <%= form_with model: test_comment, url: category_test_comments_path do |f| %>
+    <%= f.hidden_field :test_category_id, value: @category.id %>
+    <%= f.hidden_field :souvenir_photo_id, value: @souvenir.id %>
     <div class="pt-10 space-y-10 pl-10">
       <div class="flex space-x-10">
         <%= f.label :name, SouvenirPhoto.human_attribute_name(:name) %>
@@ -17,7 +19,7 @@
           <p><%= souvenir.name %></p>
         <% end %>
       </div>
-      <div class="flex flex-col space-y-3">
+      <div class="flex flex-col space-y-3 container">
         <%= f.label :content, TestComment.human_attribute_name(:content), class:"wrap" %>
         <%= f.text_area:content, placeholder: t('test_comments.new.example'), class:"input input-bordered user_new_input max-w-sm h-32 mr-10" %>
       </div>
