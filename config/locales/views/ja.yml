@@ -2,12 +2,12 @@
 ja:
   defaults:
     login: ログイン
-    pass_list: 合格一覧
+    passed_list: 合格級一覧
     my_page: マイページ
     logout: ログアウト
     register: 登録
     back: 戻る
-    categories: カテゴリー一覧
+    categories: カテゴリー
     submit: 提出
   users:
     create:
