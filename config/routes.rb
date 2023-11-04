@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       post 'calculate_score', on: :collection
     end
     resources :reviews, only: %i[index new create]
-    resources :test_comments, only: %i[index new create show edit]
+    resources :test_comments, only: %i[index new create show edit update]
   end
 
   
