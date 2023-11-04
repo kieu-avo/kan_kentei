@@ -1,6 +1,7 @@
 <div class="page h-full">
   <div class="container pt-32 mb-10 mx-auto">
-
+  <%= render 'crud_menus', test_comment: @test_comment, category: @category %>
+    <h1>合格証明書</h1>
     <%= render @test_comment, category: @category, souvenir: @souvenir %>
   </div>
   <div class="flex justify-center">
