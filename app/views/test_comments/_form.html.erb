@@ -6,7 +6,7 @@
       <%= image_tag current_user.avatar.url, class: "w-20 flex" %>
     </div>
   </div>
-  <%= form_with model: test_comment, url: category_test_comments_path do |f| %>
+  <%= form_with model: [@category, @test_comment], url: (@test_comment.new_record? ? category_test_comments_path(@category) : category_test_comment_path(@category, @test_comment)) do |f| %>
     <%= f.hidden_field :test_category_id, value: @category.id %>
     <%= f.hidden_field :souvenir_photo_id, value: @souvenir.id %>
     <div class="pt-10 space-y-10 pl-10">
@@ -24,7 +24,7 @@
         <%= f.text_area:content, placeholder: t('test_comments.new.example'), class:"input input-bordered user_new_input max-w-sm h-32 mr-10" %>
       </div>
       <div class="container flex justify-center items-center pt-20 ">
-        <%= f.submit t('test_comments.new.post'), class:"btn btn-lg btn-outline mr-10" %>
+        <%= f.submit class:"btn btn-lg btn-outline mr-10" %>
       </div>
     </div>
   <% end %>
