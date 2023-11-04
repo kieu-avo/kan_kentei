@@ -2,6 +2,7 @@
   <div class="container pt-32 mb-10 mx-auto">
     <h1 class="text-xl">合格発表</h1>
     <div class="text-center text-4xl py-10 space-y-5"> 
+    <p>氏名：<%= current_user.name %></p>
       <p><%= @pass_status %></p>
       <p>点数：<%= @quiz_result.score %>/100</p>
     </div>
