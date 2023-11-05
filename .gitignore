@@ -39,4 +39,7 @@
 
 /node_modules
 
+#Add
 /yarn-error.log
+/public/uploads/
+
