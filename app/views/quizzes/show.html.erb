@@ -2,6 +2,7 @@
   <div class="container pt-32 mb-10 mx-auto">
     <h1 class="text-xl">合格発表</h1>
     <div class="text-center text-4xl py-10 space-y-5"> 
+    <p>氏名：<%= current_user.name %></p>
       <p><%= @pass_status %></p>
       <p>点数：<%= @quiz_result.score %>/100</p>
     </div>
@@ -20,7 +21,7 @@
     <% @quizzes.each do |quiz| %>
       <div class="py-10 container mb-10 px-5 py-10 rounded-lg bg-neutral-50 bg-opacity-90 ">
         <p class="text-3xl"><%= simple_format(quiz.content, class:"text-2xl") %></p>
-        <!-- 選択肢、ユーザーの回答、正解を表示 -->
+        <!--選択肢、ユーザーの回答、正解を表示-->
         <div class="flex space-x-16 py-10">
           <% quiz.quiz_choices.each do |choice| %>
             <div>
@@ -39,7 +40,7 @@
             </div>
           <% end %>
         </div>
-        <!--解説を表示 -->
+        <!--解説を表示-->
         <div class="text-xl pt-5 border-dashed border-t-2 border-stone-400">
           <% quiz.quiz_choices.each do |choice| %>
             <% if choice.correct_answer %>
@@ -51,11 +52,16 @@
         </div>
       </div>
     <% end %>
+    <!--ボタン-->
     <div class="flex justify-center">
       <% if @quiz_result.is_passed? %>
-        <%= link_to t('.souvenir'),  new_category_review_path(@category), class: "btn btn-lg btn-outline bg-sky-200" %>
+        <% if params[:from_passed_list] == 'true' %>
+          <%= link_to t('defaults.back'), passed_lists_path, class: "btn btn-lg btn-outline" %>
+        <% else %>
+          <%= link_to t('.souvenir'), new_category_review_path(@category), class: "btn btn-lg btn-outline bg-sky-200" %>
+        <% end %>
       <% else %>
-        <%= link_to t('.challenge_again'), category_quizzes_path(@category), class: "btn btn-lg btn-outline bg-rose-200" %>
+        <%= link_to t('.challenge_again'), category_quizzes_path(@category), class: "btn btn-lg btn-outline bg-rose-200" %> 
       <% end %>
     </div>
   </div>
