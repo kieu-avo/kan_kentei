@@ -1,0 +1,21 @@
+<div class="page h-full">
+  <div class="container pt-32 mb-10 mx-auto">
+    <h1 class="text-xl">サンプル問題</h1>
+    <p><%= @sample_category.title %>級</p>
+    <% @sample_quiz.each do |quiz| %>
+      <div>
+        <%= quiz.content%>
+      </div>
+      <% quiz.quiz_choices.each do |choice| %>
+        <div class="flex pt-5">
+          <input type="radio" name="answer_<%= quiz.id %>" class= "block w-8 h-8 rounded-full border-2 border-gray-400 cursor-pointer" />
+          <p><%= choice.content%></p>
+        </div>
+      <% end %>
+    <% end %>
+    <div class="pt-10 flex justify-center">
+      <p></p>
+      <%= link_to t('.continue'), login_path, class:"btn btn-lg btn-outline" %>
+    </div>
+  </div>
+</div>
