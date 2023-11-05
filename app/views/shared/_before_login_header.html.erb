@@ -3,9 +3,9 @@
     <%= link_to image_tag('logo3.png', class:'w-20 ml-5'), root_path %>
     <div class="space-x-10 hidden md:flex">
     <!--各ボタンのリンクパスを追加すること！！！ -->
-      <button class="header-button"><%= link_to "サンプル問題"%></button>
-      <button class="header-button"><%= link_to t('user_sessions.new.title'), login_path %></button>
-      <button class="header-button"><%= link_to t('users.new.title'), new_user_path %></button>
+      <%= link_to t('quizzes.sample_quiz.title'), sample_quiz_path, class: "header-button" %>
+      <%= link_to t('user_sessions.new.title'), login_path, class: "header-button" %>
+      <%= link_to t('users.new.title'), new_user_path, class: "header-button" %>
     </div>
 
   <!-- スマホサイズ -->
