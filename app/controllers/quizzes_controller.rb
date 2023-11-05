@@ -1,4 +1,5 @@
 class QuizzesController < ApplicationController
+  skip_before_action :require_login, only: %i[sample_quiz]
   before_action :set_category, only: %i[index calculate_score show]
   before_action :set_quiz, only: %i[index calculate_score show]
 
@@ -56,6 +57,11 @@ class QuizzesController < ApplicationController
 
     @user_quiz_answers = UserQuizAnswer.where(user_id: current_user.id, quiz_id: @quizzes.pluck(:id)).index_by(&:quiz_id)
     @explanations = QuizChoice.where(quiz_id: @quizzes.pluck(:id), correct_answer: true).index_by(&:quiz_id)
+  end
+
+  def sample_quiz
+    @sample_category = TestCategory.find_by(title: "sample")
+    @sample_quiz = @sample_category.quizzes.includes(:quiz_choices) if @sample_category
   end
 
   private
