@@ -23,7 +23,5 @@
       </div>
     </div>
   </div>
-  <% if test_comment.user.own?(test_comment)%>
-     <%= render 'crud_menus', test_comment: test_comment, category: category %>
-  <% end %>
+    <%= render 'crud_menus', test_comment: test_comment, category: category if current_user.own?(test_comment) %>
 </div>
