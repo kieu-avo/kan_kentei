@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
   
   #get 'japan_and_overseas_test_categories', to: 'japan_and_overseas_test_categories#index', as: 'place'
-  get 'quizzes/:category_name', to: 'quizzes#index'
+  #get 'quizzes/:category_name', to: 'quizzes#index'
+  get 'passed_lists', to: 'passed_lists#index'
+  get 'sample_quiz', to: 'quizzes#sample_quiz'
 
   resources :users, only: %i[new create]
   resource :profile, only: %i[show edit update]
@@ -15,7 +17,7 @@ Rails.application.routes.draw do
       post 'calculate_score', on: :collection
     end
     resources :reviews, only: %i[index new create]
-    resources :test_comments, only: %i[index new create show]
+    resources :test_comments, only: %i[index new create show edit update]
   end
 
   

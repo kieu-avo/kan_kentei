@@ -2,13 +2,14 @@
 ja:
   defaults:
     login: ログイン
-    pass_list: 合格一覧
+    passed_list: 合格級一覧
     my_page: マイページ
     logout: ログアウト
     register: 登録
     back: 戻る
-    categories: カテゴリー一覧
+    categories: カテゴリー
     submit: 提出
+    require_login: ログインをしてください
   users:
     create:
       success: 新規登録が完了しました
@@ -45,12 +46,16 @@ ja:
       failed: 不合格
       challenge_again: 再受検
       souvenir: お土産コーナーへ
+    sample_quiz:
+      continue: ログインして続きをやる
+      title: サンプル問題
   reviews:
     create:
       blank: レビューをお願いします。
   test_comments:
     new:
       post: 投稿
+      update: 更新
       example: |
         同じ級に合格した仲間へ一言、合格した感想などコメントを書きましょう。
         ＜例：次の夏休みはここに行こうかな！＞
