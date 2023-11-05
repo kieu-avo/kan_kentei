@@ -24,7 +24,7 @@
         <%= f.text_area:content, placeholder: t('test_comments.new.example'), class:"input input-bordered user_new_input max-w-sm h-32 mr-10" %>
       </div>
       <div class="container flex justify-center items-center pt-20 ">
-        <%= f.submit class:"btn btn-lg btn-outline mr-10" %>
+        <%= f.submit test_comment.new_record? ? t('test_comments.new.post') : t('test_comments.new.update'), class: "btn btn-lg btn-outline mr-10" %>
       </div>
     </div>
   <% end %>
