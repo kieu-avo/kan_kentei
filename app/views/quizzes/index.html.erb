@@ -21,7 +21,7 @@
           <div class="py-10 border-dashed border-b-2 border-stone-400">
             <p><%= simple_format(quiz.content, class:"text-3xl") %></p>
             <% quiz.quiz_choices.each do |choice| %>
-              <div class="flex pt-5 space-w-10">
+              <div class="flex pt-5">
                 <%= f.radio_button "answers[#{quiz.id}]", 
                       choice.id, 
                       checked: @user_answers&.dig(quiz.id.to_s)  == choice.id.to_s,
@@ -36,7 +36,7 @@
         </div>
       <% end %>
       <div class="pt-10">
-        <button class="btn btn-lg btn-outline bg-sky-200 "><%= link_to t('defaults.back'), categories_path %></button>
+        <%= link_to t('defaults.back'), categories_path, class: "btn btn-lg btn-outline bg-sky-200" %>
       </div>
     </div>  
   </div>
