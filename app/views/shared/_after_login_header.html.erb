@@ -3,8 +3,8 @@
     <%= link_to image_tag('logo3.png', class:'w-20 ml-5'), root_path %>
     <div class="space-x-10 hidden md:flex">
     <!--各ボタンのリンクパスを追加すること！！！ -->
-      <button class="header-button"><%= link_to t('defaults.categories'), categories_path %></button>
-      <button class="header-button"><%= link_to t('defaults.passed_list'), passed_lists_path %></button>
+      <%= link_to t('defaults.categories'), categories_path, class: "header-button" %>
+      <%= link_to t('defaults.passed_list'), passed_lists_path, class: "header-button" %>
       <div class="dropdown dropdown-bottom dropdown-end hidden md:flex">
         <label tabindex="0" class="btn header-button"><%= t('defaults.my_page') %></label>
         <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-200 rounded-box w-52">
