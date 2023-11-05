@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   #get 'japan_and_overseas_test_categories', to: 'japan_and_overseas_test_categories#index', as: 'place'
   #get 'quizzes/:category_name', to: 'quizzes#index'
   get 'passed_lists', to: 'passed_lists#index'
+  get 'sample_quiz', to: 'quizzes#sample_quiz'
 
   resources :users, only: %i[new create]
   resource :profile, only: %i[show edit update]
