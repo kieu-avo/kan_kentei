@@ -21,7 +21,7 @@
     <% @quizzes.each do |quiz| %>
       <div class="py-10 container mb-10 px-5 py-10 rounded-lg bg-neutral-50 bg-opacity-90 ">
         <p class="text-3xl"><%= simple_format(quiz.content, class:"text-2xl") %></p>
-        <!-- 選択肢、ユーザーの回答、正解を表示 -->
+        <!--選択肢、ユーザーの回答、正解を表示-->
         <div class="flex space-x-16 py-10">
           <% quiz.quiz_choices.each do |choice| %>
             <div>
@@ -40,7 +40,7 @@
             </div>
           <% end %>
         </div>
-        <!--解説を表示 -->
+        <!--解説を表示-->
         <div class="text-xl pt-5 border-dashed border-t-2 border-stone-400">
           <% quiz.quiz_choices.each do |choice| %>
             <% if choice.correct_answer %>
@@ -52,6 +52,7 @@
         </div>
       </div>
     <% end %>
+    <!--ボタン-->
     <div class="flex justify-center">
       <% if @quiz_result.is_passed? %>
         <% if params[:from_passed_list] == 'true' %>
