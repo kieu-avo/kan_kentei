@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :test_comments, dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader
+  #has_one_attached :avatar
 
   validates :email, presence: true, uniqueness: true
   validates :name, presence: true, uniqueness: true
@@ -18,7 +19,23 @@ class User < ApplicationRecord
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
+  #crud_menusを呼び出すためのもの
   def own?(object)
     id == object.user_id
+  end
+
+  #以下2つのメソッドはpassed_listsのためのもの
+  def passed_quizzes
+    quiz_results.includes(:test_category).where(is_passed: true)
+  end
+
+  def latest_test_comments
+    test_comments
+      .joins(:test_category)
+      .where(test_categories: { id: passed_quizzes.select(:test_category_id) })
+      .distinct
+      .order(created_at: :desc)
+      .pluck(:test_category_id, id)
+      .to_h
   end
 end
