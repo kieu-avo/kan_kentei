@@ -9,7 +9,7 @@
   </div>
   <% @categories.each do |category| %>
     <div>
-      <p><%= link_to category.title, category_quizzes_path(category) %></p>
+      <p><%= link_to category.title, category_reviews_path(category) %></p>
     </div>
   <% end %>
 </div>

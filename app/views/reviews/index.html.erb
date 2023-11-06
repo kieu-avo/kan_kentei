@@ -1,0 +1,22 @@
+<div class="page h-full">
+  <div class="container pt-32 mb-10 mx-auto">
+    <h1 class="text-xl pb-5 text-center"><%= @category.title%>級の評価</h1>
+    <p class="text-right">回答人数：<%= @total_users %>名</p>
+    <% @reviews.each do |review| %>
+      <div class="review-item pt-10 flex items-center justify-start ml-32" data-review-id="<%= review.id %>">
+        <div class="w-2/3">
+          <%= review.content %>
+        </div>
+        <div class="flex py-5" id="star-rating-<%= review.id %>"
+          data-score="<%= @average_ratings[review.id] %>"
+          data-star-on="<%= asset_path('star-on.png') %>"
+          data-star-off="<%= asset_path('star-off.png') %>"
+          data-star-half="<%= asset_path('star-half.png') %>">
+        </div>
+      </div>
+    <% end %>
+    <div class="flex justify-center pt-10">
+      <p><%= link_to @category.title + "級を受検する", category_quizzes_path(@category),  class: "btn btn-lg btn-outline" %></p>
+    </div>
+  </div>
+</div>
