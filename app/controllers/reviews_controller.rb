@@ -2,12 +2,27 @@ class ReviewsController < ApplicationController
   before_action :set_category, only: %i[index new create]
   before_action :set_review, only: %i[index new create]
 
+  def index
+    @reviews = @category.reviews.includes(:user_review_answers)
+    @total_users = UserReviewAnswer.select(:user_id).distinct.count
+    @average_ratings = {}
+
+    @reviews.each do |review|
+      unique_user_count = review.user_review_answers.select(:user_id).distinct.count
+      @average_ratings[review.id] = if unique_user_count.positive?
+                                      review.user_review_answers.average(:rating).to_f.round(1)
+                                    else
+                                      0
+                                    end
+    end
+  end
+
   def new
     @user_review_answer = UserReviewAnswer.new
   end
 
-  #ユーザーからの回答をDBに保存
-  def create 
+  # ユーザーからの回答をDBに保存
+  def create
     user_review_params[:rating].each do |review, rating|
       @user_review_answer = UserReviewAnswer.new(
         rating: rating.to_f,
@@ -17,7 +32,7 @@ class ReviewsController < ApplicationController
 
       unless @user_review_answer.save
         flash.now[:error] = t('.blank')
-        render :new, status: :unprocessable_entity and return
+        render :new, status: :unprocessable_entity
       end
     end
 
@@ -37,5 +52,4 @@ class ReviewsController < ApplicationController
   def user_review_params
     params.require(:user_review_answer).permit(:user_id, :review_id, rating: {})
   end
-
 end
