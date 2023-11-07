@@ -46,6 +46,9 @@
             <% if choice.correct_answer %>
               <div class="py-5">
                 <p><%= simple_format(choice.explanation) %></p>
+                <div class="w-1/3">
+                  <%= image_tag(choice.image_url) if choice.image_url.present? %>
+                </div>
               </div>
             <%end %>
           <% end %>
