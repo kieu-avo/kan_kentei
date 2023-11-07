@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-       'sans': ['ui-sans-serif', 'system-ui'],
+        'sans': ['ui-sans-serif', 'system-ui'],
         'yomogi': ['Yomogi', 'cursive'],
       },
       colors: {
