@@ -8,5 +8,4 @@ CarrierWave.configure do |config|
     secret_access_key: Rails.application.credentials.dig(:aws, :secret_access_key),
     region: 'ap-northeast-1',
   }
-  #config.fog_directory  = Rails.application.credentials.dig(:aws, :s3_bucket)
 end
