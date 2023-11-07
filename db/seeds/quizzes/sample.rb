@@ -1,15 +1,15 @@
-sample = TestCategory.create!(title: "sample")
+sample = TestCategory.create!(title: "サンプル問題(ベトナム級)")
 
-#---------問題１--------------------------------------------------------------------★
+#---------問題１--------------------------------------------------------------------
 quiz1 = Quiz.create!(
-  content: "①これから「カナダのハワイ」と呼ばれているところに旅行をします。その場所の名前は？",
+  content: "①今飛行機でベトナムの首都に向かっています。首都の名前は?",
   youtube_url: nil,
   image_url: nil,
   test_category: sample
 )
 
 QuizChoice.create!(
-  content: "モントリオール",
+  content: "ホーチミン",
   correct_answer: false,
   explanation: nil,
   image_url: nil,
@@ -17,56 +17,82 @@ QuizChoice.create!(
 )
 
 QuizChoice.create!(
-  content: "カルガリー",
-  correct_answer: false,
-  explanation: nil,
-  image_url: nil,
-  quiz: quiz1
-)
-
-QuizChoice.create!(
-  content: "ケロウナ",
+  content: "ハノイ",
   correct_answer: true,
-  explanation: "カナダ人が老後に住みたい都市がケロウナです（お金持ちが集まる所、という噂も）。\n
-          海はありませんが、巨大な湖（オカナガン湖）が流れています。夏になると自家用ボートを湖に浮かべて、家族や友人とボートの上でゆったりした時間を過ごします。\n
-          ワインナリーが有名で、約数十ヶ所もあるそうです。ワインナリーに訪れた際はティスティングをお勧めします。ティスティングをするのに年齢確認をされますので、身分証明証は必ず持参してください！\n
-          ティスティングをする気で行ったのに、身分証明書を忘れてティスティングができずに帰った、という悲しい経験をされた方もいます。。。\n
-          もちろん、ワインを飲まなくてもワインナリーの景色だけを楽しむのもおすすめです！",
+  explanation: "よくホーチミンと勘違いされますが、首都はハノイです。ホーチミンは南部に位置し、ハノイは北部に位置しています。",
+  image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/vietnam/q1_exp.png",
+  quiz: quiz1
+)
+
+QuizChoice.create!(
+  content: "ダナン",
+  correct_answer: false,
+  explanation: nil,
   image_url: nil,
   quiz: quiz1
 )
 
 #---------問題２--------------------------------------------------------------------
 quiz2 = Quiz.create!(
-  content: "②本場のものを食べたいということでレストランに入りました。カナダの食べ物と言ったら何でしょう？",
+  content: "②ベトナム人の友達の家に遊びに行きました。明日はその友達の誕生日なので、あるものをプレゼントしたら微妙な反応をされました。そのプレゼントとは？",
   youtube_url: nil,
   image_url: nil,
   test_category: sample
 )
 
- QuizChoice.create!(
-  content: "プラリネ",
-  correct_answer: false,
-  explanation: nil,
-  image_url: nil,
-  quiz: quiz2
-)
-
 QuizChoice.create!(
-  content: "プーティン",
+  content: "ハンカチ",
   correct_answer: true,
-  explanation: "プーティンはフライドポテトの上にグレイビーソース（肉汁のソース）をかけた、カナダの数少ない料理の一つです。\n
-          ５〜１０口目までは美味しいと感じますが、その後はだんだん飽きてきます... やはり、普通のフライドポテトが一番美味しいとだんだん感じてきます。\n
-          小さいサイズを選んでも食べきれないことがありますので、誰かとシェアすることをお勧めします！ちなみに、グレイビーソースが定番ですが、お店によっては色んなソースやトッピングをするお店もあります。",
+  explanation: "ベトナム語でハンカチ（khăn）は「困難（khó khăn）」と発音が似ているため、ハンカチをプレゼントすると喜ばれないことがあります。\n
+              他にも避けるべきものがありますので、ベトナム人にプレゼントを贈る際は注意が必要です！",
   image_url: nil,
   quiz: quiz2
 )
 
 QuizChoice.create!(
-  content: "プリン",
+  content: "ハンドクリーム",
   correct_answer: false,
   explanation: nil,
   image_url: nil,
   quiz: quiz2
 )
 
+QuizChoice.create!(
+  content: "ペン",
+  correct_answer: false,
+  explanation: nil,
+  image_url: nil,
+  quiz: quiz2
+)
+
+#---------問題３--------------------------------------------------------------------
+quiz3 = Quiz.create!(
+  content: "③その友達には生後3ヶ月の赤ちゃんがいます。赤ちゃんに向かって「かわいい〜」と褒めたら友達に怒られました。どうして？",
+  youtube_url: nil,
+  image_url: nil,
+  test_category: sample
+)
+
+QuizChoice.create!(
+  content: "褒めるのが下手だから",
+  correct_answer: false,
+  explanation: nil,
+  image_url: nil,
+  quiz: quiz3
+)
+
+QuizChoice.create!(
+  content: "褒めると赤ちゃんは不細工になるから",
+  correct_answer: true,
+  explanation: "ベトナムには、赤ちゃんを褒めると将来その通りにならないという迷信があります。褒めたい時は反対の言葉を使います。",
+  image_url: nil,
+  quiz: quiz3
+)
+
+QuizChoice.create!(
+  content: "褒めると赤ちゃんは可愛くなりすぎて将来困るから",
+  correct_answer: false,
+  explanation: nil,
+  image_url: nil,
+  quiz: quiz3
+)
