@@ -1,16 +1,24 @@
 <div class="container pt-32 mb-10 mx-auto h-full">
 <h1 class="text-center md:text-6xl sm:text-4xl pt-16">今日は、どこで勘を試しますか？</h1>
-  <div class="flex justify-center space-x-40 pt-20">
-    <input type="text" placeholder="都道府県名" class="input input-bordered w-full max-w-xs" />
-    <input type="text" placeholder="国名" class="input input-bordered w-full max-w-xs" />
-  </div>
+  <!--検索-->
+    <%= render 'search_form' %>
+
+  <!--写真or地図を表示-->
   <div class="flex justify-center space-x-20 pt-10">
-    <%= image_tag 'map3.png', class:"w-screen" %>
+    <%= image_tag 'map3.png', class:"w-96" %>
   </div>
-  <% @categories.each do |category| %>
-    <div>
-      <p><%= link_to category.title, category_reviews_path(category) %></p>
+
+  <!--カテゴリ表示-->
+  <div class="flex space-x-72 justify-center">
+    <div class="categories px-14">
+      <p class="pb-5 pt-3">海外編</p>
+      <%= render 'regions', { categories: @categories, region: 'foreign' } %>
     </div>
-  <% end %>
+    <div class="categories px-14">
+      <p class="pb-5 pt-3">日本編</p>
+      <%= render 'regions', { categories: @categories, region: 'japan' } %>
+    </div>
+  </div>
+  <%= render 'regions', { categories: @categories, region: 'sample' } %>
+
 </div>
-  
