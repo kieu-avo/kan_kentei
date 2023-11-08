@@ -1,0 +1,6 @@
+<% categories.each do |category| %>
+  <li role="option" data-autocomplete-value="<%= category.id %>" data-autocomplete-label="<%= category.title %>"
+                    class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 rounded-lg">
+    <%= link_to category.title, category_reviews_path(category) %>
+  </li>
+<% end %>
