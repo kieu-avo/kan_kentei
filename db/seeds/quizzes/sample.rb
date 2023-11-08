@@ -1,4 +1,4 @@
-sample = TestCategory.create!(title: "サンプル問題(ベトナム級)")
+sample = TestCategory.create!(title: "サンプル問題(ベトナム級)", region: "sample")
 
 #---------問題１--------------------------------------------------------------------
 quiz1 = Quiz.create!(
