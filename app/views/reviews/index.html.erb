@@ -15,7 +15,8 @@
         </div>
       </div>
     <% end %>
-    <div class="flex justify-center pt-10">
+    <div class="flex justify-center pt-10 space-x-10">
+      <p><%= link_to t('defaults.back'), categories_path, class: "btn btn-lg btn-outline" %></p>
       <p><%= link_to @category.title + "級を受検する", category_quizzes_path(@category),  class: "btn btn-lg btn-outline" %></p>
     </div>
   </div>
