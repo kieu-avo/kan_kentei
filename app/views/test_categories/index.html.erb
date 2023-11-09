@@ -1,7 +1,7 @@
 <div class="container pt-32 mb-10 mx-auto h-full">
 <h1 class="text-center md:text-6xl sm:text-4xl pt-16">今日は、どこで勘を試しますか？</h1>
   <!--検索-->
-    <%= render 'search_form' %>
+  <%= render 'search_form' %>
 
   <!--写真or地図を表示-->
   <div class="flex justify-center space-x-20 pt-10">
@@ -10,6 +10,7 @@
 
   <!--カテゴリ表示-->
   <div class="flex space-x-72 justify-center">
+  <% if @categories.any? %>
     <div class="categories px-14">
       <p class="pb-5 pt-3">日本編</p>
       <%= render 'regions', { categories: @categories, region: 'japan' } %>
@@ -18,7 +19,12 @@
       <p class="pb-5 pt-3">海外編</p>
       <%= render 'regions', { categories: @categories, region: 'foreign' } %>
     </div>
+  <% else %>
+    <div class="flex items-center space-x-3">
+      <%= image_tag 'sorry.png', class: "w-10" %>
+      <p class="text-xl">該当の検定はありません。</p>
+    </div>
+  <% end %>
   </div>
   <%= render 'regions', { categories: @categories, region: 'sample' } %>
-
 </div>
