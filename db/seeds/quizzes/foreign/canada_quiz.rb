@@ -1,4 +1,4 @@
-canada = TestCategory.create!(title: "canada")
+canada = TestCategory.create!(title: "カナダ", region: "foreign")
 
 #---------問題１--------------------------------------------------------------------★
 quiz1 = Quiz.create!(

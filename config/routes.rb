@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resource :profile, only: %i[show edit update]
   resources :test_categories, only: %i[index], as: :categories do
+    get 'search_result', on: :collection
+    
     resources :quizzes, only: %i[index show] do
       post 'calculate_score', on: :collection
     end
