@@ -33,10 +33,8 @@ class User < ApplicationRecord
     test_comments
       .joins(:test_category)
       .where(test_categories: { id: passed_quizzes.select(:test_category_id) })
-      .distinct
       .order(created_at: :desc)
-      .pluck(:test_category_id, id)
-      .to_h
+      .distinct
   end
 
   #reviews用のメソッド
