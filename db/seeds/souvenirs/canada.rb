@@ -1,4 +1,4 @@
-canada = TestCategory.find_by(title: "canada")
+canada = TestCategory.find_by(title: "カナダ")
 
 gift1 = SouvenirPhoto.create!(
   name: "アイスワイン", 
