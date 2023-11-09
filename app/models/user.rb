@@ -19,12 +19,12 @@ class User < ApplicationRecord
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
-  #crud_menusを呼び出すためのもの
+  #crud_menus.html.erb用のメソッド
   def own?(object)
     id == object.user_id
   end
 
-  #以下2つのメソッドはpassed_listsのためのもの
+  #passed_lists用のメソッド（以下2つ）
   def passed_quizzes
     quiz_results.includes(:test_category).where(is_passed: true)
   end
@@ -38,4 +38,10 @@ class User < ApplicationRecord
       .pluck(:test_category_id, id)
       .to_h
   end
+
+  #reviews用のメソッド
+  def already_reviewed?(category)
+    UserReviewAnswer.joins(:review).where(user_id: id, reviews: { test_category: category }).exists?
+  end
+
 end
