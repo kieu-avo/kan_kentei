@@ -2,8 +2,8 @@
 import "@hotwired/turbo-rails";
 import "./controllers";
 import "@fortawesome/fontawesome-free/js/all";
-import $ from "jquery";
 import "./raty";
-import "./reviews"
+import "./reviews";
+import $ from "jquery";
 window.$ = $;
 window.jQuery = $;
