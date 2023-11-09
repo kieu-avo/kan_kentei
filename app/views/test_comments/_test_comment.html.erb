@@ -10,7 +10,6 @@
     <div class="flex space-x-10">
       <p><%= SouvenirPhoto.human_attribute_name(:name) %></p>
       <%if test_comment.souvenir_photo.image_url.present? %>
-        <p><%= test_comment.souvenir_photo.image_url %></p>
         <%= image_tag test_comment.souvenir_photo.image_url, class: "border-solid border-2 border-neutral-400 rounded-lg w-80 h-80"%>
       <% else %>
         <p><%= test_comment.souvenir_photo.name %></p>
