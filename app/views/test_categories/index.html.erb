@@ -11,12 +11,12 @@
   <!--カテゴリ表示-->
   <div class="flex space-x-72 justify-center">
     <div class="categories px-14">
-      <p class="pb-5 pt-3">海外編</p>
-      <%= render 'regions', { categories: @categories, region: 'foreign' } %>
-    </div>
-    <div class="categories px-14">
       <p class="pb-5 pt-3">日本編</p>
       <%= render 'regions', { categories: @categories, region: 'japan' } %>
+    </div>
+    <div class="categories px-14">
+      <p class="pb-5 pt-3">海外編</p>
+      <%= render 'regions', { categories: @categories, region: 'foreign' } %>
     </div>
   </div>
   <%= render 'regions', { categories: @categories, region: 'sample' } %>
