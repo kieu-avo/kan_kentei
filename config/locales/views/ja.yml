@@ -37,8 +37,7 @@ ja:
       title: プロフィール
   test_categories:
     index:
-      search_japan: 都道府県名
-      search_country: 国名
+      search_test: 都道府県名・国名
   quizzes:
     calculate_score:
       blank: 未回答の質問があります。
