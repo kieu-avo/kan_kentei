@@ -1,21 +1,8 @@
 <%= search_form_for @q, url: categories_path, method: :get do |f| %>
   <div class="flex justify-center space-x-20">
-    <!--日本検索-->
     <div class="flex space-x-1 pt-10 justify-center">
       <div data-controller="autocomplete" data-autocomplete-url-value="<%= search_result_categories_path %>" role="combobox">
-        <%= f.search_field :title_cont, data: { autocomplete_target: 'input' }, class: "input w-full max-w-xs rounded-lg", placeholder: t('test_categories.index.search_japan') %>
-        <%= f.hidden_field :title, data: { autocomplete_target: 'hidden' } %>
-        <ul class="list-group" data-autocomplete-target="results"></ul>
-      </div>
-      <div>
-        <%= f.submit t('defaults.search'), class: "btn btn-md btn-outline bg-gray-700 text-white text-base" %>
-      </div>
-    </div>
-
-    <!--外国検索-->
-    <div class="flex space-x-1 pt-10 justify-center">
-      <div data-controller="autocomplete" data-autocomplete-url-value="<%= search_result_categories_path %>" role="combobox">
-        <%= f.search_field :title_cont, data: { autocomplete_target: 'input' }, class: "input w-full max-w-xs rounded-lg", placeholder: t('test_categories.index.search_country') %>
+        <%= f.search_field :title_cont, data: { autocomplete_target: 'input' }, class: "input w-full max-w-xs rounded-lg", placeholder: t('test_categories.index.search_test') %>
         <%= f.hidden_field :title, data: { autocomplete_target: 'hidden' } %>
         <ul class="list-group" data-autocomplete-target="results"></ul>
       </div>
