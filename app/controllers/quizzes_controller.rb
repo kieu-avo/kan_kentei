@@ -7,56 +7,35 @@ class QuizzesController < ApplicationController
 
   def calculate_score
     answers = params[:answers] || {}
-    count_correct = 0
-    count_quizzes = Quiz.total_by_category(@category.id)
+    quiz_result = QuizResult.calculate_and_create_result(
+      category_id: params[:category_id],
+      user_id: current_user.id,
+      answers:
+    )
 
-    # 未選択の問題があった場合の処理
-    if answers.empty? || answers.keys.size < count_quizzes
+    if quiz_result.nil?
       flash.now[:error] = t('.blank')
       @user_answers = answers
       render :index, status: :unprocessable_entity and return
+    elsif quiz_result.persisted?
+      redirect_to category_quiz_path(category_id: params[:category_id], id: quiz_result.id)
+    else
+      flash.now[:error] = quiz_result.errors.full_messages.to_sentence
+      @user_answers = answers
+      render :index, status: :unprocessable_entity and return
     end
-
-    # 正解の選択肢を取得
-    correct_choices = QuizChoice.where(quiz_id: answers.keys, correct_answer: true).index_by(&:quiz_id)
-
-    # 正解数を計算
-    answers.each do |quiz, choice|
-      count_correct += 1 if correct_choices[quiz.to_i]&.id.to_s == choice
-      # ユーザーが選んだ回答をUserQuizAnswerに保存
-      UserQuizAnswer.create(
-        user_id: current_user.id,
-        quiz_id: quiz,
-        quiz_choice_id: choice
-      )
-    end
-
-    # 点数を計算
-    total_quizzes = answers.keys.length
-    total_score = (count_correct.to_f * 100) / total_quizzes
-
-    # QuizResultに保存
-    quiz_result = QuizResult.create(
-      test_category_id: params[:category_id],
-      user_id: current_user.id,
-      score: total_score,
-      is_passed: total_score >= 70
-    )
-
-    return unless quiz_result.save
-
-    redirect_to category_quiz_path(category_id: params[:category_id], id: quiz_result.id)
   end
 
   # クイズの結果を表示
   def show
     @quiz_result = current_user.quiz_results.find(params[:id])
     @pass_status = @quiz_result.is_passed ? t('.passed') : t('.failed')
-    @category = TestCategory.find(@quiz_result.test_category_id)
-    @quizzes = Quiz.includes(:quiz_choices).where(test_category_id: @quiz_result.test_category_id)
+    @category = @quiz_result.test_category
+    @quizzes = @quiz_result.related_quizzes
 
-    @user_quiz_answers = UserQuizAnswer.where(user_id: current_user.id, quiz_id: @quizzes.pluck(:id)).index_by(&:quiz_id)
-    @explanations = QuizChoice.where(quiz_id: @quizzes.pluck(:id), correct_answer: true).index_by(&:quiz_id)
+    answers_explanations = @quiz_result.user_quiz_answers_with_explanations(current_user)
+    @user_quiz_answers = answers_explanations[:user_answers]
+    @explanations = answers_explanations[:explanations]
   end
 
   def sample_quiz
