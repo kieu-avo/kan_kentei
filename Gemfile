@@ -58,6 +58,7 @@ gem 'mini_magick'
 gem 'ransack'
 gem 'aws-sdk-s3', require: false
 gem 'carrierwave-aws'
+gem 'kaminari'
 
 
 group :development, :test do
