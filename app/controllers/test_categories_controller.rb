@@ -2,6 +2,14 @@ class TestCategoriesController < ApplicationController
   skip_before_action :require_login, only: %i[index]
 
   def index
-    @categories = TestCategory.all
+    @q = TestCategory.ransack(params[:q])
+    @categories = @q.result(distinct: true)
+  end
+  
+  def search_result
+    @categories = TestCategory.where('LOWER(title) LIKE ?', "%#{params[:q]}%")
+    respond_to do |format|
+      format.js { render partial: 'search_result', locals: { categories: @categories } }
+    end
   end
 end

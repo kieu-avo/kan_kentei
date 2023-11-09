@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_01_123006) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_08_115022) do
   create_table "quiz_choices", force: :cascade do |t|
     t.integer "quiz_id", null: false
     t.text "content", null: false
@@ -64,6 +64,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_01_123006) do
     t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "region"
   end
 
   create_table "test_comments", force: :cascade do |t|
