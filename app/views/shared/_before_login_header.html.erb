@@ -2,7 +2,6 @@
   <div class="flex items-center justify-between cursor-pointe pr-5">
     <%= link_to image_tag('logo3.png', class:'w-20 ml-5'), root_path %>
     <div class="space-x-10 hidden md:flex">
-    <!--各ボタンのリンクパスを追加すること！！！ -->
       <%= link_to t('quizzes.sample_quiz.title'), sample_quiz_path, class: "header-button" %>
       <%= link_to t('user_sessions.new.title'), login_path, class: "header-button" %>
       <%= link_to t('users.new.title'), new_user_path, class: "header-button" %>
