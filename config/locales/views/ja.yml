@@ -55,6 +55,7 @@ ja:
   reviews:
     create:
       blank: レビューをお願いします。
+      thanks: レビューのご協力ありがとうございました.
   test_comments:
     new:
       post: 投稿
@@ -63,6 +64,12 @@ ja:
         同じ級に合格した仲間へ一言、合格した感想などコメントを書きましょう。
         ＜例：次の夏休みはここに行こうかな！＞
       congrats_again: 改めまして、合格おめでとうございます！
+    create:
+      failt: 投稿に失敗しました。
+      success: コメントを投稿しました。 
+    update:
+      failt: 更新を失敗しました。
+      success: コメントを更新しました。
   date:
     abbr_day_names:
     - 日
