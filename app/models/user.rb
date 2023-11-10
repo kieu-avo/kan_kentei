@@ -37,9 +37,8 @@ class User < ApplicationRecord
       .distinct
   end
 
-  #reviews用のメソッド
   def already_reviewed?(category)
-    UserReviewAnswer.joins(:review).where(user_id: id, reviews: { test_category: category }).exists?
+    UserReviewAnswer.joins(:review).where(user_id: id, reviews: { test_category_id: category.id }).exists?
   end
 
 end
