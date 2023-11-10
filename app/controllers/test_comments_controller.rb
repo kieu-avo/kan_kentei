@@ -38,9 +38,9 @@ class TestCommentsController < ApplicationController
     @souvenir = @test_comment.souvenir_photo
 
     if @test_comment.update(test_comment_params)
-      redirect_to category_test_comment_path(@category, @test_comment), success: "コメントを更新しました"
+      redirect_to category_test_comment_path(@category, @test_comment), success: t('.success')
     else
-      flash.now[:error] = "更新を失敗しました。"
+      flash.now[:error] = t('.failt')
       render :edit, status: :unprocessable_entity
     end
   end
