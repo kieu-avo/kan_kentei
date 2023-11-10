@@ -3,7 +3,6 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: %i[index new create]
 
   def index
-    @reviews = @category.reviews.includes(:user_review_answers)
     @total_users = UserReviewAnswer.select(:user_id).distinct.count
     @average_ratings = {}
 
@@ -44,7 +43,7 @@ class ReviewsController < ApplicationController
       end
     end
 
-    redirect_to new_category_test_comment_path(category_id: @category.id)
+    redirect_to new_category_test_comment_path(category_id: @category.id), success: t('.thanks')
   end
 
   private
