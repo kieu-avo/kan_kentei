@@ -3,11 +3,11 @@ class TestCommentsController < ApplicationController
 
   def index
     @test_comments = @category.test_comments.includes(:user, :souvenir_photo).order(created_at: :desc)
-    # @test_comments = TestComment.all.includes(:user, :test_category, :souvenir_photo).order(created_at: :desc)
     @souvenir = SouvenirPhoto.where(test_category_id: @category.id)
   end
 
   def new
+    @reviewed = current_user.already_reviewed?(@category)
     @test_comment = TestComment.new
     @souvenir = SouvenirPhoto.where(test_category_id: @category.id).order("RANDOM()").first
   end
@@ -15,11 +15,10 @@ class TestCommentsController < ApplicationController
   def create
     @test_comment = current_user.test_comments.build(test_comment_params)
     if @test_comment.save
-      # redirect_to category_test_comment_path(@category, @test_comment), success: "コメントを投稿しました"
-      redirect_to category_test_comments_path(@category), success: "コメントを投稿しました。"
+      redirect_to category_test_comments_path(@category), success: t('.success')
     else
       @souvenir = SouvenirPhoto.find(test_comment_params[:souvenir_photo_id])
-      flash.now[:error] = "投稿に失敗しました"
+      flash.now[:error] = t('.failt')
       render :new, status: :unprocessable_entity
     end
   end
@@ -27,12 +26,10 @@ class TestCommentsController < ApplicationController
   def show
     @test_comment = current_user.test_comments.find(params[:id])
     @souvenir = @test_comment.souvenir_photo
-    # @souvenir = @test_comment.souvenir_photo
   end
 
   def edit
     @test_comment = current_user.test_comments.find(params[:id])
-    # @test_comment = TestComment.find(params[:id])
     @souvenir = @test_comment.souvenir_photo
   end
 
