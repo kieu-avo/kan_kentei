@@ -2,6 +2,7 @@
   <div class="container pt-32 mb-10 mx-auto">
     <h1 class="text-xl">レビュー</h1>
     <%= form_with model: @user_review_answer, url: category_reviews_path(@category) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
       <% @reviews.each do |review| %>
         <div class="review-item" data-review-id="<%= review.id %>">
           <%= review.content %>
