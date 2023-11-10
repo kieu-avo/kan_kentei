@@ -2,7 +2,6 @@
 ja:
   defaults:
     login: ログイン
-    passed_list: 合格級一覧
     my_page: マイページ
     logout: ログアウト
     register: 登録
@@ -16,7 +15,7 @@ ja:
       success: 新規登録が完了しました
       fail: 新規登録に失敗しました
     new:
-      title: 新規登録
+      title: ユーザー登録
       minimum: 5文字以上入力してください
       register: 登録
   user_sessions:
@@ -37,14 +36,17 @@ ja:
       title: プロフィール
   test_categories:
     index:
+      title: 受検カテゴリー
       search_test: 都道府県名・国名
   quizzes:
     index: 
+      title: 受検
       reviewed?: 見直しをしましたか？
       limit: 一日に受検できる回数を超えました。明日以降ご受検下さい。
     calculate_score:
       blank: 未回答の質問があります。
     show:
+      title: 結果
       passed: 合格
       failed: 不合格
       challenge_again: 再受検
@@ -53,11 +55,18 @@ ja:
       continue: ログインして続きをやる
       title: サンプル問題
   reviews:
+    index:
+      title: レビュー
+    new:
+      title: レビュー投稿
     create:
       blank: レビューをお願いします。
       thanks: レビューのご協力ありがとうございました.
   test_comments:
+    index:
+      title: コメント一覧
     new:
+      title: コメント投稿
       post: 投稿
       update: 更新
       example: |
@@ -67,9 +76,16 @@ ja:
     create:
       failt: 投稿に失敗しました。
       success: コメントを投稿しました。 
+    show: 
+      title: コメント詳細
+    edit:
+      title: コメント編集
     update:
       failt: 更新を失敗しました。
       success: コメントを更新しました。
+  passed_lists:
+    index:
+      title: 合格級一覧
   date:
     abbr_day_names:
     - 日
