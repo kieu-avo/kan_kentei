@@ -4,11 +4,11 @@ class QuizzesController < ApplicationController
   before_action :set_quiz, only: %i[index calculate_score show]
 
   def index
-    if QuizResult.taken_today(current_user).exists?
-      redirect_to category_reviews_path(@category), error: t('.limit')
-    else
-      render :index, status: :unprocessable_entity
-    end
+    #if QuizResult.taken_today(current_user).exists?
+     # redirect_to category_reviews_path(@category), error: t('.limit')
+    #else
+     # render :index, status: :unprocessable_entity
+    #end
   end
 
   def calculate_score
