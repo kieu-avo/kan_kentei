@@ -6,8 +6,9 @@
       <%= image_tag current_user.avatar.url, class: "w-20 flex" %>
     </div>
   </div>
-  <%= form_with model: [@category, @test_comment], url: (@test_comment.new_record? ? category_test_comments_path(@category) : category_test_comment_path(@category, @test_comment)) do |f| %>
-    <%= f.hidden_field :test_category_id, value: @category.id %>
+  <%= form_with model: [category, test_comment], url: (test_comment.new_record? ? category_test_comments_path(category) : category_test_comment_path(category, test_comment)) do |f| %>
+    <%= render 'shared/error_messages', object: f.object%>
+    <%= f.hidden_field :test_category_id, value: category.id %>
     <%= f.hidden_field :souvenir_photo_id, value: @souvenir.id %>
     <div class="pt-10 space-y-10 pl-10">
       <div class="flex space-x-10">
