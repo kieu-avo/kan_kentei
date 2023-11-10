@@ -13,6 +13,7 @@ ja:
       review: レビュー
       test_comment: コメント
       souvenir_photo: お土産
+      user_review_answer: 評価
     attributes:
       user:
         name: お名前
@@ -32,6 +33,8 @@ ja:
         name: 獲得したお土産
       test_comment:
         content: コメント
+      user_review_answer:
+        rating: 評価
   date:
     abbr_day_names:
     - 日
