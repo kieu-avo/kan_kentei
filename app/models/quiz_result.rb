@@ -2,6 +2,8 @@ class QuizResult < ApplicationRecord
   belongs_to :test_category
   belongs_to :user
 
+  scope :taken_today, ->(user) { where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).where(user_id: user.id).where(is_passed: true) }
+
   # quizzes/create用のメソッド
   def self.calculate_and_create_result(category_id:, user_id:, answers:)
     count_correct = 0
