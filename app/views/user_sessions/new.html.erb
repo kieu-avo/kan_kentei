@@ -1,19 +1,22 @@
 <%= content_for(:title, t('.title'))%>
-<div class="container pt-20 mb-10 mx-auto h-screen">
-  <h1 class="pt-20 mb-10 text-center md:text-3xl sm:text-xl"><%=  t '.title' %></h1>
+<div class="container pt-10 mb-10 md:pt-20 mx-auto h-screen font-sans font-light">
+  <div class="flex justify-end pt-20 px-5">
+    <%= image_tag 'plane.png', class:"md:w-1/5 w-24"%>
+  </div>
+  <h1 class="mb-14 text-center md:text-5xl text-3xl"><%= t('.title')%></h1>
   <%= form_with url: login_path do |f| %>
-    <div class="container flex flex-col items-centers ">
-      <div class="cotainer py-5 flex flex-col items-center">
+    <div class="container flex flex-col items-centers">
+      <div class="cotainer py-5 md:text-2xl flex flex-col items-center">
         <%= f.label :email, User.human_attribute_name(:email) %>
-        <%= f.email_field :email, class:"input input-bordered user_new_input" %>
+        <%= f.email_field :email, class:"input input-bordered md:w-1/4" %>
       </div>
-      <div class="cotainer py-5 flex flex-col items-center">
+      <div class="cotainer py-5 md:text-2xl flex flex-col items-center">
         <%= f.label :password, User.human_attribute_name(:password) %>
-        <%= f.password_field :password, class:"input input-bordered user_new_input" %>
+        <%= f.password_field :password, class:"input input-bordered md:w-1/4" %>
       </div>
     </div>
     <div class="container flex justify-center items-center pt-10">
-      <%= f.submit t('defaults.login'), class:"btn btn-lg btn-outline" %>
+      <%= f.submit t('defaults.login'), class:"btn primary md:btn-lg btn-md bg-zinc-700 text-white" %>
     </div>
   <% end %>
 </div>
