@@ -6,7 +6,7 @@ ja:
     logout: ログアウト
     register: 登録
     back: 戻る
-    categories: カテゴリー
+    categories: 受検カテゴリー
     submit: 提出
     require_login: ログインをしてください
     search: 検索
@@ -16,7 +16,7 @@ ja:
       fail: 新規登録に失敗しました
     new:
       title: ユーザー登録
-      minimum: 5文字以上入力してください
+      minimum: 5文字以上
       register: 登録
   user_sessions:
     new:
@@ -61,7 +61,7 @@ ja:
       title: レビュー投稿
     create:
       blank: レビューをお願いします。
-      thanks: レビューのご協力ありがとうございました.
+      thanks: レビューのご協力ありがとうございました。
   test_comments:
     index:
       title: コメント一覧
