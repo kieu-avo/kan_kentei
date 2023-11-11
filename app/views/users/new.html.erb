@@ -1,28 +1,28 @@
 <%= content_for(:title, t('.title')) %>
-<div class="container pt-20 mx-auto">
-  <h1 class="pt-20 mb-10 text-center md:text-3xl sm:text-xl"><%=  t '.title' %></h1>
+<div class="container pt-10 mb-10 md:pt-20 mx-auto font-sans font-light">
+  <h1 class="pt-20 mb-10 text-center md:text-5xl text-3xl"><%= t('.title') %></h1>
   <%= form_with model: @user do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="container flex flex-col items-centers">
       <div class="cotainer py-5 flex flex-col items-center">
         <%= f.label :name %>
-        <%= f.text_field :name, class:"input input-bordered user_new_input" %>
+        <%= f.text_field :name, class:"input input-bordered md:w-1/4" %>
       </div>
       <div class="cotainer py-5 flex flex-col items-center">
         <%= f.label :email %>
-        <%= f.email_field :email, class:"input input-bordered user_new_input" %>
+        <%= f.email_field :email, class:"input input-bordered md:w-1/4" %>
       </div>
       <div class="cotainer py-5 flex flex-col items-center">
         <%= f.label :password %>
-        <%= f.password_field :password, class:"input input-bordered user_new_input", placeholder: t('.minimum') %>
+        <%= f.password_field :password, class:"input input-bordered md:w-1/4 wrap", placeholder: t('.minimum') %>
       </div>
       <div class="cotainer p-5 flex flex-col items-center">
         <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, class:"input input-bordered user_new_input" %>
+        <%= f.password_field :password_confirmation, class:"input input-bordered md:w-1/4" %>
       </div>
     </div>
     <div class="container flex justify-center items-center py-10 ">
-      <%= f.submit t('.register'), class: "btn btn-lg btn-outline" %>
+      <%= f.submit t('.register'),  class:"btn primary md:btn-lg btn-md bg-zinc-700 text-white" %>
     </div>
   <% end %>
 </div>
