@@ -4,7 +4,7 @@
 
 
 body {
-  background-color: rgb(214 211 209);
+  background-color: rgb(214 211 209); 
   font-family: 'yomogi';
   min-height: 100vh;
   color: rgb(67 20 7);
@@ -16,6 +16,15 @@ body {
 
 .explain_for_md {
   @apply py-2 
+}
+
+.about:hover  {
+  background-color: rgb(171,213,219);
+}
+
+.primary:hover {
+  background-color: rgb(161 161 170);
+  color: rgb(67 20 7);
 }
 
 .header-button {
@@ -42,8 +51,6 @@ body {
 }
 
 .categories {
-  padding-left: 3.5rem;
-  padding-right: 3.5rem;
   border-radius: 0.5rem;
   background-color: rgb(250 250 250);
   opacity: 0.9;
