@@ -1,7 +1,5 @@
-
-  <% categories.each do |category| %>
-    <% if category.region == region %>
-
-      <p><%= link_to category.title, category_reviews_path(category) %></p>
-    <% end %>
+<% categories.each do |category| %>
+  <% if category.region == region %>
+    <p><%= link_to category.title, category_reviews_path(category) %></p>
   <% end %>
+<% end %>
