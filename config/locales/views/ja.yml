@@ -10,6 +10,7 @@ ja:
     submit: 提出
     require_login: ログインをしてください
     search: 検索
+    test: 受検する
   users:
     create:
       success: 新規登録が完了しました
