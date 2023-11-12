@@ -1,31 +1,37 @@
 <%= content_for(:title, t('.title')) %>
 <div class="container pt-32 mb-10 mx-auto h-full">
-<h1 class="text-center md:text-6xl sm:text-4xl pt-16">今日は、どこで勘を試しますか？</h1>
+  <h1 class="text-center md:text-5xl text-4xl md:pt-20 pt-14 px-5">今日は、</b>
+      <p class="py-5">どこで<span class="bg-amber-100 rounded-full px-5">勘</span>をためしますか？</h1>
   <!--検索-->
   <%= render 'search_form' %>
+  <!--サンプル問題の続き-->
+  <div class="flex justify-center pt-10 px-2">
+    <p class="text-lg md:text-2xl font-bold">サンプル問題(ベトナム級)の続きは<%= link_to "こちらへ", category_reviews_path(@vietnam_quiz), class:"underline underline-offset-1 cursor-pointe" %>
+  </div>
 
-  <!--写真or地図を表示-->
+  <!--写真かgooglemapを表示-->
   <div class="flex justify-center space-x-20 pt-10">
-    <%= image_tag 'map3.png', class:"w-96" %>
+    <%= image_tag 'map3.png', class:"w-96 md:w-full" %>
   </div>
 
   <!--カテゴリ表示-->
-  <div class="flex space-x-72 justify-center">
-  <% if @categories.any? %>
-    <div class="categories px-14">
-      <p class="pb-5 pt-3">日本編</p>
-      <%= render 'regions', { categories: @categories, region: 'japan' } %>
-    </div>
-    <div class="categories px-14">
-      <p class="pb-5 pt-3">海外編</p>
-      <%= render 'regions', { categories: @categories, region: 'foreign' } %>
-    </div>
-  <% else %>
-    <div class="flex items-center space-x-3">
-      <%= image_tag 'sorry.png', class: "w-10" %>
-      <p class="text-xl">該当の検定はありません。</p>
-    </div>
-  <% end %>
+  <div class="flex md:space-x-10 space-x-5 mx-5 pt-10 justify-center items-start mx-2 text-lg">
+    <% if @categories.any? %>
+      <div class="border px-16">
+        <p class="pb-5 pt-3 text-xl font-black">日本編</p>
+        <%= render 'regions', { categories: @categories, region: 'japan'} %>
+      </div>
+      <div class="border px-16">
+        <p class="pb-5 pt-3 text-xl font-black">海外編</p>
+        <%= render 'regions', { categories: @categories, region: 'foreign'} %>
+      </div>
+
+    <% else %>
+      <div class="flex items-center space-x-3">
+        <%= image_tag 'sorry.png', class: "w-10" %>
+        <p class="text-xl">該当の検定はありません。</p>
+      </div>
+    <% end %>
   </div>
-  <%= render 'regions', { categories: @categories, region: 'sample' } %>
+ 
 </div>
