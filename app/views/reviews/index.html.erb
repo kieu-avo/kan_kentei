@@ -1,6 +1,6 @@
 <%= content_for(:title, t('.title')) %>
 <div class="page">
-  <div class="w-2/5 h-full border-indigo-600 pt-32 px-20">
+  <div class="border-indigo-600 pt-32 px-20">
     <h1 class="md:text-4xl text-3xl pb-5 md:pt-20 text-center"><%= @category.title%>級のレビュー</h1>
     <p class="pt-3 md:text-xl text-lg text-right pr-10">回答人数：<%= @total_users %>名<i class="fa-solid fa-person"></i></p>
     <% @reviews.each do |review| %>
@@ -16,9 +16,9 @@
         </div>
       </div>
     <% end %>
-    <div class="flex justify-center pt-28 pb-20 space-x-10 mx-5 ">
-      <p><%= link_to t('defaults.back'), categories_path, class: "btn about btn-lg btn-outline bg-sky-200 font-sans" %></p>
-      <p><%= link_to t('defaults.test'), category_quizzes_path(@category), class:"btn primary btn-lg bg-zinc-700 text-white font-sans" %></p>
+    <div class="flex justify-center pt-28 pb-20 space-x-10 ">
+      <p><%= link_to t('defaults.back'), categories_path, class: "btn about md:btn-lg btn-outline bg-sky-200 font-sans" %></p>
+      <p><%= link_to t('defaults.test'), category_quizzes_path(@category), class:"btn primary md:btn-lg bg-zinc-700 text-white font-sans" %></p>
     </div>
   </div>
 </div>
