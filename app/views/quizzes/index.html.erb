@@ -1,45 +1,45 @@
 <%= content_for(:title, t('.title')) %>
-<div class="page h-full">
-  <div class="container pt-32 mb-10 mx-auto">
-    <h1 class="text-xl">勘検定</h1>
-    <div class="text-center text-4xl py-10">
+<div class="page">
+  <div class="container pt-32 mx-auto">
+    <h1 class="md:text-2xl text-xl px-5">勘検定</h1>
+    <div class="text-center md:text-5xl text-4xl py-5">
       <p><%= @category.title %>級</p>
     </div>
-    <div class="py-5 text-right text-xl underline underline-offset-1">
+    <div class="py-5 pr-5 text-right text-xl underline underline-offset-1">
       <p>氏名：<%= current_user.name %></p>
     </div>
-    <div>
-      <p class="text-xl">受検中に気を付けること</p>
-      <ul class="text-xl">
-        <li>分からない問題があったら「勘」で答えること</li>
-        <li>現地にいるイメージをしながら回答すること</li>
-        <li>とにかく楽しむこと！<li>
+    <div class="container mx-auto  mt-10 px-10 py-5 w-2/3 md:text-2xl text-lg rounded-lg bg-neutral-50 bg-opacity-90">
+      <ul>
+        <li>⚠️分からない問題があったら「勘」で答えること</li>
+        <li>⚠️現地にいるイメージをしながら回答すること</li>
+        <li>⚠️とにかく楽しむこと！</li>
       </ul>
     </div>
-    <div class="pt-20">
+    <div class="md:pt-20 pt-10 px-5 md:px-10">
       <%= form_with url: calculate_score_category_quizzes_path(@category) ,method: :post do |f|%>
         <% @quizzes.each do |quiz| %>
           <div class="py-10 border-dashed border-b-2 border-stone-400">
-            <p><%= simple_format(quiz.content, class:"text-3xl") %></p>
+            <p><%= simple_format(quiz.content, class:"md:text-3xl text-2xl") %></p>
             <% quiz.quiz_choices.each do |choice| %>
-              <div class="flex pt-5">
-                <%= f.radio_button "answers[#{quiz.id}]", 
-                      choice.id, 
-                      checked: @user_answers&.dig(quiz.id.to_s)  == choice.id.to_s,
-                      class:"block w-8 h-8 rounded-full border-2 border-gray-400 cursor-pointer space-w-5" %>
-                <%= f.label "answers_#{quiz.id}_#{choice.id}", choice.content, class:"text-2xl" %>
+              <div class="flex pt-5 px-10 space-x-2">
+                  <div>
+                    <%= f.radio_button "answers[#{quiz.id}]", 
+                          choice.id, 
+                          checked: @user_answers&.dig(quiz.id.to_s)  == choice.id.to_s,
+                          class:"w-8 h-8 rounded-full border-2 border-gray-400 cursor-pointer" %>
+                  </div>
+                  <div>
+                    <%= f.label "answers_#{quiz.id}_#{choice.id}", choice.content, class:"md:text-2xl text-xl" %>
+                  </div>
               </div>
             <% end %>
           </div>
         <% end %>
-        <div class="container flex justify-center items-center pt-10">
-          <%= f.submit t('defaults.submit'), class:"btn btn-lg btn-outline bg-amber-300", 
+        <div class="container flex justify-center items-center pt-10 pb-10">
+          <%= f.submit t('defaults.submit'), class:"btn btn-lg btn-outline bg-amber-300 font-sans", 
                 data: { turbo_confirm: t('.reviewed?') } %>
         </div>
       <% end %>
-      <div class="pt-10">
-        <%= link_to t('defaults.back'), categories_path, class: "btn btn-lg btn-outline bg-sky-200" %>
-      </div>
     </div>  
   </div>
 </div>
