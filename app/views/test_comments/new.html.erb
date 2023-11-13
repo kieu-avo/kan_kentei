@@ -1,13 +1,13 @@
 <%= content_for(:title, t('.title')) %>
-<div class="page h-full">
-  <div class="container pt-32 mb-10 mx-auto">
-    <div class="text-xl">
-      <p><%= current_user.name %>さんへのお土産は<%= @souvenir.name %>です。</p>
-      <p><%= t('.congrats_again') %></p>
-    </div>
+<div class="pt-32 mx-auto text-center">
+  <div class="px-10 md:text-3xl text-xl">
+    <p><%= current_user.name %>さんへのお土産は<%= @souvenir.name %>です。</p>
+    <p>改めまして、合格おめでとうございます<i class="fa-solid fa-hands-bubbles"></i></p>
+  </div>
+  <div class="pt-20">
     <%= render 'form', category: @category, souvenir: @souvenir, test_comment: @test_comment %>
   </div>
 </div>
 
 
-    
+  
