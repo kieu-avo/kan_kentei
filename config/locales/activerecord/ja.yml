@@ -32,7 +32,7 @@ ja:
       souvenir_photo:
         name: 獲得したお土産
       test_comment:
-        content: コメント
+        content: コメント(48文字以内) 
       user_review_answer:
         rating: 評価
   date:
