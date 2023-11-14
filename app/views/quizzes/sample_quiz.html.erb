@@ -1,22 +1,33 @@
 <%= content_for(:title, t('.title')) %>
 <div class="background-image">
-  <div class="container pt-32 mb-10 mx-auto">
-    <h1 class="text-xl">サンプル問題</h1>
-    <p><%= @sample_category.title %>級</p>
-    <% @sample_quiz.each do |quiz| %>
-      <div>
-        <%= quiz.content%>
-      </div>
-      <% quiz.quiz_choices.each do |choice| %>
-        <div class="flex pt-5">
-          <input type="radio" name="answer_<%= quiz.id %>" class= "block w-8 h-8 rounded-full border-2 border-gray-400 cursor-pointer" />
-          <p><%= choice.content%></p>
+  <div class="container pt-32 mx-auto">
+    <h1 class="text-center md:text-5xl text-4xl py-5 px-16"><%= @sample_category.title %></h1>
+    <div class="container mx-auto mt-10 md:px-10 px-5 py-5 w-2/3 md:text-2xl text-lg rounded-lg bg-neutral-50 bg-opacity-90">
+      <ul>
+        <li>⚠️分からない問題があったら「勘」で答えること</li>
+        <li>⚠️現地にいるイメージをしながら回答すること</li>
+        <li>⚠️とにかく楽しむこと！</li>
+      </ul>
+    </div>
+    <div class="md:pt-20 pt-10 px-5 md:px-10">
+      <% @sample_quiz.each do |quiz| %>
+        <div class="py-10 border-dashed border-b-2 border-stone-400">
+          <%= simple_format(quiz.content, class:"md:text-3xl text-2xl") %>
+          <% quiz.quiz_choices.each do |choice| %>
+            <div class="flex pt-5 px-10 space-x-2">
+              <div>
+                <input type="radio" name="answer_<%= quiz.id %>" class= "w-8 h-8 rounded-full border-2 border-gray-400 cursor-pointer" />
+              </div>
+              <div>
+                <p class="md:text-2xl text-xl"><%= choice.content %></p>
+              </div>
+            </div>
+          <% end %>
         </div>
       <% end %>
-    <% end %>
-    <div class="pt-10 flex justify-center">
-      <p></p>
-      <%= link_to t('.continue'), login_path, class:"btn btn-lg btn-outline" %>
+    </div>
+    <div class="pb-10 pt-14 flex justify-center">
+      <%= link_to t('.continue'), login_path, class:"btn primary btn-lg bg-zinc-700 text-white" %>
     </div>
   </div>
 </div>
