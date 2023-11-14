@@ -1,15 +1,15 @@
 <%= content_for(:title, t('.title')) %>
 <div class="background-image">
-  <div class="pt-32 px-5 mx-auto text-center">
+  <div class="container pt-32 px-5 mx-auto text-center">
     <h1 class="md:text-3xl text-2xl"><%= @category.title %>級に合格した仲間達</h1>
     <div class="md:grid md:grid-cols-3 md:gap-4 flex-wrap pt-20">
       <%= render @test_comments, category: @category, souvenir: @souvenir %>
     </div>
     <div class="flex justify-center pb-10">
       <% if params[:from_passed_list] == "true" %>
-        <%= link_to t('defaults.back'), passed_lists_path, class: "btn btn-lg btn-outline" %>
+        <%= link_to t('defaults.back'), passed_lists_path, class:"btn primary btn-lg bg-zinc-700 text-white" %>
       <% else %>
-        <%= link_to t('defaults.categories'), categories_path, class: "btn btn-lg btn-outline" %>
+        <%= link_to t('defaults.categories'), categories_path,  class:"btn primary btn-lg bg-zinc-700 text-white" %>
       <% end %>
     </div>
     <div class="py-10">
