@@ -4,16 +4,14 @@
     <div class="space-x-10 hidden md:flex">
       <%= link_to t('quizzes.sample_quiz.title'), sample_quiz_path, class: "header-button" %>
       <%= link_to t('user_sessions.new.title'), login_path, class: "header-button" %>
-      <%= link_to t('users.new.title'), new_user_path, class: "header-button" %>
     </div>
 
   <!-- スマホサイズ -->
     <div class="dropdown dropdown-left md:hidden">
       <label tabindex="0" class="btn m-1"><i class="fa-solid fa-bars"></i></label>
       <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-200 rounded-box w-52">
-        <li><%= link_to "サンプル問題"%></li>
+        <li><%= link_to t('quizzes.sample_quiz.title'), sample_quiz_path %></li>
         <li><%= link_to t('user_sessions.new.title'), login_path %></li>
-        <li><%= link_to t('users.new.title'), new_user_path %></li>
       </ul>
     </div>
   </div>
