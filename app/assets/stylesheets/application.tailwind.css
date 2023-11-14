@@ -39,15 +39,20 @@ body {
   width: 800px;
 }
 
-.page {
+.background-image {
   background-image: url(paper.png);
 }
 
 .certification {
-  background-image: url(certification.png);  
+  background-image: url(certification.png); 
   background-size: contain;
   background-repeat: no-repeat;
-  height: 100vh;
+  background-attachment: local;
+}
+
+.custom-padding {
+  padding-right: 420px;
+  padding-left: 420px;
 }
 
 .categories {
@@ -57,17 +62,41 @@ body {
 }
 
 .paginate {
-  font-weight: 600;
   border-radius: 9999px;
   background-color: rgb(46,151,167);
-  padding-left: 0.375rem; /* 6px */
-  padding-right: 0.375rem; /* 6px */
-  padding-top: 0.5rem; /* 8px */
-  padding-bottom: 0.5rem; /* 8px */
-  color: rgb(241 245 249);
+  padding-left: 0.625rem; /* 10px */
+  padding-right: 0.625rem; /* 10px */
+  padding-top: 0.375rem; /* 6px */
+  padding-bottom: 0.375rem; /* 6px */
   place-items: center;
+  color: rgb(245 245 244);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .5);/*影*/
 }
 
 .paginate:hover {
+  background-color: rgb(171,213,219);
+}
+
+.page {
+  border-radius: 9999px;
+  background-color: rgb(46,151,167); /* すべてのページに背景色を適用 */
+  padding-left: 1.5rem; /* 24px */
+  padding-right: 1.25rem; /* 20px */
+  padding-top: 0.375rem; /* 6px */
+  padding-bottom: 0.375rem; /* 6px */
+  text-align: center;
+  color: rgb(245 245 244);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .5); /* 影 */
+}
+
+.current {
+  border-radius: 9999px;
+  background-color: transparent; /* 現在のページには背景色を適用しない */
+  text-align: center;
+  color: rgb(67 20 7);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .5); /* 影 */
+}
+
+.page:hover {
   background-color: rgb(171,213,219);
 }
