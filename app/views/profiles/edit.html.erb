@@ -1,16 +1,16 @@
 <%= content_for(:title, t('.title')) %>
 <div class="container pt-20 mb-10 mx-auto h-full">
-  <h1 class="pt-20 mb-10 text-center md:text-4xl sm:text-3xl"><%=  t '.title' %></h1>
+  <h1 class="pt-20 mb-10 text-center md:text-4xl text-3xl"><%=  t '.title' %></h1>
   <%= form_with model: @user, url: profile_path do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="container flex flex-col items-centers text-xl">
       <div class="cotainer py-5 flex flex-col items-center">
         <%= f.label :name, User.human_attribute_name(:name) %>
-        <%= f.text_field :name, class:"input input-bordered user_new_input" %>
+        <%= f.text_field :name, class:"input input-bordered md:w-1/4" %>
       </div>
       <div class="cotainer py-5 flex flex-col items-center">
         <%= f.label :email, User.human_attribute_name(:email) %>
-        <%= f.email_field :email, class:"input input-bordered user_new_input" %>
+        <%= f.email_field :email, class:"input input-bordered md:w-1/4" %>
       </div>
       <div class="cotainer py-5 flex flex-col items-center">
         <div class="form-control w-full max-w-xs">
@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="container flex justify-center items-center pt-10">
-      <%= f.submit t('defaults.register'), class:"btn btn-lg btn-outline" %>
+      <%= f.submit t('defaults.register'), class:"btn primary btn-lg bg-zinc-700 text-white" %>
     </div>
   <% end %>
 </div>
