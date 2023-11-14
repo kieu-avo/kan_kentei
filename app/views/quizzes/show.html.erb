@@ -69,7 +69,7 @@
     <div class="flex justify-center pb-10">
       <% if @quiz_result.is_passed? %>
         <% if params[:from_passed_list] == 'true' %>
-          <%= link_to t('defaults.back'), passed_lists_path, class: "btn btn-lg btn-outline" %>
+          <%= link_to t('defaults.back'), passed_lists_path, class:"btn primary btn-lg bg-zinc-700 text-white" %>
         <% else %>
           <%= link_to t('.souvenir'), new_category_review_path(@category), class: "btn btn-lg btn-outline bg-sky-200" %>
         <% end %>
