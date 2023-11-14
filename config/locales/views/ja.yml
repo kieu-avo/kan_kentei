@@ -17,6 +17,7 @@ ja:
       fail: 新規登録に失敗しました
     new:
       title: ユーザー登録
+      new_user: ユーザー登録はこちらへ
       minimum: 5文字以上
       register: 登録
   user_sessions:
