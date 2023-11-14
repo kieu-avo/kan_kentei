@@ -3,7 +3,7 @@
   <h1 class="pt-20 mb-10 text-center md:text-5xl text-3xl"><%= t('.title') %></h1>
   <%= form_with model: @user do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-    <div class="container flex flex-col items-centers">
+    <div class="container md:text-2xl flex flex-col items-centers">
       <div class="cotainer py-5 flex flex-col items-center">
         <%= f.label :name %>
         <%= f.text_field :name, class:"input input-bordered md:w-1/4" %>
