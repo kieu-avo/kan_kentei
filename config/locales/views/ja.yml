@@ -77,6 +77,7 @@ ja:
       success: コメントを投稿しました。 
     show: 
       title: コメント詳細
+      buddy: 仲間一覧
     edit:
       title: コメント編集
     update:
