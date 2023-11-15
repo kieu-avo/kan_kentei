@@ -6,8 +6,8 @@
       <%= render @test_comment, category: @category, souvenir: @souvenir %>
     </div>
   </div>
-  <div class="flex justify-center pb-10">
-    <%= link_to t('defaults.back'), passed_lists_path, class:"btn primary btn-lg bg-zinc-700 text-white"%>
+  <div class="flex justify-center pb-10 pt-5">
+    <%= link_to t('.buddy'), category_test_comments_path(@category), class:"btn primary btn-lg bg-zinc-700 text-white" %>
   </div>
 </div>
 
