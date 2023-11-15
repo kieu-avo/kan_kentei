@@ -7,18 +7,11 @@
         <div class="dropdown dropdown-hover">
           <label tabindex="0" class="btn m-1"><p><%= passed.test_category.title %>級</p></label>
           <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-            <li><%= link_to "結果", category_quiz_path(passed.test_category_id, passed.id, from_passed_list: true) %></li>
-            <!--合格証明書関係-->
-            <% comment_id = find_latest_test_comments(passed.test_category_id, @latest_test_comments)%>
-            <% if comment_id %>
-              <li><%= link_to "合格証明書", category_test_comment_path(passed.test_category_id, comment_id), from_passed_list: true %></li>
-            <% end %>
-            <!--終わり-->
-            <li><%= link_to "合格した仲間達", category_test_comments_path(passed.test_category_id, from_passed_list: true)  %></li>
+            <li><%= link_to t('quizzes.show.title'), category_quiz_path(passed.test_category_id, passed.id, from_passed_list: true) %></li>
+            <li><%= link_to t('test_comments.show.buddy'), category_test_comments_path(passed.test_category_id, from_passed_list: true)  %></li>
           </ul>
         </div>
       <% end %>
     </div>
   </div>
-  <p class="pt-20 pb-20 text-center"><%= link_to t('defaults.back'), categories_path, class: "btn primary btn-lg bg-zinc-700 text-white font-san" %></p>
-</div>
+ 
