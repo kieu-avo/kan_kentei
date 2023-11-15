@@ -54,11 +54,11 @@ gem 'rails-i18n'
 gem 'sorcery'
 gem 'pry-byebug'
 gem 'carrierwave'
-gem 'mini_magick'
 gem 'ransack'
 gem 'aws-sdk-s3', require: false
 gem 'carrierwave-aws'
 gem 'kaminari'
+gem "meta-tags"
 
 
 group :development, :test do
