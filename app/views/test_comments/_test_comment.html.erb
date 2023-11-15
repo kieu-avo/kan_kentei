@@ -1,29 +1,34 @@
-<div class="certification mt-10 p-5 mt-20 mx-auto">
-  <div class="pt-20">
-    <p class="text-center text-3xl pb-5"><%= category.title.upcase %>級 合格証明書</p>
-    <p class="text-right pr-10">氏名：<%= test_comment.user.name %></p>
-    <div class="flex justify-end pr-12">
-      <%= image_tag test_comment.user.avatar.url, class: "w-20 flex" %>
+<div class="container certification w-fit pb-28 md:pb-20 py-10 md:mx-auto">
+  <p class="text-center md:text-xl text-md md:pt-10 pt-2 font-black"><%= category.title %>級 合格証明書</p>
+  <div class="flex items-center space-x-20 md:px-10">
+    <div class="pl-16">
+      <%= image_tag test_comment.user.avatar.url, class: "w-14" %>
     </div>
+    <p class="text-sm pt-3 pr-10 md:pl-20 text-nowrap">氏名：<%= test_comment.user.name %></p>
   </div>
-  <div class="pt-10 space-y-10 pl-10">
-    <div class="flex space-x-10">
-      <p><%= SouvenirPhoto.human_attribute_name(:name) %></p>
-      <%if test_comment.souvenir_photo.image_url.present? %>
-        <div>
-          <p><%= test_comment.souvenir_photo.name %></p>
-          <%= image_tag test_comment.souvenir_photo.image_url, class: "border-solid border-2 border-neutral-400 rounded-lg w-80 h-80"%>
-        </div>
-      <% else %>
-        <p><%= test_comment.souvenir_photo.name %></p>
-      <% end %>
-    </div>
-    <div class="flex flex-col space-y-3">
-      <p><%= TestComment.human_attribute_name(:content) %></p>
-      <div>
+  <div class="px-5 md:text-md text-sm font-bold">
+    <div class="flex flex-col items-center">
+      <div class="md:text-md text-sm input input-bordered md:w-68 w-60 h-28">
         <%= test_comment.content %>
       </div>
     </div>
+    <div class="flex flex-col items-center pt-2">
+      <p>【<%= SouvenirPhoto.human_attribute_name(:name) %>】</p>
+      <p><%= test_comment.souvenir_photo.name %></p>
+      <%= image_tag test_comment.souvenir_photo.image_url, class:"rounded-lg md:w-66 w-40 pt-5" %>
+    </div>
   </div>
-    <%= render 'crud_menus', test_comment: test_comment, category: category if current_user.own?(test_comment) %>
+  <div class="text-2xl flex space-x-5 items-center pt-10 pb-20 px-40">
+    <% if current_user.own?(test_comment) %>
+      <div>
+        <%= link_to "https://twitter.com/share?url=#{root_url}&text=#{category.title}級に合格しました。%0A同じ級に合格したみんなよろしくね🤝&hashtags=勘検定,#{category.title},旅", target: '_blank', data: { toggle: "tooltip", placement: "bottom" }, title: "Xでシェア" do %>
+          <i class="fa-brands fa-square-x-twitter"></i>
+        <% end %>
+      </div>
+      <%= render 'crud_menus', test_comment: test_comment, category: category  %>
+    <% end %>
+  </div>
 </div>
+
+
+

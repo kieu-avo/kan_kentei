@@ -1,17 +1,17 @@
 <%= content_for(:title, t('.title')) %>
 <div class="container pt-20 mb-10 mx-auto h-full">
-  <div class="flex items-center justify-center md:text-4xl sm:text-3xl">
-    <h1 class="pt-20 mb-10 text-center md:text-4xl sm:text-3xl"><%=  t '.title' %></h1>
+  <div class="flex items-center justify-center md:text-4xl text-3xl">
+    <h1 class="pt-20 mb-10 text-center md:text-4xl text-3xl"><%=  t '.title' %></h1>
     <%= link_to edit_profile_path do %>
-      <i class="fa-solid fa-pen-to-square"></i>
+      <i class="fa-solid fa-pen-to-square text-3xl"></i>
     <% end %>
   </div>
-  <table class="container md:text-2xl sm:text-xl text-center">
+  <table class="container md:text-2xl text-xl">
     <tr>
-      <th class="py-5"><%= User.human_attribute_name(:name) %>:<span class="pl-10"><%= current_user.name %></span></th>
+      <th class="py-10 flex flex-col text-center justify-center"><%= User.human_attribute_name(:name) %>:</br> <%= current_user.name %></th>
     </tr>
     <tr>
-      <th class="pb-11"><%= User.human_attribute_name(:email) %>:<span class="pl-10"><%= current_user.email %></span></th>
+      <th class="pb-11 flex flex-col text-center"><%= User.human_attribute_name(:email) %>: </br><%= current_user.email %></th>
     </tr>
   </table>
   <div class="flex justify-center">
