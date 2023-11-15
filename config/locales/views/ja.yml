@@ -6,17 +6,19 @@ ja:
     logout: ログアウト
     register: 登録
     back: 戻る
-    categories: カテゴリー
+    categories: 受検カテゴリー
     submit: 提出
     require_login: ログインをしてください
     search: 検索
+    test: 受検する
   users:
     create:
       success: 新規登録が完了しました
       fail: 新規登録に失敗しました
     new:
       title: ユーザー登録
-      minimum: 5文字以上入力してください
+      new_user: ユーザー登録はこちらへ
+      minimum: 5文字以上
       register: 登録
   user_sessions:
     new:
@@ -61,7 +63,7 @@ ja:
       title: レビュー投稿
     create:
       blank: レビューをお願いします。
-      thanks: レビューのご協力ありがとうございました.
+      thanks: レビューのご協力ありがとうございました。
   test_comments:
     index:
       title: コメント一覧
@@ -69,15 +71,13 @@ ja:
       title: コメント投稿
       post: 投稿
       update: 更新
-      example: |
-        同じ級に合格した仲間へ一言、合格した感想などコメントを書きましょう。
-        ＜例：次の夏休みはここに行こうかな！＞
-      congrats_again: 改めまして、合格おめでとうございます！
+      example: 同じ級に合格した仲間へ一言、合格した感想などコメントを書きましょう！ 
     create:
       failt: 投稿に失敗しました。
       success: コメントを投稿しました。 
     show: 
       title: コメント詳細
+      buddy: 仲間一覧
     edit:
       title: コメント編集
     update:

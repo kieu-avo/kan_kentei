@@ -1,12 +1,16 @@
 <%= content_for(:title, t('.title')) %>
-<div class="page h-full">
-  <div class="container pt-32 mb-10 mx-auto">
-    <h1 class="text-xl">レビュー</h1>
+<div class="background-image">
+  <div class="pt-32 mx-auto px-5 pb-5">
+    <p class="md:text-4xl text-3xl md:pt-20 text-center">ただいまお土産をご用意しております。</br>
+        お待ちの間にレビューをお願い致します。</br></p>
+    <p class="text-center md:text-xl text-md md:pb-20 pt-3">＊１〜５で評価ください＊</p>
     <%= form_with model: @user_review_answer, url: category_reviews_path(@category) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <% @reviews.each do |review| %>
-        <div class="review-item" data-review-id="<%= review.id %>">
-          <%= review.content %>
+        <div class="review-item pt-20 text-xl md:text-2xl flex flex-wrap items-center justify-center" data-review-id="<%= review.id %>">
+          <div class="w-2/3">
+            <%= review.content %>
+          </div>
           <div class="flex py-5" id="star-rating-<%= review.id %>"
                   data-star-on="<%= asset_path('star-on.png') %>"
                   data-star-off="<%= asset_path('star-off.png') %>"
@@ -14,8 +18,8 @@
           </div>
         </div>
       <% end %>
-      <div class="container flex justify-center items-center py-10 ">
-      <%= f.submit t('defaults.submit'), class:"btn btn-lg btn-outline" %>
+      <div class="container flex justify-center items-center py-10 pt-28">
+      <%= f.submit t('defaults.submit'), class:"btn primary md:btn-lg bg-zinc-700 text-white font-sans" %>
     </div>
     <% end %>
   </div>

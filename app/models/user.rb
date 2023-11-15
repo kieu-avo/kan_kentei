@@ -24,17 +24,9 @@ class User < ApplicationRecord
     id == object.user_id
   end
 
-  #passed_lists用のメソッド（以下2つ）
+  #passed_lists用のメソッド
   def passed_quizzes
     quiz_results.includes(:test_category).where(is_passed: true)
-  end
-
-  def latest_test_comments
-    test_comments
-      .joins(:test_category)
-      .where(test_categories: { id: passed_quizzes.select(:test_category_id) })
-      .order(created_at: :desc)
-      .distinct
   end
 
   def already_reviewed?(category)

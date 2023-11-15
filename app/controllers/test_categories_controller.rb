@@ -4,6 +4,7 @@ class TestCategoriesController < ApplicationController
   def index
     @q = TestCategory.ransack(params[:q])
     @categories = @q.result(distinct: true)
+    @vietnam_quiz = TestCategory.find_by(title: "ベトナム")
   end
   
   def search_result
