@@ -1,8 +1,8 @@
 <%= content_for(:title, t('.title')) %>
 <div class="background-image">
-  <div class="container pt-32 px-5 mx-auto text-center">
+  <div class="container pt-32 mx-auto text-center">
     <h1 class="md:text-3xl text-2xl"><%= @category.title %>級に合格した仲間達</h1>
-    <div class="md:grid md:grid-cols-3 md:gap-4 flex-wrap pt-20">
+    <div class="md:grid md:grid-cols-2 md:gap-4 flex flex-wrap place-items-center pt-20 justify-center px-5">
       <%= render @test_comments, category: @category, souvenir: @souvenir %>
     </div>
     <div class="flex justify-center pb-10">
