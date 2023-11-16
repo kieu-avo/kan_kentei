@@ -1,14 +1,8 @@
 module ApplicationHelper
-  def page_title(page_title = '')
-    base_title = '勘検定'
-
-    page_title.empty? ? base_title : page_title + ' | ' + base_title
-  end
-
   def default_meta_tags
   {
     site: '勘検定',
-    title: '勘検定',
+    title: content_for(:title),
     description: '日本・海外のあまり知られていないことを検定で出題し、「勘」を使って答えて頂くサービスです。',
     reverse: true,
     keywords: '勘、旅、クイズ、検定、お土産',
