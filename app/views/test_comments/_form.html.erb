@@ -1,10 +1,10 @@
 <div class="container certification md:pb-20 pb-10 py-5 mx-auto max-w-lg">
   <p class="text-center md:text-2xl text-xl md:pt-12 pt-6 font-black"><%= category.title %>級 合格証明書</p>
   <div class="flex md:space-x-32 space-x-24 items-center pt-2">
-    <div class="pl-28">
-      <%= image_tag current_user.avatar.url, class: "w-14" %>
+    <div class="md:pl-28 pl-20">
+      <%= image_tag current_user.avatar.url, class: "md:max-w-sm w-12 border-solid border-2 border-neutral-400 rounded-lg" %>
     </div>
-    <p class="text-sm pr-10">氏名：<%= current_user.name %></p>
+    <p class="md:text-xl text-sm pr-10">氏名：<%= current_user.name %></p>
   </div>
   <%= form_with model: [category, test_comment], url: (test_comment.new_record? ? category_test_comments_path(category) : category_test_comment_path(category, test_comment)) do |f| %>
     <%= render 'shared/error_messages', object: f.object%>
@@ -17,8 +17,12 @@
       </div>
       <div class="flex flex-col items-center">
         <%= f.label :name, "【" + SouvenirPhoto.human_attribute_name(:name) + "】" %>
-        <p class="pb-5 px-5"><%= souvenir.name %></p>
-        <%= image_tag souvenir.image_url, class: "rounded-lg md:w-44 w-32 md:h-40 h-28" %>
+        <%if souvenir.image_url.present? %>
+          <p class="pb-0 px-5"><%= souvenir.name %></p>
+          <%= image_tag souvenir.image_url, class: "rounded-lg md:w-44 w-32 md:h-40 h-28" %>
+        <% else %>
+          <p><%= souvenir.name %></p>
+        <% end %>
       </div>
       <div class="container flex justify-center items-center pt-28 pb-10">
         <%= f.submit test_comment.new_record? ? t('test_comments.new.post') : t('test_comments.new.update'),  class:"btn primary btn-lg bg-zinc-700 text-white"%>
