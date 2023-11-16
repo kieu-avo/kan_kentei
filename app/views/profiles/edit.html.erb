@@ -15,11 +15,11 @@
       <div class="cotainer py-5 flex flex-col items-center">
         <div class="form-control w-full max-w-xs">
           <%= f.label :avatar, class: "text-center" %>
-          <%= f.file_field :avatar, onchange: 'previewFileWithId(preview)', class: "file-input file-input-bordered w-full max-w-xs" %>
+          <%= f.file_field :avatar, class: "file-input file-input-bordered max-w-xs" %>
         </div>
       </div>
       <div class="flex justify-center">
-        <%= image_tag @user.avatar.url, class: "border-solid border-2 border-neutral-400 rounded-lg w-80 h-80"%>
+        <%= image_tag @user.avatar.url %>
       </div>
     </div>
     <div class="container flex justify-center items-center pt-10">
