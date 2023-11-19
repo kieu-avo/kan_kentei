@@ -2,6 +2,12 @@
 <div class="background-image">
   <div class="pt-32 md:text-3xl text-2xl mx-auto text-center">
     <h1>コメント編集</h1>
+    <% if @souvenir.explanation.present? %>
+      <div class="rounded-lg bg-neutral-50 bg-opacity-90 p-3 w-fit mx-auto mt-16 md:text-xl text-sm">
+        <p>獲得したお土産：<%= @souvenir.name %></p>
+        <%= @souvenir.explanation.present? ?  @souvenir.explanation : "" %>
+      </div>
+    <% end %>
     <div class="pt-20">
       <%= render 'form', category: @category, souvenir: @souvenir, test_comment: @test_comment %>
     </div>
