@@ -22,6 +22,7 @@
           <%= image_tag souvenir.image_url, class: "rounded-lg md:w-44 w-32 md:h-40 h-28" %>
         <% else %>
           <p><%= souvenir.name %></p>
+          <%= image_tag "no_image.jpg", class: "rounded-lg md:w-44 w-32 md:h-40 h-28" %>
         <% end %>
       </div>
       <div class="container flex justify-center items-center pt-28 pb-10">
