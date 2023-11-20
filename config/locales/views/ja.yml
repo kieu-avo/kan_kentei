@@ -14,7 +14,7 @@ ja:
   users:
     create:
       success: 新規登録が完了しました
-      fail: 新規登録に失敗しました
+      failed: 新規登録に失敗しました
     new:
       title: ユーザー登録
       new_user: ユーザー登録はこちらへ
@@ -25,13 +25,13 @@ ja:
       title: ログイン
     create:
       success: ログインしました
-      fail: ログインに失敗しました
+      failed: ログインに失敗しました
     destroy:
       logout: お疲れ様でした。またの受検をお待ちしております！
   profiles:
     update:
       success: プロフィールを更新しました
-      fail: プロフィールの更新ができませんでした
+      failed: プロフィールの更新ができませんでした
     edit:
       title: プロフィール編集
     show:
@@ -67,13 +67,14 @@ ja:
   test_comments:
     index:
       title: コメント一覧
+      reset: リセット
     new:
       title: コメント投稿
       post: 投稿
       update: 更新
       example: 同じ級に合格した仲間へ一言、合格した感想などコメントを書きましょう！ 
     create:
-      failt: 投稿に失敗しました。
+      failed: 投稿に失敗しました。
       success: コメントを投稿しました。 
     show: 
       title: コメント詳細
@@ -81,7 +82,7 @@ ja:
     edit:
       title: コメント編集
     update:
-      failt: 更新を失敗しました。
+      failed: 更新を失敗しました。
       success: コメントを更新しました。
   passed_lists:
     index:
