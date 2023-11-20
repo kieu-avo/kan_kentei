@@ -11,7 +11,7 @@
 
   <!--写真かgooglemapを表示-->
   <div class="flex justify-center space-x-20 pt-10">
-    <%= image_tag 'map3.png', class:"w-96 md:w-full" %>
+    <%= image_tag 'map3.png', class:"w-96 md:w-fit" %>
   </div>
 
   <!--カテゴリ表示-->
@@ -30,9 +30,9 @@
         </div>
       </div>
     <% else %>
-      <div class="flex items-center space-x-3">
-        <%= image_tag 'sorry.png', class: "w-10" %>
-        <p class="text-xl">該当の検定はありません。</p>
+      <div class="flex items-center">
+        <%= image_tag 'sorry.png', class: "w-20" %>
+        <p class="md:text-2xl text-xl">お探しの検定は見つかりませんでした。</p>
       </div>
     <% end %>
   </div>
