@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_08_115022) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_19_020610) do
   create_table "quiz_choices", force: :cascade do |t|
     t.integer "quiz_id", null: false
     t.text "content", null: false
@@ -57,6 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_08_115022) do
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "explanation"
     t.index ["test_category_id"], name: "index_souvenir_photos_on_test_category_id"
   end
 
