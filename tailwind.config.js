@@ -12,7 +12,7 @@ module.exports = {
         'yomogi': ['Yomogi', 'cursive'],
       },
       colors: {
-        header_footer_color: {
+        color: {
           400: '#2E97A7',
         },
       },
