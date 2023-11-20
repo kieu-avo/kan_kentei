@@ -19,10 +19,12 @@ Rails.application.routes.draw do
       post 'calculate_score', on: :collection
     end
     resources :reviews, only: %i[index new create]
-    resources :test_comments, only: %i[index new create show edit update]
+    resources :test_comments, only: %i[index new create show edit update] do
+      collection do
+        get 'search_content'
+        get 'search_user_name'
+        get 'search_souvenir'
+      end
+    end
   end
-
-  
-  
-
 end
