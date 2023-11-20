@@ -33,4 +33,8 @@ class User < ApplicationRecord
     UserReviewAnswer.joins(:review).where(user_id: id, reviews: { test_category_id: category.id }).exists?
   end
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["avatar", "created_at", "crypted_password", "email", "id", "name", "salt", "updated_at"]
+  end
+
 end

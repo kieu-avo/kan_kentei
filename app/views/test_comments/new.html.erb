@@ -1,13 +1,14 @@
 <%= content_for(:title, t('.title')) %>
-<div class="pt-32 mx-auto text-center">
-  <div class="px-10 md:text-3xl text-xl px-44">
-    <p class="text-center">改めまして、合格おめでとうございます<i class="fa-solid fa-hands-bubbles"></i></p>
-    <p class="pt-16"><%= current_user.name %>さんへのお土産は「<%= @souvenir.name %>」です。</p>
-    <%= @souvenir.explanation.present? ?  @souvenir.explanation : "" %>
-    
-  </div>
-  <div class="pt-20">
-    <%= render 'form', category: @category, souvenir: @souvenir, test_comment: @test_comment %>
+<div class="background-image">
+  <div class="pt-32 mx-auto text-center">
+    <div class="px-10 md:text-3xl text-xl px-44">
+      <p class="text-center">改めまして、合格おめでとうございます<i class="fa-solid fa-hands-bubbles"></i></p>
+      <p class="pt-16"><%= current_user.name %>さんへのお土産は「<%= @souvenir.name %>」です。</p>
+      <%= @souvenir.explanation.present? ?  @souvenir.explanation : "" %>
+    </div>
+    <div class="pt-20">
+      <%= render 'form', category: @category, souvenir: @souvenir, test_comment: @test_comment %>
+    </div>
   </div>
 </div>
 
