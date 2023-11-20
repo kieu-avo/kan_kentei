@@ -1,8 +1,7 @@
-<header class="fixed top-0 left-0 w-screen bg-header_footer_color-400 p-2 font-sans">
+<header class="fixed top-0 left-0 w-screen bg-color-400 p-2 font-sans">
   <div class="flex items-center justify-between cursor-pointe pr-5">
     <%= link_to image_tag('logo.jpeg', class:'md:w-20 w-12  ml-5'), root_path %>
     <div class="space-x-10 hidden md:flex">
-    <!--各ボタンのリンクパスを追加すること！！！ -->
       <%= link_to t('defaults.categories'), categories_path, class: "header-button" %>
       <%= link_to t('passed_lists.index.title'), passed_lists_path, class: "header-button" %>
       <div class="dropdown dropdown-bottom dropdown-end hidden md:flex">
