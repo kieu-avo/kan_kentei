@@ -3,7 +3,6 @@ class TestCommentsController < ApplicationController
 
   def index
     @test_comments = @category.test_comments.includes(:user, :souvenir_photo).order(created_at: :desc).page(params[:page]).per(6)
-    @souvenir = SouvenirPhoto.where(test_category_id: @category.id)
   end
 
   def new
