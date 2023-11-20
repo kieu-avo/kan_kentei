@@ -2,13 +2,11 @@
   <div class="flex justify-center space-x-20">
     <div class="flex space-x-1 pt-10 md:pt-20 px-5 justify-center">
       <div data-controller="autocomplete" data-autocomplete-url-value="<%= search_result_categories_path %>" role="combobox">
-        <%= f.search_field :title_cont, data: { autocomplete_target: 'input' }, class: "input input-bordered w-full rounded-lg", placeholder: t('test_categories.index.search_test') %>
+        <%= f.search_field :title_cont, data: { autocomplete_target: 'input' }, class: "input input-bordered w-full rounded-lg", placeholder: "都道府県名・国名" %>
         <%= f.hidden_field :title, data: { autocomplete_target: 'hidden' } %>
         <ul class="list-group" data-autocomplete-target="results"></ul>
       </div>
-      <div>
-        <%= f.submit t('defaults.search'), class: "btn btn-md btn-outline bg-gray-700 text-white text-base" %>
-      </div>
+      <%= f.submit t('defaults.search'), class: "btn btn-md btn-outline bg-gray-700 text-white text-base" %>
     </div>
   </div>
 <% end %>

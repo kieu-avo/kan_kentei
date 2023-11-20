@@ -4,8 +4,8 @@
     <h1>コメント編集</h1>
     <% if @souvenir.explanation.present? %>
       <div class="rounded-lg bg-neutral-50 bg-opacity-90 p-3 w-fit mx-auto mt-16 md:text-xl text-sm">
-        <p>獲得したお土産：<%= @souvenir.name %></p>
-        <%= @souvenir.explanation.present? ?  @souvenir.explanation : "" %>
+        <p>獲得したお土産：<%= @test_comment.souvenir_photo.name %></p>
+        <%= @test_comment.souvenir_photo.explanation.present? ?  @test_comment.souvenir_photo.explanation : "" %>
       </div>
     <% end %>
     <div class="pt-20">
