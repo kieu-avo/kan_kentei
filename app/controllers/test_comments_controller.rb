@@ -2,7 +2,8 @@ class TestCommentsController < ApplicationController
   before_action :set_category, only: %i[index new create show edit update]
 
   def index
-    @test_comments = @category.test_comments.includes(:user, :souvenir_photo).order(created_at: :desc).page(params[:page]).per(6)
+    @q = @category.test_comments.ransack(params[:q])
+    @test_comments = @q.result(distinct: true).includes(:user, :souvenir_photo).order(created_at: :desc).page(params[:page]).per(6)
   end
 
   def new
@@ -17,7 +18,7 @@ class TestCommentsController < ApplicationController
       redirect_to category_test_comments_path(@category), success: t('.success')
     else
       @souvenir = SouvenirPhoto.find(test_comment_params[:souvenir_photo_id])
-      flash.now[:error] = t('.failt')
+      flash.now[:error] = t('.failed')
       render :new, status: :unprocessable_entity
     end
   end
@@ -39,8 +40,29 @@ class TestCommentsController < ApplicationController
     if @test_comment.update(test_comment_params)
       redirect_to category_test_comment_path(@category, @test_comment), success: t('.success')
     else
-      flash.now[:error] = t('.failt')
+      flash.now[:error] = t('.failed')
       render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def search_content
+    @test_comments = TestComment.where("content LIKE ?", "%#{params[:q]}%")
+    search_results(:content)
+  end
+
+  def search_user_name
+    @test_comments = TestComment.joins(:user).where("users.name LIKE ?", "%#{params[:q]}%")
+    search_results(:user_name)
+  end
+
+  def search_souvenir
+    @test_comments = TestComment.joins(:souvenir_photo).where("souvenir_photos.name LIKE ?", "%#{params[:q]}%")
+    search_results(:souvenir_photo_name)
+  end
+
+  def search_results(search_type)
+    respond_to do |format|
+      format.js { render partial: 'search_result', locals: { test_comments: @test_comments, search_type: search_type } }
     end
   end
 
