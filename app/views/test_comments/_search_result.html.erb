@@ -1,0 +1,18 @@
+<% test_comments.each do |test_comment| %>
+  <% if search_type == :content && test_comment.content.present? %>
+    <li role="option" data-autocomplete-value="<%= test_comment.id %>" data-autocomplete-label="<%= test_comment.content %>"
+                  class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 rounded-lg w-60">
+      <%= test_comment.content %>
+    </li>
+  <% elsif search_type == :user_name && test_comment.user.name.present? %>
+    <li role="option" data-autocomplete-value="<%= test_comment.id %>" data-autocomplete-label="<%= test_comment.user.name %>"
+                  class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 rounded-lg w-60">
+      <%= test_comment.user.name %>
+    </li>
+  <% elsif search_type == :souvenir_photo_name && test_comment.souvenir_photo.present? %>
+    <li role="option" data-autocomplete-value="<%= test_comment.id %>" data-autocomplete-label="<%= test_comment.souvenir_photo.name %>"
+                  class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 rounded-lg w-60">
+      <%= test_comment.souvenir_photo.name %>
+    </li>
+  <% end %>
+<% end %>
