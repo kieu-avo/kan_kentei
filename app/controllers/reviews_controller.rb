@@ -37,10 +37,11 @@ class ReviewsController < ApplicationController
           review_id: review
         )
 
-        unless @user_review_answer.save
-          flash.now[:error] = t('.blank')
-          render :new, status: :unprocessable_entity and return
-        end
+        next if @user_review_answer.save
+
+        flash.now[:error] = t('.blank')
+        render :new, status: :unprocessable_entity
+        break
       end
     end
 
