@@ -3,7 +3,6 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: %i[index new create]
 
   def index
-    @total_users = UserReviewAnswer.select(:user_id).distinct.count
     @average_ratings = {}
 
     @reviews.each do |review|
@@ -14,6 +13,8 @@ class ReviewsController < ApplicationController
                                       0
                                     end
     end
+
+    @total_users = UserReviewAnswer.count_user_answer(@category)
   end
 
   def new
