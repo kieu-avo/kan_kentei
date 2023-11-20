@@ -2,18 +2,30 @@
 <div class="background-image">
   <div class="container pt-32 mx-auto text-center">
     <h1 class="md:text-3xl text-2xl"><%= @category.title %>級に合格した仲間達</h1>
-    <div class="md:grid md:grid-cols-2 md:gap-4 flex flex-wrap place-items-center pt-20 justify-center px-5">
-      <%= render @test_comments, category: @category, souvenir: @souvenir %>
-    </div>
-    <div class="flex justify-center pb-10">
-      <% if params[:from_passed_list] == "true" %>
-        <%= link_to t('defaults.back'), passed_lists_path, class:"btn primary btn-lg bg-zinc-700 text-white" %>
-      <% else %>
-        <%= link_to t('defaults.categories'), categories_path,  class:"btn primary btn-lg bg-zinc-700 text-white" %>
-      <% end %>
-    </div>
+
+    <!--検索-->
+    <%= render 'search_form' %>
+    <% if @test_comments.present? %>
+      <div class="md:grid md:grid-cols-2 md:gap-4 flex flex-wrap place-items-center pt-20 justify-center px-5">
+        <%= render @test_comments, category: @category, souvenir: @souvenir %>
+      </div>
+      <div class="flex justify-center pb-10">
+        <% if params[:from_passed_list] == "true" %>
+          <%= link_to t('defaults.back'), passed_lists_path, class:"btn primary btn-lg bg-zinc-700 text-white" %>
+        <% else %>
+          <%= link_to t('defaults.categories'), categories_path,  class:"btn primary btn-lg bg-zinc-700 text-white" %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="flex items-center justify-center pt-20 pb-60">
+        <%= image_tag 'sorry.png', class: "w-20" %>
+        <p class="md:text-2xl text-xl">お探しの内容は見つかりませんでした。</p>
+      </div>
+    <% end %>
+
+    <!--ページネーション-->
     <div class="py-10">
-    <%= paginate @test_comments %>
+      <%= paginate @test_comments %>
     </div>
   </div>
 </div>
