@@ -25,7 +25,7 @@ QuizChoice.create!(
 )
 
 QuizChoice.create!(
-  content: "ケロウナ(Kelowna",
+  content: "ケロウナ(Kelowna)",
   correct_answer: true,
   explanation: "ケロウナはカナダ人が老後に住みたい都市の一つです。海はありませんが、巨大なオカナガン湖が流れています。夏になると自家用ボートを湖に浮かべて、家族や友人とボートの上でゆったりした時間を過ごします。 ワインナリーが有名で、約数十ヶ所もあるそうです。ワインのティスティングがおすすめですが、もちろんワインを飲まなくてもワインナリーの景色やレストランを楽しむのもおすすめです！",
   image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/canada/q1_exp.jpg",
@@ -52,7 +52,7 @@ QuizChoice.create!(
   content: "オタワ(Ottawa)",
   correct_answer: true,
   explanation: "カナダの首都はオタワです。「オワタ」と言いたくなりますが、正しくは「オタワ」ですのでご注意を。バンクーバーとトロントが目立ちすぎて少し存在感が薄いですが、田舎過ぎず都会すぎず落ち着いているところです。",
-  image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/canada/q3_exp.jpg",
+  image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/canada/q2_exp.jpg",
   quiz: quiz2
 )
 
@@ -84,7 +84,7 @@ QuizChoice.create!(
   content: "牛乳がプラスチックの袋に入っている",
   correct_answer: true,
   explanation:"牛乳の袋を専用のピッチャーにセットして、そのままコップに注いで飲みます。日本では見ない光景ですね！ちなみに、バンクーバーがある西部ではプラスチックの袋に入った牛乳は販売されていません。",
-  image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/canada/q2_exp.jpeg",
+  image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/canada/q3_exp.jpeg",
   quiz: quiz3
 )
 
@@ -243,7 +243,7 @@ QuizChoice.create!(
 QuizChoice.create!(
   content: "プーティン",
   correct_answer: true,
-  explanation: "⑧プーティンはフライドポテトの上にグレイビーソース（肉汁のソース）をかけた、カナダの数少ない料理の一つです。最初の数口は美味しいのですが、後半はちょっと飽きてきて、やはり普通のフライドポテトが一番美味しいと感じることも。グレイビーソースが定番ですが、お店によっては色んなソースやトッピングを提供しているお店もあります。",
+  explanation: "⑧プーティンはフライドポテトの上にグレイビーソース（肉汁のソース）をかけた、カナダの数少ない料理の一つです。最初の数口は美味しいのですが、後半は少し飽きてきて、やはり普通のフライドポテトが一番美味しいと感じることも。グレイビーソースが定番ですが、お店によっては色んなソースやトッピングを提供しているお店もあります。",
   image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/canada/q8_exp.jpg",
   quiz: quiz8
 )
