@@ -1,6 +1,6 @@
 <%= search_form_for @q, url: category_test_comments_path, method: :get do |f| %>
   <div class="flex justify-center space-x-20">
-    <div class="flex space-x-1 pt-10 md:pt-20 px-5 justify-center">
+    <div class="flex flex-col md:flex-row space-x-2 pt-10 md:pt-20 px-5 justify-center">
       <div data-controller="autocomplete" data-autocomplete-url-value="<%= search_content_category_test_comments_path %>" role="combobox">
         <%= f.search_field :content_cont, data: { autocomplete_target: 'input' }, class: "input input-bordered w-60 rounded-lg", placeholder: "コメント" %>
         <%= f.hidden_field :content, data: { autocomplete_target: 'hidden' } %>
@@ -16,8 +16,10 @@
         <%= f.hidden_field :souvenir_photo_name, data: { autocomplete_target: 'hidden' } %>
         <ul class="list-group" data-autocomplete-target="results"></ul>
       </div>
-      <%= link_to t('test_comments.index.reset'), category_test_comments_path, class: "btn btn-outline bg-color-400 text-white text-base" %>
-      <%= f.submit t('defaults.search'), class: "btn btn-md btn-outline bg-gray-700 text-white text-base" %>
+      <div>
+        <%= link_to t('test_comments.index.reset'), category_test_comments_path, class: "btn md:btn-md btn-outline bg-color-400 text-white text-base md:mt-0 mt-5" %>
+        <%= f.submit t('defaults.search'), class: "btn btn-md btn-outline bg-gray-700 text-white text-base" %>
+      </div>
     </div>
   </div>
 <% end %>

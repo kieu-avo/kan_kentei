@@ -3,7 +3,6 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: %i[index new create]
 
   def index
-    @total_users = UserReviewAnswer.select(:user_id).distinct.count
     @average_ratings = {}
 
     @reviews.each do |review|
@@ -14,6 +13,8 @@ class ReviewsController < ApplicationController
                                       0
                                     end
     end
+
+    @total_users = UserReviewAnswer.count_user_answer(@category)
   end
 
   def new
@@ -36,10 +37,11 @@ class ReviewsController < ApplicationController
           review_id: review
         )
 
-        unless @user_review_answer.save
-          flash.now[:error] = t('.blank')
-          render :new, status: :unprocessable_entity and return
-        end
+        next if @user_review_answer.save
+
+        flash.now[:error] = t('.blank')
+        render :new, status: :unprocessable_entity
+        break
       end
     end
 

@@ -16,7 +16,7 @@ gift2 = SouvenirPhoto.create!(
 
 gift3 = SouvenirPhoto.create!(
   name: "自転車のベル", 
-  explanation: "ゴッホのアーモンドの花とコラボです！",
+  explanation: "ゴッホの「花咲くアーモンドの木の枝」とコラボです！",
   image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/netherlands/bell_sou.jpeg",
   test_category: netherlands
 )

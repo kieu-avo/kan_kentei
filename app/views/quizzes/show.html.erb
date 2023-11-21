@@ -30,8 +30,11 @@
     <!--クイズ一覧を表示-->
     <% @quizzes.each do |quiz| %>
       <div class="container mb-10 py-10 rounded-lg bg-neutral-50 bg-opacity-90">
-        <div class="px-5">
+        <div class="md:px-10 px-5">
           <p class="text-3xl"><%= simple_format(quiz.content, class:"text-2xl") %></p>
+          <div class="w-3/5 mx-auto pt-5">
+            <%= image_tag(quiz.image_url) if quiz.image_url.present? %>
+          </div>
         </div>
         <!--選択肢、ユーザーの回答、正解を表示-->
         <div class="flex md:flex-row flex-col justify-center md:space-x-16 space-x-0 md:space-y-0 space-y-4 px-10 py-10 md:text-xl text-lg">
@@ -51,13 +54,13 @@
           <% end %>
         </div>
         <!--解説を表示-->
-        <div class="<%= 'md:text-xl text-lg pt-5 border-dashed border-t-2 border-stone-400 px-10' + (has_image?(quiz) ? ' md:flex space-x-5' : '' )%>">
+        <div class="md:text-xl text-lg pt-5 border-dashed border-t-2 border-stone-400 px-10">
           <% quiz.quiz_choices.each do |choice| %>
             <% if choice.correct_answer %>
               <div class="py-5">
                 <p><%= simple_format(choice.explanation) %></p>
               </div>
-              <div class="w-3/5 pl-16">
+              <div class="w-3/5 mx-auto">
                 <%= image_tag(choice.image_url) if choice.image_url.present? %>
               </div>
             <%end %>

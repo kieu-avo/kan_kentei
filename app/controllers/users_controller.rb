@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       auto_login(@user)
       redirect_to categories_path, success: t('.success')
     else
-      flash.now[:error] = t('.fail')
+      flash.now[:error] = t('.failed')
       render :new, status: :unprocessable_entity
     end
   end

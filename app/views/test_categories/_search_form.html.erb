@@ -1,5 +1,5 @@
 <%= search_form_for @q, url: categories_path, method: :get do |f| %>
-  <div class="flex justify-center space-x-20">
+  <div class="flex justify-center space-x-20 md:pr-10">
     <div class="flex space-x-1 pt-10 md:pt-20 px-5 justify-center">
       <div data-controller="autocomplete" data-autocomplete-url-value="<%= search_result_categories_path %>" role="combobox">
         <%= f.search_field :title_cont, data: { autocomplete_target: 'input' }, class: "input input-bordered w-full rounded-lg", placeholder: "都道府県名・国名" %>

@@ -8,11 +8,11 @@
     <div class="container flex flex-col items-centers">
       <div class="cotainer py-5 md:text-2xl flex flex-col items-center">
         <%= f.label :email, User.human_attribute_name(:email) %>
-        <%= f.email_field :email, class:"input input-bordered md:w-1/4" %>
+        <%= f.email_field :email, class:"input input-bordered w-full max-w-xs" %>
       </div>
       <div class="cotainer py-5 md:text-2xl flex flex-col items-center">
         <%= f.label :password, User.human_attribute_name(:password) %>
-        <%= f.password_field :password, class:"input input-bordered md:w-1/4" %>
+        <%= f.password_field :password, class:"input input-bordered w-full max-w-xs" %>
       </div>
     </div>
     <div class="text-xl text-center">

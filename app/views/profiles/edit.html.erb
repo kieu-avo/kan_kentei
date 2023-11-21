@@ -6,11 +6,11 @@
     <div class="container flex flex-col items-centers text-xl">
       <div class="cotainer py-5 flex flex-col items-center">
         <%= f.label :name, User.human_attribute_name(:name) %>
-        <%= f.text_field :name, class:"input input-bordered md:w-1/4" %>
+        <%= f.text_field :name, class:"input input-bordered w-full max-w-xs" %>
       </div>
       <div class="cotainer py-5 flex flex-col items-center">
         <%= f.label :email, User.human_attribute_name(:email) %>
-        <%= f.email_field :email, class:"input input-bordered md:w-1/4" %>
+        <%= f.email_field :email, class:"input input-bordered w-full max-w-xs" %>
       </div>
       <div class="cotainer py-5 flex flex-col items-center">
         <div class="form-control w-full max-w-xs">
