@@ -14,7 +14,7 @@
       <th class="pb-11 flex flex-col text-center"><%= User.human_attribute_name(:email) %>: </br><%= current_user.email %></th>
     </tr>
   </table>
-  <div class="flex justify-center">
+  <div class="flex justify-center pb-20">
     <%= image_tag current_user.avatar.url, class: "border-solid border-2 border-neutral-400 rounded-lg" %>
   </div>
 </div>
