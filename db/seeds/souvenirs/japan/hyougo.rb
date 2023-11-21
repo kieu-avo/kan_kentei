@@ -24,7 +24,7 @@ gift1 = SouvenirPhoto.create!(
 gift1 = SouvenirPhoto.create!(
   name: "神戸牛", 
   explanation: nil,
-  image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/hyougo/q1_exp.jpg",
+  image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/hyougo/kobebeef_sou.jpg",
   test_category: hyougo
 )
 

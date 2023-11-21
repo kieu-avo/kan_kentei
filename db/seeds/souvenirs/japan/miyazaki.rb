@@ -1,7 +1,7 @@
 miyazaki = TestCategory.find_by(title: "宮崎")
 
 gift1 = SouvenirPhoto.create!(
-  name: "マンゴー", 
+  name: "宮崎県産のマンゴー", 
   explanation: nil,
   image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/miyazaki/q6_exp.jpg",
   test_category: miyazaki

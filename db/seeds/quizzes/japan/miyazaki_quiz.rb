@@ -75,7 +75,7 @@ quiz3 = Quiz.create!(
 QuizChoice.create!(
   content: "オーシャンドーム",
   correct_answer: true,
-  explanation: "オーシャンドームは1993年に開業しましたが、入場客の減少により2007年に閉鎖されました。オーシャンドームに行ったことがある方にとって施設がなくなるのは悲しいことですね... こちらの写真は当時販売されていた公式キャラクターのキーホルダーです。",
+  explanation: "オーシャンドームは1993年に開業しましたが、入場者数の減少により2007年に閉鎖されました。オーシャンドームに行ったことがある方にとって、施設がなくなるのは悲しいことですね... ",
   image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/miyazaki/q3_exp.jpg",
   quiz: quiz3
 )
@@ -89,7 +89,7 @@ QuizChoice.create!(
 )
 
 QuizChoice.create!(
-  content: "メガオーシャンs",
+  content: "メガオーシャンドーム",
   correct_answer: false,
   explanation: nil,
   image_url: nil,
@@ -107,7 +107,7 @@ quiz4 = Quiz.create!(
 QuizChoice.create!(
   content: "フェニックス",
   correct_answer: true,
-  explanation: "宮崎の有名な木『フェニックス』は、自生していたのではなく、大正時代にアメリカから種を輸入して育てられたものです。フェニックスはヤシ科の樹木で、病害虫に強く、寿命が長いことから『フェニックス』と名付けられました。",
+  explanation: "県の木とされている『フェニックス』は、自生していたのではなく、大正時代にアメリカから種を輸入して育てられたものです。フェニックスはヤシ科の樹木で、病害虫に強く、寿命が長いことから『フェニックス』と名付けられました。",
   image_url: nil,
   quiz: quiz4
 )
@@ -147,7 +147,7 @@ QuizChoice.create!(
 QuizChoice.create!(
   content: "新幹線が通ってない",
   correct_answer: true,
-  explanation: "県民の方はもちろん、他県の方も感じています。宮崎県当てに、交通の便が悪いので新幹線を開通してほしいという声が届いており、県は開通できるように国などに要望活動を行っているそうです。早く開通してほしいですね。https://www.pref.miyazaki.lg.jp/kense/koho/kenminnokoe/koe_page/20201002113044.html",
+  explanation: "県民の方はもちろん、他県の方も感じています。宮崎県に対して、交通の便が悪いので新幹線を開通してほしいという声が届いており、県は開通できるように国などに要望活動を行っているそうです。早く開通してほしいですね。\n https://www.pref.miyazaki.lg.jp/kense/koho/kenminnokoe/koe_page/20201002113044.html",
   image_url: nil,
   quiz: quiz5
 )
