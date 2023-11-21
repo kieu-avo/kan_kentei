@@ -20,8 +20,11 @@
         <% @quizzes.each do |quiz| %>
           <div class="py-10 border-dashed border-b-2 border-stone-400">
             <%= simple_format(quiz.content, class:"md:text-3xl text-2xl") %>
+            <div class="w-3/5 mx-auto pt-5">
+              <%= image_tag(quiz.image_url) if quiz.image_url.present? %>
+            </div>
             <% quiz.quiz_choices.each do |choice| %>
-              <div class="flex pt-5 px-10 space-x-2">
+              <div class="flex pt-5 px-10 ">
                 <div>
                   <%= f.radio_button "answers[#{quiz.id}]", 
                         choice.id, 
