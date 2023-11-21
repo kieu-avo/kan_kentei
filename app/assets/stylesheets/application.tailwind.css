@@ -14,10 +14,6 @@ body {
   @apply pt-4;
 }
 
-.explain_for_md {
-  @apply py-2 
-}
-
 .about:hover  {
   background-color: rgb(171,213,219);
 }
