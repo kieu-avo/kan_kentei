@@ -23,7 +23,7 @@
       <% end %>
     </div>
   </div>
-  <div class="text-2xl flex space-x-5 items-center pt-10 pb-20 px-40">
+  <div class="md:text-4xl text-3xl flex space-x-5 items-center pt-10 pb-20 px-40 md:pl-28">
     <% if current_user.own?(test_comment) %>
       <div>
         <%= link_to "https://twitter.com/share?url=#{root_url}&text=#{category.title}級に合格しました。%0A同じ級に合格したみんなよろしくね🤝&hashtags=勘検定,#{category.title},旅", target: '_blank', data: { toggle: "tooltip", placement: "bottom" }, title: "Xでシェア" do %>
