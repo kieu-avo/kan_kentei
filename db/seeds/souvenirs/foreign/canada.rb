@@ -23,7 +23,7 @@ gift3 = SouvenirPhoto.create!(
 
 gift4 = SouvenirPhoto.create!(
   name: "オゴポゴのマスコット", 
-  explanation: "ケロウナのアイドルです。",
+  explanation: "昔からオカナガン湖に棲んでいると伝えられる水棲の未確認動物で、ケロウナのアイドルです。",
   image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/canada/ogopogo_sou.jpg",
   test_category: canada
 )

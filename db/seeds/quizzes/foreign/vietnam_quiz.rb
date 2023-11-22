@@ -19,7 +19,7 @@ QuizChoice.create!(
 QuizChoice.create!(
   content: "ハノイ(Hà Nội)",
   correct_answer: true,
-  explanation: "よくホーチミンと勘違いされますが、首都はハノイです。ホーチミンは南部に位置し、ハノイは北部に位置しています。",
+  explanation: "よくホーチミンと間違えられますが、首都はハノイです。ホーチミンは南部に位置し、ハノイは北部に位置しています。東京と大阪のように、ハノイとホーチミンの発音が違います。",
   image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/vietnam/q1_exp.png",
   quiz: quiz1
 )
@@ -156,7 +156,7 @@ QuizChoice.create!(
 QuizChoice.create!(
   content: "パイナップル",
   correct_answer: true,
-  explanation: "たっぷりの野菜と魚が入った甘酸っぱい味わいの魚介スープで、「canh （スープー）chua（酸っぱい）」とよびます。一部の日本人には好まれない傾向があります。",
+  explanation: "魚とたっぷりの野菜が入った甘酸っぱい味わいの魚介スープで、「canh （スープー）chua（酸っぱい）」とよびます。一部の日本人には好まれない傾向があります。",
   image_url: nil,
   quiz: quiz5
 )
@@ -172,7 +172,7 @@ quiz6 = Quiz.create!(
 QuizChoice.create!(
   content: "女性の日",
   correct_answer: true,
-  explanation: "⑥10月20日はベトナムの女性の日です。彼女や奥さんにプレゼントをするのはもちろん、職場の女性にもプレゼントを渡さないと評価が下がることもあります（もちろん地域や個人にもよります）。",
+  explanation: "⑥10月20日はベトナムの女性の日です。女性たちの社会的・文化的な貢献を称える日で、ベトナム全体で広く祝われています。彼女や奥さんにプレゼントをするのはもちろん、同僚など日頃からお世話になっている女性にもプレゼントを贈ります（もちろん地域や個人にもよります）。",
   image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/vietnam/q6_exp.jpg",
   quiz: quiz6
 )

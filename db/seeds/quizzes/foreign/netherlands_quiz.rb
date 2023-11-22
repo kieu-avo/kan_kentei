@@ -27,7 +27,7 @@ QuizChoice.create!(
 QuizChoice.create!(
   content: "フィンセント・ファン・ゴッホ",
   correct_answer: true,
-  explanation: "首都アムステルダムにゴッホ美術館（Van Gogh Museum）があります。有名なひまわりの絵の素描や、手紙、絵画などが約200点以上が展示されています。ゆっくり見る場合は一日はかかります。音声ガイドを聞きながらみると面白いのでおすすめです（会場でレンタルができます）。お土産コーナーも充実していますので、最後に立ち寄るのをお忘れずに！",
+  explanation: "首都アムステルダムにゴッホ美術館（Van Gogh Museum）があります。有名なひまわりの絵の素描や、手紙、絵画など約200点以上が展示されています。ゆっくり見る場合は一日はかかります。音声ガイドを聞きながら鑑賞すると面白いのでおすすめです（会場でレンタルすることができます）。お土産コーナーも充実していますので、最後に立ち寄るのをお忘れずに！",
   image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/netherlands/q1_exp.jpeg",
   quiz: quiz1
 )
@@ -43,7 +43,7 @@ quiz2 = Quiz.create!(
 QuizChoice.create!(
   content: "ハイネケン",
   correct_answer: true,
-  explanation: "ビール工場の見学ができたり、ゴッホとコラボしたビールボトルがありますので、気になった方はオランダに来たら是非立ち寄ってみてください。行かれる際は事前にチケットを購入した方がスムーズに入場ができるのでお勧めです。",
+  explanation: "ビール工場の見学ができます。ゴッホとコラボしたビールボトルがありますので、気になった方はオランダに来たら是非立ち寄ってみてください。行く際は事前にチケットを購入した方がスムーズに入場できるのでお勧めです。",
   image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/netherlands/q2_exp.jpeg",
   quiz: quiz2
 )
@@ -91,7 +91,7 @@ QuizChoice.create!(
 QuizChoice.create!(
   content: "165",
   correct_answer: true,
-  explanation: "約165の運河が流れていると言われています。クルージングしているお客さんに手を振ると振り返ってきます。これはアムステルダムの散策時のお楽しみポイントです。みなさんもクルージングをしたら是非歩いている人に手を振ってみてください！",
+  explanation: "アムステルダムには約165の運河が流れていると言われています。クルージングしているお客さんに手を振ると、彼らは振り返ってくれます。これもアムステルダムを散策する際の楽しみの一つです。もしクルージングをする機会があれば、是非歩行者に手を振ってみてください！",
   image_url: nil,
   quiz: quiz3
 )
@@ -179,7 +179,7 @@ QuizChoice.create!(
 QuizChoice.create!(
   content: "キンデルダイク＝エルスハウト",
   correct_answer: true,
-  explanation: "⑥キンデルダイク＝エルスハウトの風車群は世界遺産に登録されています。18世紀に建てられた19基の風車のうち、現在も稼働しているのは数機だけです。現在でも稼働しているのは珍しいことです。風車の中は住居となっており、当時の生活を見ることができます。「Kinderdijk UNESCO Official」というアプリをダウンロードすると、歴史などを教えてくれます。周囲はのどかで平和で、ゆっくりとした時間を過ごすことができます！キンデルダイク以外にも風車を見られるところはあります。",
+  explanation: "⑥キンデルダイク＝エルスハウトの風車群（合計で19基）は世界遺産に登録されています。18世紀に建てられたこれら19基の風車のうち、現在も稼働しているのは数基のみですが、これは珍しいことです。風車の内部は住居として使われており、当時の生活様式を垣間見ることができます。『Kinderdijk UNESCO Official』というアプリをダウンロードすれば、風車群の歴史などを詳しく知ることができます。周囲はのどかで平和で、ゆっくりとした時間を過ごすことができます！キンデルダイクの他にも、オランダ国内には多くの風車を見られる場所があります。",
   image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/netherlands/q6_exp.jpeg",
   quiz: quiz6
 )

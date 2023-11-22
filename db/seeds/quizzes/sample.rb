@@ -5,7 +5,7 @@ quiz1 = Quiz.create!(
   content: "①日本で友達になったベトナム人の友人に会うために、ベトナムの首都へ向かっています。初めてのベトナム旅行で少し緊張していますが、10年ぶりに友人に会えるのがとても楽しみです！さて、首都の名前はなんでしょうか？",
   youtube_url: nil,
   image_url: nil,
-  test_category: sample
+  test_category: sample 
 )
 
 QuizChoice.create!(
@@ -19,7 +19,7 @@ QuizChoice.create!(
 QuizChoice.create!(
   content: "ハノイ(Hà Nội)",
   correct_answer: true,
-  explanation: "よくホーチミンと勘違いされますが、首都はハノイです。ホーチミンは南部に位置し、ハノイは北部に位置しています。",
+  explanation: "よくホーチミンと間違えられますが、首都はハノイです。ホーチミンは南部に位置し、ハノイは北部に位置しています。東京と大阪のように、ハノイとホーチミンの発音が違います。",
   image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/vietnam/q1_exp.png",
   quiz: quiz1
 )
@@ -37,7 +37,7 @@ quiz2 = Quiz.create!(
   content: "②無事に友人宅に到着しました。明日はその友人の誕生日なので、あるものをプレゼントしたらびっくりされました。その反応は嬉しいものではなく、ショックな反応でした。そのプレゼントとは何でしょう？",
   youtube_url: nil,
   image_url: nil,
-  test_category: sample
+  test_category: sample 
 )
 
 QuizChoice.create!(
@@ -69,7 +69,7 @@ quiz3 = Quiz.create!(
   content: "③その友達には生後3ヶ月の赤ちゃんがいます。ニコニコしていて可愛かったので、「かわいい〜」と言って赤ちゃんを褒めたら、友達に注意されました。これはなぜでしょうか？",
   youtube_url: nil,
   image_url: nil,
-  test_category: sample
+  test_category: sample 
 )
 
 QuizChoice.create!(
