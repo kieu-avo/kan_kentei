@@ -18,7 +18,7 @@ document.addEventListener('turbo:load', function() {
         starOff: elem.dataset.starOff,
         starHalf: elem.dataset.starHalf,
         scoreName: isReadyOnly ? undefined : 'user_review_answer[rating][' + reviewId + ']',
-        score: isReadyOnly ? elem.dataset.socore : undefined,
+        score: isReadyOnly ? elem.dataset.score : undefined,
         readOnly: isReadyOnly
       };
       window.raty(elem, opt);
