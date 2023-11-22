@@ -11,7 +11,9 @@ document.addEventListener('turbo:load', function() {
   $('.review-item').each(function() {
     var reviewId = $(this).data('review-id');
     let elem = document.querySelector('#star-rating-' + reviewId);
-    if (elem) {
+    if (elem && !elem.dataset.initialized) {
+      elem.dataset.initialized = true; 
+
       let isReadyOnly = elem.hasAttribute('data-score');
       let opt = {
         starOn: elem.dataset.starOn,
