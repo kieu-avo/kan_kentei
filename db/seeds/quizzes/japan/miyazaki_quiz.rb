@@ -108,7 +108,7 @@ QuizChoice.create!(
   content: "フェニックス",
   correct_answer: true,
   explanation: "県の木とされている『フェニックス』は、自生していたのではなく、大正時代にアメリカから種を輸入して育てられたものです。フェニックスはヤシ科の樹木で、病害虫に強く、寿命が長いことから『フェニックス』と名付けられました。",
-  image_url: nil,
+  image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/miyazaki/q4_exp.jpg",
   quiz: quiz4
 )
 
