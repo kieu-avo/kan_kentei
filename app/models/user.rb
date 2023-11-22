@@ -1,9 +1,10 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
-  has_many :user_quiz_answers
+  has_many :user_quiz_answers, dependent: :destroy
   has_many :quizzes, through: :user_quiz_answers
   has_many :quiz_choices, through: :user_quiz_answers
+
   has_many :quiz_results
   has_many :souvenir_photos, through: :test_comments
   has_many :user_review_answers, dependent: :destroy
