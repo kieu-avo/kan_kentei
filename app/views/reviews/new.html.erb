@@ -19,8 +19,12 @@
         </div>
       <% end %>
       <div class="container flex justify-center items-center py-10 pt-28">
-      <%= f.submit t('defaults.submit'), class:"btn primary btn-lg bg-zinc-700 text-white font-sans" %>
-    </div>
+        <% if @user_review_answer.errors.present? %>
+          <%= link_to t('defaults.back'), :back, class:"btn primary btn-lg bg-zinc-700 text-white font-sans" %>
+        <% else %>
+          <%= f.submit t('defaults.submit'), class:"btn primary btn-lg bg-zinc-700 text-white font-sans" %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
