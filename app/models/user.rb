@@ -29,6 +29,7 @@ class User < ApplicationRecord
     quiz_results.includes(:test_category).where(is_passed: true)
   end
 
+  # reviews/create用のメソッド
   def already_reviewed?(category)
     UserReviewAnswer.joins(:review).where(user_id: id, reviews: { test_category_id: category.id }).exists?
   end
