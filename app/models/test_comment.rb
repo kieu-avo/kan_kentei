@@ -5,13 +5,11 @@ class TestComment < ApplicationRecord
 
   validates :content, presence: true, length: { maximum: 48 }
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["content", "created_at", "id", "souvenir_photo_id", "test_category_id", "updated_at", "user_id"]
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[content created_at id souvenir_photo_id test_category_id updated_at user_id]
   end
 
-  def self.ransackable_associations(auth_object = nil)
-    ["souvenir_photo", "test_category", "user"]
+  def self.ransackable_associations(_auth_object = nil)
+    %w[souvenir_photo test_category user]
   end
-  
-
 end
