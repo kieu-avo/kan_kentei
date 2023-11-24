@@ -23,7 +23,7 @@ gift3 = SouvenirPhoto.create!(
 
 gift4 = SouvenirPhoto.create!(
   name: "chả giò", 
-  explanation: "揚げ春巻きです。日本でよく食べる揚げ春巻きは餡にとろみがありますが、ベトナムの揚げ春巻きはとろみはありません。挽肉や海老が入っており、程よいしょっぱさで、ご飯とお酒がすすみます。読み方は「チャー　ヨア」で、南部は「ヨア」と発音しますが、北部では「ゾア」と発音をします。地域によっては呼び方が違います。",
+  explanation: "揚げ春巻きです。日本の揚げ春巻きは餡にとろみがありますが、ベトナムのはとろみはありません。挽肉、海老、野菜、春雨などが入っており、程よいしょっぱさでご飯とお酒がすすみます。読み方は「チャー　ヨア」で、南部は「ヨア」と発音しますが、北部では「ゾア」と発音をします。地域によっては呼び方が違います。",
   image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/vietnam/chalam_sou.jpg",
   test_category: vietnam
 )
