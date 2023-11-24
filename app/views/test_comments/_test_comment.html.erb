@@ -16,7 +16,7 @@
       <p>【<%= SouvenirPhoto.human_attribute_name(:name) %>】</p>
       <%if test_comment.souvenir_photo.image_url.present? %>
         <p><%= test_comment.souvenir_photo.name %></p>
-        <%= image_tag test_comment.souvenir_photo.image_url, class:"rounded-lg md:w-66 w-40 pt-2" %>
+        <%= image_tag test_comment.souvenir_photo.image_url, class:"rounded-lg md:w-66 w-48 md:h-40 h-32 pt-2" %>
       <% else %>
         <p><%= test_comment.souvenir_photo.name %></p>
         <%= image_tag "no_image.jpg", class: "rounded-lg md:w-44 w-32 md:h-40 h-28" %>
