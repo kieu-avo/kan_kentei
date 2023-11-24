@@ -7,9 +7,8 @@ class UserReviewAnswer < ApplicationRecord
 
   def self.count_user_answer(category)
     joins(:review)
-    .where(review: { test_category_id: category.id })
-    .select(:user_id)
-    .distinct.count
+      .where(review: { test_category_id: category.id })
+      .select(:user_id)
+      .distinct.count
   end
 end
-

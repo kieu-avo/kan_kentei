@@ -6,7 +6,7 @@ class TestCategoriesController < ApplicationController
     @categories = @q.result(distinct: true)
     @vietnam_quiz = TestCategory.find_by(title: "ベトナム")
   end
-  
+
   def search_result
     @categories = TestCategory.where('LOWER(title) LIKE ?', "%#{params[:q]}%")
     respond_to do |format|

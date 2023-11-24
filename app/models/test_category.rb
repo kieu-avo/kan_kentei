@@ -5,7 +5,7 @@ class TestCategory < ApplicationRecord
   has_many :test_comments, dependent: :destroy
   has_many :reviews, dependent: :destroy
 
-  def self.ransackable_attributes(auth_object = nil)
+  def self.ransackable_attributes(_auth_object = nil)
     ["title"]
   end
 end
