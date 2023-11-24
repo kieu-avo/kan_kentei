@@ -62,7 +62,7 @@ class TestCommentsController < ApplicationController
 
   def search_results(search_type)
     respond_to do |format|
-      format.js { render partial: 'search_result', locals: { test_comments: @test_comments, search_type: search_type } }
+      format.js { render partial: 'search_result', locals: { test_comments: @test_comments, search_type: } }
     end
   end
 

@@ -4,8 +4,6 @@ class ApplicationController < ActionController::Base
   add_flash_types :success, :error
 
   def not_authenticated
-   redirect_to login_path, error: t('defaults.require_login')
+    redirect_to login_path, error: t('defaults.require_login')
   end
-
-
 end

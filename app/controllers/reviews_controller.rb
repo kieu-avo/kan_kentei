@@ -29,23 +29,12 @@ class ReviewsController < ApplicationController
   def create
     if current_user.already_reviewed?(@category)
       redirect_to new_category_test_comment_path(category_id: @category.id)
+    elsif save_user_review
+      redirect_to new_category_test_comment_path(category_id: @category.id), success: t('.thanks')
     else
-      user_review_params[:rating].each do |review, rating|
-        @user_review_answer = UserReviewAnswer.new(
-          rating: rating.to_f,
-          user_id: current_user.id,
-          review_id: review
-        )
-
-        next if @user_review_answer.save
-
-        flash.now[:error] = t('.blank')
-        render :new, status: :unprocessable_entity
-        break
-      end
+      flash.now[:error] = t('.blank')
+      render :new, status: :unprocessable_entity
     end
-
-    redirect_to new_category_test_comment_path(category_id: @category.id), success: t('.thanks')
   end
 
   private
@@ -60,5 +49,20 @@ class ReviewsController < ApplicationController
 
   def user_review_params
     params.require(:user_review_answer).permit(:user_id, :review_id, rating: {})
+  end
+
+  def save_user_review
+    ActiveRecord::Base.transaction do
+      user_review_params[:rating].each do |review, rating|
+        @user_review_answer = UserReviewAnswer.new(
+          rating: rating.to_f,
+          user_id: current_user.id,
+          review_id: review
+        )
+
+        return false unless @user_review_answer.save
+      end
+    end
+    true
   end
 end
