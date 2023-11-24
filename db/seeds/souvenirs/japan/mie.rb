@@ -24,7 +24,7 @@ gift3 = SouvenirPhoto.create!(
 gift4 = SouvenirPhoto.create!(
   name: "シュルレーヌ", 
   explanation: "G7三重・伊勢志摩交通大臣会合の休憩時のお供として選定されました。",
-  image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/mie/shelllemu_sou.jpgs",
+  image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/mie/shelllemu_sou.jpg",
   test_category: mie 
 )
 
