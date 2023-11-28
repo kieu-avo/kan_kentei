@@ -15,7 +15,7 @@
   </div>
 
   <!--カテゴリ表示-->
-  <div class="md:mr-26 md:mx-auto ml-8 mt-20 flex flex-col md:flex-row justify-center md:space-x-20">
+  <div class="md:mr-26 md:mx-auto ml-8 md:mt-10 mt-20 flex flex-col md:flex-row justify-center md:space-x-20">
     <% if @categories.any? %>
       <div class="md:px-20 px-12 md:max-w-fit w-11/12 pb-5 rounded-lg bg-neutral-50 bg-opacity-90">
         <p class="pb-5 pt-3 text-xl text-center font-black">🇯🇵 日本編 🇯🇵</p>
@@ -37,11 +37,15 @@
     <% end %>
   </div>
 
-  <!--写真かgooglemapを表示-->
-  <div class="flex justify-center space-x-20 pt-10 md:px-20">
-    <%= image_tag 'map3.png', class:"w-96 md:w-fit" %>
+  <!--googlemap表示-->
+  <%= javascript_include_tag 'google_map' %>
+  <div class="search-box pt-10">
+    <input id="place-search" type="text" placeholder="場所を検索" class="input input-bordered w-full max-w-xs" />
   </div>
-
-
+  <div id="map" class="google-map">
+    <script async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoSrUoaWyWK-21yCPgb0YkzSwYmpnTSeI&libraries=places&region=JP&language=ja&callback=initMap">
+    </script>
+  </div>
 
 </div>
