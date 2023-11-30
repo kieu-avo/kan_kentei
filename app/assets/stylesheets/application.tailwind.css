@@ -57,6 +57,7 @@ body {
   opacity: 0.9;
 }
 
+/* pagination -begin- */
 .paginate {
   border-radius: 9999px;
   background-color: rgb(46,151,167);
@@ -96,3 +97,12 @@ body {
 .page:hover {
   background-color: rgb(171,213,219);
 }
+/* -end- */
+
+.google-map {
+  height: 600px; 
+  width: 100%;
+  border-radius: 0.75rem;
+}
+
+
