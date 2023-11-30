@@ -42,6 +42,5 @@
 #Add
 /yarn-error.log
 /public/uploads/
-
-
 /config/credentials/production.key
+/.env
