@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'sample_quiz', to: 'quizzes#sample_quiz'
 
   resources :users, only: %i[new create]
+  resources :password_resets, only: %i[new create edit update]
   resource :profile, only: %i[show edit update]
   resources :test_categories, only: %i[index], as: :categories do
     get 'search_result', on: :collection
@@ -27,4 +28,7 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  #開発のみの使用
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
