@@ -61,6 +61,7 @@ gem 'carrierwave-aws'
 gem 'kaminari'
 gem 'meta-tags'
 gem 'dotenv-rails'
+gem 'config'
 
 
 
