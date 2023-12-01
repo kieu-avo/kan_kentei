@@ -120,6 +120,10 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.12.0)
     faraday (2.7.11)
       base64
@@ -160,6 +164,10 @@ GEM
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
     language_server-protocol (3.17.0.3)
+    launchy (2.5.2)
+      addressable (~> 2.8)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
     loofah (2.21.4)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -353,9 +361,11 @@ DEPENDENCIES
   carrierwave-aws
   cssbundling-rails
   debug
+  dotenv-rails
   jbuilder
   jsbundling-rails
   kaminari
+  letter_opener
   meta-tags
   mini_magick
   pg
