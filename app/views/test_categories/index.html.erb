@@ -14,18 +14,18 @@
     <p class="text-lg md:text-2xl font-bold md:pb-20">サンプル問題(ベトナム級)の続きは<%= link_to "こちらから", category_reviews_path(@vietnam_quiz), class:"underline underline-offset-8 cursor-pointe" %>
   </div>
 
-  <!--カテゴリ表示-->
-  <div class="md:mr-26 mx-7 mt-20 flex flex-col md:flex-row justify-center md:space-x-20">
+  <!--カテゴリ-->
+  <div class="md:mr-26 md:mx-auto ml-8 md:mt-5 mt-20 flex flex-col md:flex-row justify-center md:space-x-20">
     <% if @categories.any? %>
-      <div class="px-12 mx-10 max-w-fit pb-5 rounded-lg bg-neutral-50 bg-opacity-90">
+      <div class="md:px-20 px-12 md:max-w-fit w-11/12 pb-5 rounded-lg bg-neutral-50 bg-opacity-90">
         <p class="pb-5 pt-3 text-xl text-center font-black">🇯🇵 日本編 🇯🇵</p>
-        <div class="flex grid grid-cols-2 gap-3 gap-5  whitespace-nowrap px-10 h-fit md:text-xl text-md">
+        <div class="flex grid grid-cols-2 gap-4 whitespace-nowrap px-10 h-fit md:text-xl text-md">
           <%= render 'regions', { categories: @categories, region: 'japan'} %>
         </div>
       </div>
-      <div class="pl-5 pr-3 mx-10 md:mt-0 mt-5 max-w-fit pb-5 rounded-lg bg-neutral-50 bg-opacity-90">
+      <div class="md:pl-5 pl-5 pr-3 md:mt-0 mt-5 md:max-w-fit w-11/12 pb-5 rounded-lg bg-neutral-50 bg-opacity-90">
         <p class="pb-5 pt-3 text-xl text-center font-black">🌎 海外編 🌍</p>
-        <div class="flex grid grid-cols-2 gap-3 gap-4  whitespace-nowrap px-10 h-fit md:text-xl text-md">
+        <div class="flex grid grid-cols-2 gap-3 whitespace-pre px-10 h-fit md:text-xl text-md">
           <%= render 'regions', { categories: @categories, region: 'foreign'} %>
         </div>
       </div>
@@ -37,11 +37,15 @@
     <% end %>
   </div>
 
-  <!--写真かgooglemapを表示-->
-  <div class="flex justify-center space-x-20 pt-10 md:px-20">
-    <%= image_tag 'map3.png', class:"w-96 md:w-fit" %>
+  <!--googlemap-->
+  <%= javascript_include_tag 'google_map' %>
+  <div class="pt-10">
+    <input id="place-search" type="text" placeholder="場所を検索" class="input input-bordered border-2 input-accent max-w-xs text-center" />
   </div>
-
-
+  <div id="map" class="google-map">
+    <script async
+      src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&libraries=places&region=JP&language=ja&callback=initMap">
+    </script>
+  </div>
 
 </div>

@@ -4,6 +4,7 @@ import "./controllers";
 import "@fortawesome/fontawesome-free/js/all";
 import "./raty";
 import "./reviews";
+import "./google_map";
 import $ from "jquery";
 window.$ = $;
 window.jQuery = $;

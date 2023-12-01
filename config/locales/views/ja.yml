@@ -13,8 +13,8 @@ ja:
     test: 受検する
   users:
     create:
-      success: 新規登録が完了しました
-      failed: 新規登録に失敗しました
+      success: ユーザー登録が完了しました
+      failed: ユーザー登録に失敗しました
     new:
       title: ユーザー登録
       new_user: ユーザー登録はこちらへ
@@ -62,8 +62,8 @@ ja:
     new:
       title: レビュー投稿
     create:
-      blank: レビューをお願いします。
-      thanks: レビューのご協力ありがとうございました。
+      blank: レビューをお願いします
+      thanks: レビューのご協力ありがとうございました
   test_comments:
     index:
       title: コメント一覧
@@ -74,16 +74,16 @@ ja:
       update: 更新
       example: 同じ級に合格した仲間へ一言、合格した感想などコメントを書きましょう！ 
     create:
-      failed: 投稿に失敗しました。
-      success: コメントを投稿しました。 
+      failed: 投稿に失敗しました
+      success: コメントを投稿しました
     show: 
       title: コメント詳細
       buddy: 仲間一覧
     edit:
       title: コメント編集
     update:
-      failed: 更新を失敗しました。
-      success: コメントを更新しました。
+      failed: 更新を失敗しました
+      success: コメントを更新しました
   passed_lists:
     index:
       title: 合格級一覧
