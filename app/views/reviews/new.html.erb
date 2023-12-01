@@ -1,8 +1,8 @@
 <%= content_for(:title, t('.title')) %>
 <div class="background-image">
   <div class="pt-32 mx-auto px-5 pb-5">
-    <p class="md:text-4xl text-3xl md:pt-20 text-center">ただいまお土産をご用意しております。</br>
-        お待ちの間にレビューをお願い致します。</br></p>
+    <p class="md:text-4xl text-3xl md:pt-20 text-center">ただいまお土産をご用意しております。<br>
+        お待ちの間にレビューをお願い致します。</p>
     <p class="text-center md:text-xl text-md md:pb-20 pt-3">＊１〜５で評価してください＊</p>
     <%= form_with model: @user_review_answer, url: category_reviews_path(@category) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>

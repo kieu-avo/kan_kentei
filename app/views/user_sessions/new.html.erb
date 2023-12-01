@@ -1,5 +1,5 @@
 <%= content_for(:title, t('.title'))%>
-<div class="container pt-10 mb-20 md:pt-20 mx-auto h-screen font-sans font-light">
+<div class="container md:pt-5 pt-10 mb-20 md:pt-20 mx-auto h-screen font-sans font-light">
   <div class="flex justify-end pt-20 px-5">
     <%= image_tag 'plane.png', class:"md:w-1/5 w-24"%>
   </div>
@@ -17,6 +17,9 @@
     </div>
     <div class="text-xl text-center pt-5">
       <%= link_to t('users.new.new_user'), new_user_path, class:"underline underline-offset-8"%>
+    </div>
+    <div class="text-xl text-center pt-5">
+      <%= link_to t('defaults.for_password_reset'), new_password_reset_path, class:"underline underline-offset-8"%>
     </div>
     <div class="container flex justify-center items-center pt-20">
       <%= f.submit t('defaults.login'), class:"btn primary btn-lg bg-zinc-700 text-white" %>

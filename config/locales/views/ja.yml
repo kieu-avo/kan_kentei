@@ -10,7 +10,13 @@ ja:
     submit: 提出
     require_login: ログインをしてください
     search: 検索
+    submit: 送信
     test: 受検する
+    minimum: 5文字以上
+    for_password_reset: パスワードをお忘れの方はこちらへ
+    about_password_reset: パスワードリセットに関しまして
+    request_password_reset: パスワードリセット
+
   users:
     create:
       success: ユーザー登録が完了しました
@@ -18,7 +24,6 @@ ja:
     new:
       title: ユーザー登録
       new_user: ユーザー登録はこちらへ
-      minimum: 5文字以上
       register: 登録
   user_sessions:
     new:
@@ -28,6 +33,16 @@ ja:
       failed: ログインに失敗しました
     destroy:
       logout: お疲れ様でした。またの受検をお待ちしております！
+  password_resets:
+    new:
+      title: パスワードリセット申請
+    create:
+      success: パスワードリセット手順をメールに送信しました
+    edit:
+      title: パスワードリセット
+    update:
+      success: パスワードのリセットが完了しました
+      failed: パスワードのリセットに失敗しました
   profiles:
     update:
       success: プロフィールを更新しました
