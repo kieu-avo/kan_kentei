@@ -54,12 +54,14 @@ gem 'rails-i18n'
 gem 'sorcery'
 gem 'pry-byebug'
 gem 'carrierwave'
-gem "mini_magick"
+gem 'mini_magick'
 gem 'ransack'
 gem 'aws-sdk-s3', require: false
 gem 'carrierwave-aws'
 gem 'kaminari'
-gem "meta-tags"
+gem 'meta-tags'
+gem 'dotenv-rails'
+
 
 
 
@@ -70,6 +72,7 @@ group :development, :test do
   #Add gem
   gem 'rubocop-rails', require: false
   gem 'rubocop-performance', require: false
+  gem "letter_opener"
 end
 
 group :development do
