@@ -40,6 +40,8 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = Settings.default_url_options.to_h
 
+  config.action_mailer.default_options = { from: Settings.default_options.from_email_address }
+
   # Tell Action Mailer not to deliver emails to the real world.
   # The :test delivery method accumulates sent emails in the
   # ActionMailer::Base.deliveries array.
