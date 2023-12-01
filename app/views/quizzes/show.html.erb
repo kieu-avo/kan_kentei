@@ -14,13 +14,13 @@
     <div class="md:text-3xl text-xl flex pb-12 md:px-0 px-5 justify-center">
       <% if @quiz_result.is_passed? %>
         <div class="flex items-center pt-5 ">
-          <p>おめでとうございます！</br>
+          <p>おめでとうございます！<br>
           勘で当てたところはしっかりと復習をしましょう。</p>
           <%=image_tag 'passed_mark.png', class:"w-24" %>
         </div>
       <% else %>
         <div class="flex space-x-5">
-          <p class="pt-20">落ち込まないでください！</br>復習をしてもう一度受検をしましょう。</p>
+          <p class="pt-20">落ち込まないでください！<br>復習をしてもう一度受検をしましょう。</p>
           <% if @pass_status == t('.failed')  %>
               <%= image_tag 'failed.png', class:"w-28" %>
           <% end %>
