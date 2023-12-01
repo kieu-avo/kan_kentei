@@ -1,5 +1,5 @@
 default_url_options:
-  host: 'https://kan-kentei-be9cd1cb33fd.herokuapp.com/'
+  host: 'kan-kentei-be9cd1cb33fd.herokuapp.com'
   
 default_options:
   from_email_address: 'kan.kentei@gmail.com'
