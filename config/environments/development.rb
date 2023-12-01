@@ -43,6 +43,8 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = Settings.default_url_options.to_h
 
+  config.action_mailer.default_options = { from: Settings.default_options.from_email_address }
+
   config.action_mailer.delivery_method = :letter_opener_web
 
   # Print deprecation notices to the Rails logger.
