@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: Settings.from_email_address
+  default from: Settings.email_address.sender_address
   layout "mailer"
 end
