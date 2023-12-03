@@ -1,6 +1,3 @@
 default_url_options:
   host: 'kan-kentei-be9cd1cb33fd.herokuapp.com'
   protocol: 'https'
-
-email_address:
-  sender_address: <%= ENV['SENDER_ADDRESS'] %>
