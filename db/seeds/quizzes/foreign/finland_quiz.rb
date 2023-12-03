@@ -182,7 +182,7 @@ quiz6 = Quiz.create!(
 )
 
 QuizChoice.create!(
-  content: "カバの肉",
+  content: "カバ",
   correct_answer: false,
   explanation: nil,
   image_url: nil,
@@ -190,7 +190,7 @@ QuizChoice.create!(
 )
 
 QuizChoice.create!(
-  content: "トナカイの肉",
+  content: "トナカイ",
   correct_answer: true,
   explanation: "フィンランドでは、トナカイ肉の料理があり、レストランなどでもメニューにあります。少し臭みがあるので好みは分かれるかもしれません。フィンランドの食文化の一つなので、旅行などで行く機会があればトライをしてみてください！",
   image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/finland/q6_exp.jpg",
@@ -198,7 +198,7 @@ QuizChoice.create!(
 )
 
 QuizChoice.create!(
-  content: "うさぎの肉",
+  content: "うさぎ",
   correct_answer: false,
   explanation: nil,
   image_url: nil,
