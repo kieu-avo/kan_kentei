@@ -64,7 +64,9 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = Settings.default_url_options.to_h
+  host = "kan-kentei-be9cd1cb33fd.herokuapp.com"
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+  config.action_mailer.default_options = { from: ENV['SENDER_ADDRESS'] }
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
