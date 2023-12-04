@@ -51,7 +51,7 @@ QuizChoice.create!(
 )
 
 QuizChoice.create!(
-  content: "デコポン",
+  content: "デコポンジュース",
   correct_answer: false,
   explanation: nil,
   image_url: nil,
