@@ -16,7 +16,6 @@ ja:
     for_password_reset: パスワードをお忘れの方はこちらへ
     about_password_reset: パスワードリセットに関しまして
     request_password_reset: パスワードリセット
-
   users:
     create:
       success: ユーザー登録が完了しました
@@ -102,6 +101,11 @@ ja:
   passed_lists:
     index:
       title: 合格級一覧
+  top_pages:
+    policy:
+      title: プライバシーポリシー
+    terms: 
+      title: 利用規約
   date:
     abbr_day_names:
     - 日
