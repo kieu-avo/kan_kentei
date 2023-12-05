@@ -21,6 +21,7 @@ ja:
         password: パスワード
         password_confirmation: パスワード確認
         avatar: アバター
+        remember: 自動ログイン
       test_category:
         title: 場所
       quiz:
