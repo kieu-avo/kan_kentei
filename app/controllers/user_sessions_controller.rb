@@ -4,7 +4,7 @@ class UserSessionsController < ApplicationController
   def new; end
 
   def create
-    @user = login(params[:email], params[:password])
+    @user = login(params[:email], params[:password], params[:remember] == 'on')
     if @user
       redirect_to categories_path, success: t('.success')
     else
