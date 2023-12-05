@@ -60,8 +60,9 @@ gem 'aws-sdk-s3', require: false
 gem 'carrierwave-aws'
 gem 'kaminari'
 gem 'meta-tags'
-gem 'dotenv-rails'
+gem 'dotenv-rails' #環境変数
 gem 'config'
+gem 'line-bot-api'
 
 
 
