@@ -1,5 +1,5 @@
 <%= content_for(:title, t('.title'))%>
-<div class="container md:pt-5 pt-10 mb-52 md:pt-20 mx-auto h-screen font-sans font-light">
+<div class="container md:pt-5 pt-10 mb-96 md:pt-20 mx-auto h-screen font-sans font-light">
   <div class="flex justify-end pt-20 px-5">
     <%= image_tag 'plane.png', class:"md:w-1/5 w-24"%>
   </div>
@@ -23,12 +23,20 @@
       <%= f.submit t('defaults.login'), class:"btn primary btn-lg bg-zinc-700 text-white" %>
     </div>
   <% end %>
-  <div class="container rounded-lg bg-purple-50 bg-opacity-90 mt-10 md:mb-0 mx-auto py-10 md:w-96 w-72">
+  <div class="container rounded-lg bg-purple-50 bg-opacity-90 mt-10 md:mb-0 mx-auto py-10 md:w-96 w-72 shadow-inner shadow-purple-300">
     <div class="md:text-xl text-center">
       <%= link_to t('users.new.new_user'), new_user_path, class:"underline underline-offset-8" %>
     </div>
     <div class="md:text-xl text-center pt-5">
       <%= link_to t('defaults.for_password_reset'), new_password_reset_path, class:"underline underline-offset-8" %>
     </div>
+    <!-- LINE Messaging -->
+    <div class="md:text-xl pt-14 text-center font-bold text-green-600">
+      <p>LINE友だち追加</p>
+      <div class="pt-2 mx-auto text-center w-28">
+        <%= image_tag "https://qr-official.line.me/gs/M_843iulty_BW.png?oat_content=qr" %>
+      </div>
+    </div>
   </div>
+  
 </div>

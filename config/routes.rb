@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
+
+  post '/callback', to: 'linebot#callback' #Line Messaging
   
-  #get 'japan_and_overseas_test_categories', to: 'japan_and_overseas_test_categories#index', as: 'place'
-  #get 'quizzes/:category_name', to: 'quizzes#index'
   get 'passed_lists', to: 'passed_lists#index'
   get 'sample_quiz', to: 'quizzes#sample_quiz'
 
