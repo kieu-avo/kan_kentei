@@ -5,6 +5,7 @@ import "@fortawesome/fontawesome-free/js/all";
 import "./raty";
 import "./reviews";
 import "./google_map";
+import "./preview_image";
 import $ from "jquery";
 window.$ = $;
 window.jQuery = $;
