@@ -51,6 +51,7 @@ ja:
       title: プロフィール編集
     show:
       title: プロフィール
+      edit: 編集
   test_categories:
     index:
       title: 受検カテゴリー
