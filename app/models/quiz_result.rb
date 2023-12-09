@@ -20,13 +20,14 @@ class QuizResult < ApplicationRecord
 
   def self.count_correct_answers(answers)
     correct_choices = QuizChoice.where(quiz_id: answers.keys, correct_answer: true).index_by(&:quiz_id)
-    answers.to_unsafe_h.count { |quiz, choice| correct_choices[quiz.to_i]&.id.to_s == choice }
+    answers.to_h.count { |quiz, choice| correct_choices[quiz.to_i]&.id.to_s == choice }
   end
 
   def self.save_user_answers(user_id, answers)
-    answers.each do |quiz, choice|
-      UserQuizAnswer.create(user_id:, quiz_id: quiz, quiz_choice_id: choice)
+    records = answers.to_h.map do |quiz, choice|
+      { user_id:, quiz_id: quiz, quiz_choice_id: choice, created_at: Time.current, updated_at: Time.current }
     end
+    UserQuizAnswer.insert_all(records)
   end
 
   def self.calculate_score_and_save(category_id, user_id, count_correct, total_quizzes)
