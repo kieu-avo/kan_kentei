@@ -1,0 +1,48 @@
+<div>
+  <div class="md:flex pt-6">
+    <div class="w-screen pt-10">
+      <picture>
+        <source srcset="<%= asset_path('top_image.webp') %>" type="image/webp">
+        <img src="<%= asset_path('top_image.jpeg') %>" alt="Top image">
+      </picture>
+    </div>
+    <div class="md:mt-20 mt-10 md:mx-5 mx-24">
+    <div class="md:mt-20 mt-10">
+      <p class="text-center md:text-4xl text-4xl md:pt-20 pt-10"><span class="bg-amber-100 rounded-full px-3 pb-1">勘</span>を</p>
+      <p class="text-center md:text-4xl text-4xl pt-2">使って旅に</p>
+      <p class="text-center md:text-4xl text-4xl py-1">出ません</p>
+      <p class="text-center md:text-4xl text-4xl py-1">か？</p>
+      <p class="md:text-xl text-xl flex justify-center mb-10 md:pt-5 pt-5 font-bold">- 勘検定 -</p>
+    </div>
+  </div>
+  <!-- 使い方 -->
+  <div class="flex justify-center mx-5 md:mx-32 md:pt-12">
+    <div class="container mb-10 mt-20 md:px-10 pl-3 py-10 rounded-lg bg-neutral-50 bg-opacity-90 font-bold md:text-2xl text-xl ml-px">
+      <p class="pb-5 md:text-3xl text-2xl text-center">【使い方】<p>
+      <ul class="list-decimal pt-3 pb-10 md:px-20 px-10 space-y-5">
+        <li class="explain cursor-pointe"><%= link_to "📄勘検定について", "#explain_test", class: "about border rounded-md bg-slate-300" %>を確認</li>     
+        <li class="explain">ログイン又はユーザー登録</li>
+        <li class="explain">「受検カテゴリー」から場所を選択し、受検を開始</li>
+      </ul>
+      <p class="pt-10 md:px-20 px-10 border-t-2 border-dashed border-stone-400"> LINE友だち追加をしていただくと、新しい検定を追加した際にいち早くお知らせを致します。友だち追加はログイン画面からできます。</p>
+    </div>
+  </div>
+  <!-- 検定について -->
+  <div id="explain_test" class="flex justify-center mx-5 md:mx-32 md:mt-16 mt-5">
+    <div class="container mb-10 mt-20 md:px-10 px-5 py-10 rounded-lg bg-neutral-50 bg-opacity-90 font-bold md:text-2xl text-xl ml-px">
+      <p class="pb-5 md:text-3xl text-2xl text-center">【📄勘検定について】<p>
+      <ul class="list-disc pt-3 md:px-20 px-5 space-y-5">
+        <li class="explain">この検定は、各都道府県・各国に関してよく知られている事からあまり知られていない事を出題し、みなさんが持っている知識と<span class="bg-amber-100 border border-amber-600 rounded-full px-2 text-3xl font-bold">勘</span>で答えていただくサービスです。</li>
+        <li class="explain">７割以上が合格です。</li>
+        <li class="explain">出題する問題は、その土地の出身の方や訪れたことがある方のお話を基に作成しております。問題の形式を確認したい方は、右上にある「サンプル問題」からご確認頂けます。</li>
+        <li class="explain">勘が外れても、きっと新しい知識や世界を見ることができると信じております。<br>勘が外れたからといって、決して落ち込まないでくださいね。</li>
+        <li class="explain">受検中は、その級に旅行しているイメージをしながら回答してください。<br>きっと旅行気分を味わえるでしょう。</li>
+        <li class="explain">合格された方には<span class="text-red-600 font-bold md:text-5xl text-3xl">素敵なお土産</span>をご用意しております。<br>
+                是非、合格するまでチャレンジして下さい。また、他の級にも挑戦して素敵なお土産を集めてみてください。各級にお土産を3つ以上用意しておりますので、同じ級を複数回受検すると、違うお土産がもらえるかもしれません。</li>
+        <li class="explain explain_for_sm">一日に何度も勘を使うのは疲れると思いますので、一日に受検できるのは一つとさせていただきます。<br>※不合格の場合は回数制限に関係なく、合格するまで再受検ができます。</li>
+      </ul>
+      <p class="text-center md:pt-20 pt-10 md:text-3xl text-2xl">Good luck on your test!</p>
+    </div>
+  </div>
+</div>
+  
