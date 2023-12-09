@@ -1,23 +1,35 @@
 <%= content_for(:title, t('.title')) %>
 <div class="background-image">
-  <div class="pt-32 md:px-32 px-20 pb-20 md:text-3xl text-2xl mx-auto text-center">
-    <div class="flex items-center justify-center space-x-3 pt-5">
-      <h1>合格級一覧</h1>
-      <%=image_tag 'passed_mark.png', class:"w-20" %>
-    </div>
-    <div class="text-2xl pt-32 md:flex md:flex-wrap grid grid-cols-2 space-x-2">
-      <% @passed_quizzes.each do |passed| %>
-        <div class="dropdown dropdown-hover bg-stone-400 rounded-box">
-          <label tabindex="0" class="btn m-1"><p><%= passed.test_category.title %>級</p></label>
-          <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-            <li><%= link_to t('quizzes.show.title'), category_quiz_path(passed.test_category_id, passed.id, from_passed_list: true) %></li>
-            <li><%= link_to t('test_comments.show.buddy'), category_test_comments_path(passed.test_category_id, from_passed_list: true)  %></li>
-          </ul>
+  <div class="pt-32 md:px-32 px-20 pb-20 mx-auto text-center">
+    <h1 class="md:text-4xl text-3xl md:pt-16">合格級一覧</h1>
+    <p class="md:text-xl text-base pt-5">＊ 合格した級から結果と仲間一覧をご覧頂けます ＊</p>
+    <div class="flex md:flex-nowrap flex-wrap md:space-x-20 md:space-y-0 space-y-24 md:mt-32 mt-20 mx-auto w-full">
+      <% if @passed_quizzes.any? %>
+        <div class="md:w-1/2 h-fit w-screen">
+          <p class="pb-5 md:text-2xl text-xl font-bold">● 日本編 ●</p>
+          <div class="text-2xl px-8 py-10 md:flex md:flex-wrap grid grid-cols-2 gap-2 items-center justify-center rounded-lg bg-red-50 shadow-md shadow-slate-500 bg-opacity-90">
+            <% @japan_quizzes.each do |passed| %>
+              <%= render 'passed_test', passed: passed %>
+            <% end %>
+          </div>
         </div>
+        <div class="md:w-1/2 h-fit w-screen">
+          <p class="pb-5 md:text-2xl text-xl font-bold">● 海外編 ●</p>
+          <div class="text-2xl px-5 py-10 md:flex md:flex-wrap grid grid-cols-2 gap-2 items-center justify-center rounded-lg bg-cyan-50 shadow-md shadow-slate-500 bg-opacity-90">
+            <% @foreign_quizzes.each do |passed| %>
+              <%= render 'passed_test', passed: passed %>
+            <% end %>
+          </div>
+        </div>
+      <% else %>
+        <p>まだ合格した級がありません！</p>
       <% end %>
     </div>
-    <div class="pt-60 pb-10">
-      <%= link_to t('defaults.back'), categories_path,  class:"btn primary btn-lg bg-zinc-700 text-white" %>
-    </div>
   </div>
- 
+  <div class="flex justify-center">
+    <%=image_tag 'man.png', class:"w-20" %>
+  </div>
+  <div class="pb-10 flex justify-center">
+    <%= link_to t('defaults.back'), categories_path,  class:"btn primary btn-lg bg-zinc-700 text-white" %>
+  </div>
+</div>

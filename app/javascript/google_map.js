@@ -1,7 +1,7 @@
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 35.6812362, lng: 139.7645499 },
-    zoom: 10,
+    zoom: 5,
   });
 
   //検索

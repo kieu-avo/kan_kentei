@@ -38,10 +38,9 @@
   </div>
 
   <!--googlemap-->
+  <p class="pt-20 pb-5 md:text-left text-center md:pl-20 px-8">これから受検する級の位置を確認すると、何かヒントになるかもしれません！</p>
   <%= javascript_include_tag 'google_map' %>
-  <div class="pt-10">
-    <input id="place-search" type="text" placeholder="場所を検索" class="input input-bordered border-2 input-accent max-w-xs text-center" />
-  </div>
+  <input id="place-search" type="text" placeholder="場所を検索" class="input input-bordered border-2 input-accent max-w-xs text-center" />
   <div id="map" class="google-map">
     <script async
       src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&libraries=places&region=JP&language=ja&callback=initMap">

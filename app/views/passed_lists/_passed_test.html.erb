@@ -1,0 +1,7 @@
+<div class="dropdown dropdown-hover bg-stone-400 w-fit rounded-box">
+  <label tabindex="0" class="btn m-1"><p><%= passed.test_category.title %>級</p></label>
+  <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
+    <li><%= link_to t('quizzes.show.title'), category_quiz_path(passed.test_category_id, passed.id, from_passed_list: true) %></li>
+    <li><%= link_to t('test_comments.show.buddy'), category_test_comments_path(passed.test_category_id, from_passed_list: true)  %></li>
+  </ul>
+</div>
