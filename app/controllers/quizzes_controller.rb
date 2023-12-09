@@ -12,8 +12,8 @@ class QuizzesController < ApplicationController
   end
 
   def calculate_score
-    answers = params[:answers] || {}
-    
+    answers = quiz_params
+
     quiz_result = QuizResult.calculate_and_create_result(
       category_id: params[:category_id],
       user_id: current_user.id,
@@ -48,7 +48,9 @@ class QuizzesController < ApplicationController
     @quizzes = @category.quizzes.includes(:quiz_choices)
   end
 
- 
+  def quiz_params
+    params.require(:answers).permit(@quizzes.map { |quiz| quiz.id.to_s })
+  end
 
   def handle_quiz_result(answers, quiz_result)
     @user_answers = answers
