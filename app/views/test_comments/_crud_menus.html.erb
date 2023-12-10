@@ -1,5 +1,5 @@
 <div>
-  <%= link_to edit_category_test_comment_path(category, test_comment) do %>
+  <%= link_to edit_category_test_comment_path(category, test_comment), data: { turbo: false } do %>
     <i class="fa-solid fa-pen-to-square"></i>
   <% end %>
 </div>
