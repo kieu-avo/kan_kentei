@@ -1,12 +1,15 @@
-<%= search_form_for @q, url: categories_path, method: :get do |f| %>
+<%= search_form_for @q, url: categories_path, method: :get, html: { data: { turbo_frame: "category_list" } } do |f| %>
   <div class="flex justify-center space-x-20 md:pr-10">
-    <div class="flex space-x-1 pt-10 md:pt-20 px-5 justify-center">
+    <div class="md:flex space-x-1 pt-10 md:pt-20 px-5 justify-center">
       <div data-controller="autocomplete" data-autocomplete-url-value="<%= search_result_categories_path %>" role="combobox">
         <%= f.search_field :title_cont, data: { autocomplete_target: 'input' }, class: "input input-bordered w-full rounded-lg", placeholder: "都道府県名・国名" %>
         <%= f.hidden_field :title, data: { autocomplete_target: 'hidden' } %>
         <ul class="list-group" data-autocomplete-target="results"></ul>
       </div>
-      <%= f.submit t('defaults.search'), class: "btn btn-md btn-outline bg-gray-700 text-white text-base" %>
+      <div class="md:flex space-x-0 text-center">
+        <%= link_to t('test_comments.index.reset'), categories_path, class: "btn md:btn-md btn-outline bg-color-400 text-white text-base md:mt-0 mt-5" %>
+        <%= f.submit t('defaults.search'), class: "btn btn-md btn-outline bg-gray-700 text-white text-base" %>
+      </div>
     </div>
   </div>
 <% end %>

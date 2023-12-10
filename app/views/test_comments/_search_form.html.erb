@@ -1,4 +1,4 @@
-<%= search_form_for @q, url: category_test_comments_path, method: :get do |f| %>
+<%= search_form_for @q, url: category_test_comments_path, method: :get, html: { data: { turbo_frame: "comment_list" } } do |f| %>
   <div class="flex justify-center space-x-20">
     <div class="flex flex-col md:flex-row space-x-2 pt-10 md:pt-20 px-5 justify-center">
       <div data-controller="autocomplete" data-autocomplete-url-value="<%= search_content_category_test_comments_path %>" role="combobox">

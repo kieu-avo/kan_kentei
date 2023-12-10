@@ -1,16 +1,14 @@
 <div>
   <div class="md:flex pt-6">
-    <div class="w-screen pt-10">
-      <picture>
-        <source srcset="<%= asset_path('top_image.webp') %>" type="image/webp">
-        <img src="<%= asset_path('top_image.jpeg') %>" alt="Top image">
-      </picture>
-    </div>
-    <div class="md:mt-20 mt-10 md:mr-10 mx-24">
-      <p class="text-center md:text-4xl text-4xl md:pt-20 pt-10"><span class="bg-amber-100 rounded-full px-3 pb-1">勘</span>を</p>
-      <p class="text-center md:text-4xl text-4xl pt-2">使って旅に</p>
-      <p class="text-center md:text-4xl text-4xl py-1">出ません</p>
-      <p class="text-center md:text-4xl text-4xl py-1">か？</p>
+    <picture class="screen pt-10">
+      <source srcset="<%= asset_path('top_image.webp') %>" type="image/webp">
+      <img src="<%= asset_path('top_image.jpeg') %>" alt="Top image">
+    </picture>
+    <div class="md:mt-32 mt-10 mx-24 md:text-4xl text-4xl">
+      <p class="text-center md:pt-20 pt-10"><span class="bg-amber-100 rounded-full px-3 pb-1">勘</span>を</p>
+      <p class="text-center pt-2">使って旅に</p>
+      <p class="text-center py-1">出ません</p>
+      <p class="text-center py-1">か？</p>
       <p class="md:text-xl text-xl flex justify-center mb-10 md:pt-5 pt-5 font-bold">- 勘検定 -</p>
     </div>
   </div>

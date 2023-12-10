@@ -10,32 +10,34 @@
   <%= render 'search_form' %>
 
   <!--サンプル問題の続き-->
-  <div class="flex justify-center pt-10 px-10 text-center">
+  <div class="flex justify-center md:pt-10 pt-20 px-10 text-center">
     <p class="text-lg md:text-2xl font-bold md:pb-20">サンプル問題(ベトナム級)の続きは<%= link_to "こちらから", category_reviews_path(@vietnam_quiz), class:"underline underline-offset-8 cursor-pointe" %>
   </div>
 
   <!--カテゴリ-->
-  <div class="md:mr-26 md:mx-auto ml-8 md:mt-5 mt-20 flex flex-col md:flex-row justify-center md:space-x-20">
-    <% if @categories.any? %>
-      <div class="md:px-20 px-12 md:max-w-fit w-11/12 pb-5 rounded-lg bg-neutral-50 bg-opacity-90">
-        <p class="pb-5 pt-3 text-xl text-center font-black">🇯🇵 日本編 🇯🇵</p>
-        <div class="flex grid grid-cols-2 gap-4 whitespace-nowrap px-10 h-fit md:text-xl text-md">
-          <%= render 'regions', { categories: @categories, region: 'japan'} %>
+  <%= turbo_frame_tag "category_list" do %>
+    <div class="md:mr-26 md:mx-auto ml-8 md:mt-5 mt-20 flex flex-col md:flex-row justify-center md:space-x-20">
+      <% if @categories.present? %>
+        <div class="md:px-20 px-12 md:max-w-fit w-11/12 pb-5 rounded-lg bg-neutral-50 bg-opacity-90">
+          <p class="pb-5 pt-3 text-xl text-center font-black">🇯🇵 日本編 🇯🇵</p>
+          <div class="flex grid grid-cols-2 gap-4 whitespace-nowrap px-10 h-fit md:text-xl text-md">
+            <%= render 'regions', { categories: @categories, region: 'japan'} %>
+          </div>
         </div>
-      </div>
-      <div class="md:pl-5 pl-5 pr-3 md:mt-0 mt-5 md:max-w-fit w-11/12 pb-5 rounded-lg bg-neutral-50 bg-opacity-90">
-        <p class="pb-5 pt-3 text-xl text-center font-black">🌎 海外編 🌍</p>
-        <div class="flex grid grid-cols-2 gap-3 whitespace-pre px-10 h-fit md:text-xl text-md">
-          <%= render 'regions', { categories: @categories, region: 'foreign'} %>
+        <div class="md:pl-5 pl-5 pr-3 md:mt-0 mt-5 md:max-w-fit w-11/12 pb-5 rounded-lg bg-neutral-50 bg-opacity-90">
+          <p class="pb-5 pt-3 text-xl text-center font-black">🌎 海外編 🌍</p>
+          <div class="flex grid grid-cols-2 gap-3 whitespace-pre px-10 h-fit md:text-xl text-md">
+            <%= render 'regions', { categories: @categories, region: 'foreign'} %>
+          </div>
         </div>
-      </div>
-    <% else %>
-      <div class="flex items-center">
-        <%= image_tag 'sorry.png', class: "w-20" %>
-        <p class="md:text-2xl text-xl">お探しの検定は見つかりませんでした。</p>
-      </div>
-    <% end %>
-  </div>
+      <% else %>
+        <div class="flex items-center rounded-lg bg-neutral-50 bg-opacity-90 p-10 md:mx-auto mr-8">
+          <%= image_tag 'sorry.png', class: "w-20" %>
+          <p class="md:text-2xl text-xl">お探しの検定は見つかりませんでした。</p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 
   <!--googlemap-->
   <p class="pt-20 pb-5 md:text-left text-center md:pl-20 px-8">これから受検する級の位置を確認すると、何かヒントになるかもしれません！</p>
