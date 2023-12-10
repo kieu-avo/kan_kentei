@@ -3,8 +3,8 @@
   <div class="pt-32 md:text-3xl text-2xl mx-auto text-center">
     <h1>コメント編集</h1>
     <% if @souvenir.explanation.present? %>
-      <div class="rounded-lg bg-neutral-50 bg-opacity-90 p-3 w-fit mx-auto mt-16 md:text-xl text-base">
-        <p>獲得したお土産：<%= @test_comment.souvenir_photo.name %></p>
+      <div class="rounded-lg bg-neutral-50 bg-opacity-90 py-3 px-10 w-fit md:mx-auto mt-16 md:text-xl text-base">
+        <p class="bg-emerald-100 rounded-full pb-1">お土産：<%= @test_comment.souvenir_photo.name %></p>
         <%= @test_comment.souvenir_photo.explanation.present? ?  @test_comment.souvenir_photo.explanation : "" %>
       </div>
     <% end %>
