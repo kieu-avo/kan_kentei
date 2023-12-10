@@ -1,8 +1,5 @@
 /*!
- * Raty - A Star Rating Plugin
- *
- * author: Washington Botelho
- * github: wbotelhos/raty
+ * 外部ライブラリ(Raty)のファイル
  * version: 4.2.0
  */
 class Raty {
