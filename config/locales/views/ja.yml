@@ -6,7 +6,6 @@ ja:
     logout: ログアウト
     register: 登録
     back: 戻る
-    categories: 受検カテゴリー
     submit: 提出
     require_login: ログインをしてください
     search: 検索
@@ -54,7 +53,7 @@ ja:
       edit: 編集
   test_categories:
     index:
-      title: 受検カテゴリー
+      title: 検定カテゴリー
       search_test: 都道府県名・国名
   quizzes:
     index: 
