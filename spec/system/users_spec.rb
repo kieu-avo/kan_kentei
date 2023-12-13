@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Users", type: :system do
   let(:user) { build(:user) }
-  let!(:vietnam_category) { create(:test_category, title: "ベトナム") }
+  let!(:finland) { create(:test_category, title: "フィンランド") }
 
     #成功
     describe 'all form fields are valid' do
