@@ -34,7 +34,7 @@ class QuizzesController < ApplicationController
   end
 
   def sample_quiz
-    @sample_category = TestCategory.find_by(title: "サンプル問題(ベトナム級)")
+    @sample_category = TestCategory.find_by(title: "サンプル問題(フィンランド級)") 
     @sample_quiz = @sample_category.quizzes.includes(:quiz_choices) if @sample_category
   end
 
