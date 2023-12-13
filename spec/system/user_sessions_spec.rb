@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "UserSessions", type: :system do
   let(:user) { create(:user) }
-  let!(:vietnam_category) { create(:test_category, title: "ベトナム") }
+  let!(:finland) { create(:test_category, title: "フィンランド") }
 
   #成功
   describe 'all form fileds are valid' do
