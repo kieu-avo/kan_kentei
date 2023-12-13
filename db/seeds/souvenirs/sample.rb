@@ -1,4 +1,4 @@
-sample = TestCategory.find_by(title: "サンプル問題(ベトナム級)")
+sample = TestCategory.find_by(title: "サンプル問題(フィンランド級)")
 
 gift1 = SouvenirPhoto.create!(
   name: "カフェスーダー（練乳入りアイスコーヒー）", 
