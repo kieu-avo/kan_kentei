@@ -66,4 +66,7 @@ RSpec.configure do |config|
 
   #LoginSupport
   config.include LoginSupport
+
+  #Cabybara wating time
+  Capybara.default_max_wait_time = 10
 end
