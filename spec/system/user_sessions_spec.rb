@@ -10,7 +10,7 @@ RSpec.describe "UserSessions", type: :system do
   end
 
   #ログイン成功
-  describe 'all form fileds are valid' do
+  describe 'all form fields are valid' do
     it 'is successful' do
       login(user)
       expect(page).to have_current_path(categories_path)
@@ -20,40 +20,48 @@ RSpec.describe "UserSessions", type: :system do
 
   #ログイン失敗
   describe 'some fields are invalid' do
-    context 'email field' do
-      it 'is blank' do
-        fill_in 'email', with: ''
-        fill_in 'password', with: user.password
-        click_button 'ログイン'
-        expect(current_path).to eq login_path
-        expect(page).to have_content("ログインに失敗しました")
+    describe 'email field' do
+      context 'when email is blank' do
+        it 'is failed' do
+          fill_in 'email', with: ''
+          fill_in 'password', with: user.password
+          click_button 'ログイン'
+          expect(current_path).to eq login_path
+          expect(page).to have_content("ログインに失敗しました")
+        end
       end
 
-      it 'does not match registerd email' do
-        fill_in 'email', with: 'kathy@example.com'
-        fill_in 'password', with: user.password
-        click_button 'ログイン'
-        expect(current_path).to eq login_path
-        expect(page).to have_content("ログインに失敗しました")
+      context 'when email does not match registered email' do 
+        it 'is failed' do
+          fill_in 'email', with: 'kathy@example.com'
+          fill_in 'password', with: user.password
+          click_button 'ログイン'
+          expect(current_path).to eq login_path
+          expect(page).to have_content("ログインに失敗しました")
+        end
       end
     end
 
-    context 'password filed' do
-      it 'is blank' do
-        fill_in 'email', with: user.email
-        fill_in 'password', with: ''
-        click_button 'ログイン'
-        expect(current_path).to eq login_path
-        expect(page).to have_content("ログインに失敗しました")
-      end
+    describe 'password field' do
+      context 'when password is blank' do
+        it 'is failed' do
+          fill_in 'email', with: user.email
+          fill_in 'password', with: ''
+          click_button 'ログイン'
+          expect(current_path).to eq login_path
+          expect(page).to have_content("ログインに失敗しました")
+        end
+      end 
 
-      it 'does not match registerd password' do
-        fill_in 'email', with: user.email
-        fill_in 'password', with: 'kathy'
-        click_button 'ログイン'
-        expect(current_path).to eq login_path
-        expect(page).to have_content("ログインに失敗しました")
-      end
+      context 'when password does not match registered password' do
+        it 'is failed' do
+          fill_in 'email', with: user.email
+          fill_in 'password', with: 'kathy'
+          click_button 'ログイン'
+          expect(current_path).to eq login_path
+          expect(page).to have_content("ログインに失敗しました")
+        end
+      end 
     end
   end
 
@@ -79,7 +87,7 @@ RSpec.describe "UserSessions", type: :system do
 
   #Line QRコードの表示 （ステータスのテストは./requests/line_messagings_spec.rbにて）
   describe 'line messaging QR code' do
-    it 'is displyed' do 
+    it 'is displayed' do 
       expect(page).to have_selector("img[src='https://qr-official.line.me/gs/M_843iulty_BW.png?oat_content=qr']")
     end
   end
