@@ -21,6 +21,7 @@ RSpec.describe UserReviewAnswer, type: :model do
           create(:user_review_answer, user: user, review: review)
           duplicate_user_review_answer = build(:user_review_answer, user: user, review: review)    
           expect(duplicate_user_review_answer).not_to be_valid
+          expect(duplicate_user_review_answer.errors[:user_id]).to include("はすでに存在します")
         end  
       end
 
@@ -28,6 +29,7 @@ RSpec.describe UserReviewAnswer, type: :model do
         it 'is failed' do
           invalid_user_review_answer = build(:user_review_answer, rating: nil)
           expect(invalid_user_review_answer).not_to be_valid
+          expect(invalid_user_review_answer.errors[:rating]).to include("は数値で入力してください")
         end
       end
     end
