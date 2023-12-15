@@ -1,1 +1,10 @@
 # See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+
+Sitemap: https://www.kankentei.com/sitemaps/sitemap.xml.gz
+
+User-agent: *
+Disallow: /login
+Disallow: /logout
+Disallow: /users/*
+Disallow: /password_resets/*
+Disallow: /profile/*
