@@ -175,7 +175,7 @@ QuizChoice.create!(
 quiz6 = Quiz.create!(
   content: "⑥【サンタさんのおすすめその5：ある動物の肉を食べるべし】\n
           さて、その動物はなんでしょう？\n
-          「これだけは、サンタさんにおすすめされたくなかった...」という反応がヒントです。",
+          「これはサンタさんに勧められるとは思わなかったな...」という反応がヒントです。",
   youtube_url: nil,
   image_url: nil,
   test_category: finland
@@ -192,7 +192,10 @@ QuizChoice.create!(
 QuizChoice.create!(
   content: "トナカイ",
   correct_answer: true,
-  explanation: "フィンランドでは、トナカイ肉の料理があり、レストランなどでもメニューにあります。少し臭みがあるので好みは分かれるかもしれません。フィンランドの食文化の一つなので、旅行などで行く機会があればトライをしてみてください！",
+  explanation: "フィンランドでは、トナカイ肉の料理があり、レストランなどでもメニューにあります。少し臭みがあるので好みは分かれるかもしれません。フィンランドの食文化の一つなので、旅行などで行く機会があればトライをしてみてください！ \n
+          
+          ★サンタさんからのメッセージ★\n
+          メリークリスマス！もう今年も残り少ないけど、最後まで楽しもうね！いつか会える日を楽しみに待ってるよ。ホホホ♪",
   image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/finland/q6_exp.jpg",
   quiz: quiz6
 )

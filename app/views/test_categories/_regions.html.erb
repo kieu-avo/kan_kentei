@@ -1,6 +1,6 @@
 <% categories.each do |category| %>
   <% if category.region == region %>
-    <p><%= link_to category.title, category_reviews_path(category), data: {  turbo: false } %></p>
+    <p><%= link_to category.title, category_reviews_path(category), data: { turbo: false } %></p>
   <% end %>
 <% end %>
 

@@ -60,12 +60,11 @@ gem 'aws-sdk-s3', require: false
 gem 'carrierwave-aws'
 gem 'kaminari'
 gem 'meta-tags'
-gem 'dotenv-rails' #環境変数
+#(環境変数)
+gem 'dotenv-rails'
 gem 'config'
 gem 'line-bot-api'
-
-
-
+gem 'sitemap_generator'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -75,6 +74,11 @@ group :development, :test do
   gem 'rubocop-rails', require: false
   gem 'rubocop-performance', require: false
   gem 'letter_opener_web'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'faker'
+  #(カバレッジ計測)
+  gem 'simplecov', require: false, group: :test
 end
 
 group :development do
@@ -86,13 +90,17 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  #Add
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-
+  gem 'launchy'
 end
 
 group :production do
