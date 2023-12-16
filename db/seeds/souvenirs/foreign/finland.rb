@@ -14,9 +14,17 @@ gift2 = SouvenirPhoto.create!(
   test_category: finland
 )
 
-gift2 = SouvenirPhoto.create!(
+gift3 = SouvenirPhoto.create!(
   name: "クリスマスオーナメント", 
   explanation: "サンタ村にはかわいいクリスマスグッズがたくさん売っています！",
   image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/finland/ornament_sou.jpg",
+  test_category: finland
+)
+
+
+gift4 = SouvenirPhoto.create!(
+  name: "サンタさんからのプレゼント", 
+  explanation: "中身はあなたが一番欲しいものです。",
+  image_url: "https://kan-kentei-bucket.s3.ap-northeast-1.amazonaws.com/finland/present_sou.jpg",
   test_category: finland
 )
