@@ -20,13 +20,13 @@
       <% if @categories.present? %>
         <div class="md:px-20 px-12 md:max-w-fit w-11/12 pb-5 rounded-lg bg-neutral-50 bg-opacity-90">
           <p class="pb-5 pt-3 text-xl text-center font-black">🇯🇵 日本編 🇯🇵</p>
-          <div class="flex grid grid-cols-2 gap-4 whitespace-nowrap px-10 h-fit md:text-xl text-md">
+          <div class="flex grid grid-cols-2 gap-4 whitespace-nowrap md:px-10 pl-14 pr-10 h-fit md:text-xl text-md">
             <%= render 'regions', { categories: @categories, region: 'japan'} %>
           </div>
         </div>
         <div class="md:pl-5 pl-5 pr-3 md:mt-0 mt-5 md:max-w-fit w-11/12 pb-5 rounded-lg bg-neutral-50 bg-opacity-90">
           <p class="pb-5 pt-3 text-xl text-center font-black">🌎 海外編 🌍</p>
-          <div class="flex grid grid-cols-2 gap-3 whitespace-pre px-10 h-fit md:text-xl text-md">
+          <div class="flex grid grid-cols-2 gap-3 whitespace-pre md:pr-5 md:pl-10 pl-14 pr-10 h-fit md:text-xl text-md">
             <%= render 'regions', { categories: @categories, region: 'foreign'} %>
           </div>
         </div>
