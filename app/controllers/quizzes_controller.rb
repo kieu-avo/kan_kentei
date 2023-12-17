@@ -7,7 +7,7 @@ class QuizzesController < ApplicationController
     if QuizResult.taken_today(current_user).exists?
       redirect_to category_reviews_path(@category), error: t('.limit')
     else
-      render :index, status: :unprocessable_entity
+      render :index
     end
   end
 
