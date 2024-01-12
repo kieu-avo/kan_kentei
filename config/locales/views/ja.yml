@@ -6,7 +6,6 @@ ja:
     logout: ログアウト
     register: 登録
     back: 戻る
-    submit: 提出
     require_login: ログインをしてください
     search: 検索
     submit: 送信
@@ -60,6 +59,7 @@ ja:
       title: 受検
       reviewed?: 見直しをしましたか？
       limit: 一日に受検できる回数を超えました。明日以降ご受検下さい。
+      submit: 提出
     calculate_score:
       blank: 未回答の質問があります。
     show:
