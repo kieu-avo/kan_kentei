@@ -1,4 +1,4 @@
-[![Image from Gyazo](https://i.gyazo.com/8c4284dca42d0067f388f919aa7606d6.jpg)](https://gyazo.com/8c4284dca42d0067f388f919aa7606d6)
+[![Image from Gyazo](https://i.gyazo.com/e045b713ed17cb1927d6786911146c11.jpg)](https://gyazo.com/e045b713ed17cb1927d6786911146c11)
 ## 勘検定　https://www.kankentei.com/
 
 ## サービス概要
@@ -50,7 +50,7 @@
 |合格級一覧|LINE友だち追加|
 |---|---|
 |[![Image from Gyazo](https://i.gyazo.com/ee23b5ae835753912f66724aa0076eaa.jpg)](https://gyazo.com/ee23b5ae835753912f66724aa0076eaa)|[![Image from Gyazo](https://i.gyazo.com/8854ba99f6ad1f5987eea96e8255b79b.png)](https://gyazo.com/8854ba99f6ad1f5987eea96e8255b79b)|
-|合格した級にカーソルをあてると、結果と仲間一覧（コメント一覧）の2つの項目が表示され、各項目をクリックすると該当する画面に遷移します。|ログインページに表示されているLINE友だち追加をすると、新しい検定が公開された際に通知します。友だち追加のQRコードはログインページに掲載されています。|
+|合格した級にカーソルをあてると、結果と仲間一覧（コメント一覧）の2つの項目が表示され、各項目をクリックすると該当する画面に遷移します。|LINE友だち追加をすると、新しい検定が公開された際に通知します。友だち追加のQRコードはログインページに掲載されています。|
 
 |その他|
 |---|
