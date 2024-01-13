@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  skip_before_action :require_login, only: %i[index]
   before_action :set_category, only: %i[index new create]
   before_action :set_review, only: %i[index new create]
 

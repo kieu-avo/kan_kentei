@@ -69,7 +69,7 @@ ja:
       challenge_again: 再受検
       souvenir: お土産コーナーへ
     sample_quiz:
-      continue: ログインして続きをやる
+      continue: ログインして受検をする
       title: サンプル問題
   reviews:
     index:
